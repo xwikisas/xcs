@@ -41,4 +41,25 @@
       <type>xar</type>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.xwiki.commons</groupId>
+        <artifactId>xwiki-commons-tool-xar-plugin</artifactId>
+        <!-- We need to use a recent version since this transformation feature is new, see
+             http://jira.xwiki.org/browse/XCOMMONS-469 -->
+        <version>5.3-SNAPSHOT</version>
+        <configuration>
+          <transformations>
+            <transformation>
+              <artifact>org.xwiki.platform:xwiki-platform-administration-ui</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/rightPanels</xpath>
+              <value>$1,Panels.XWikiSAS</value>
+            </transformation>
+          </transformations>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
