@@ -22,7 +22,8 @@
  *
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.xwikisas</groupId>
@@ -32,7 +33,9 @@
   <artifactId>xcs-ui-common</artifactId>
   <name>XWiki Collaboration Suite - UI - Common</name>
   <packaging>xar</packaging>
-  <description>Default set of wiki pages containing both content and default applications for XWiki Collaboration Suite Main Wiki and (sub)wikis.</description>
+  <description>Default set of wiki pages containing both content and default applications for XWiki Collaboration Suite
+    Main Wiki and (sub)wikis.
+  </description>
   <dependencies>
     <dependency>
       <groupId>org.xwiki.enterprise</groupId>
@@ -41,4 +44,26 @@
       <type>xar</type>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.xwiki.commons</groupId>
+        <artifactId>xwiki-commons-tool-xar-plugin</artifactId>
+        <!-- We need to use a recent version since this transformation feature is new, see
+             http://jira.xwiki.org/browse/XCOMMONS-469 -->
+        <version>5.3-SNAPSHOT</version>
+        <configuration>
+          <transformations>
+            <!-- Specify a different default Color Theme -->
+            <transformation>
+              <artifact>org.xwiki.platform:xwiki-platform-administration-ui</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/colorTheme</xpath>
+              <value>ColorThemes.Mint</value>
+            </transformation>
+          </transformations>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

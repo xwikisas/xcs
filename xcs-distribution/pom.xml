@@ -35,5 +35,6 @@
   <description>XWiki Collaboration Suite - Distribution - Parent POM</description>
   <modules>
     <module>xcs-jetty</module>
+    <module>xcs-ui-wiki-all</module>
   </modules>
 </project>
