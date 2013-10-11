@@ -27,7 +27,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs</artifactId>
-    <version>2013-5.2-rc-1-1-SNAPSHOT</version>
+    <version>2013-5.2-1-SNAPSHOT</version>
   </parent>
   <artifactId>xcs-distribution</artifactId>
   <name>XWiki Collaboration Suite - Distribution - Parent POM</name>
