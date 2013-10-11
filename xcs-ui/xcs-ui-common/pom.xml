@@ -59,7 +59,7 @@
               <artifact>org.xwiki.platform:xwiki-platform-administration-ui</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/colorTheme</xpath>
-              <value>ColorThemes.Mint</value>
+              <value>ColorThemes.XCSColorTheme</value>
             </transformation>
             <!-- Specify a different footer -->
             <transformation>
