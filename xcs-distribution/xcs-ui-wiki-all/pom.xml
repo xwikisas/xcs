@@ -33,6 +33,14 @@
   <packaging>xar</packaging>
   <description>All in one XWiki Collaboration Suite XAR package</description>
   <properties>
+    <!-- TODO: When we start depending on XWiki 5.3 replace the lines below with the following
+         (see http://jira.xwiki.org/browse/XE-1333 for details):
+        <xwiki.extension.features>
+          ${xe.ui.wiki.all.features},
+          com.xwikisas:xcs-ui-wiki,
+          com.xwikisas:xcs-ui-common
+        </xwiki.extension.features>
+    -->
     <xwiki.extension.features>
       <!-- Embedded extensions -->
       org.xwiki.enterprise:xwiki-enterprise-ui,
