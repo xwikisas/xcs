@@ -28,7 +28,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs-ui</artifactId>
-    <version>2013-5.2-1-SNAPSHOT</version>
+    <version>2014-6.2.1-1-SNAPSHOT</version>
   </parent>
   <artifactId>xcs-ui-mainwiki</artifactId>
   <name>XWiki Collaboration Suite - UI - Main wiki</name>
@@ -37,120 +37,52 @@
     Main Wiki.
   </description>
   <dependencies>
+    <!-- Depend on the XE mainwiki XAR since we want the same default dependencies -->
+    <dependency>
+      <groupId>org.xwiki.enterprise</groupId>
+      <artifactId>xwiki-enterprise-ui-mainwiki</artifactId>
+      <version>${enterprise.version}</version>
+      <type>xar</type>
+    </dependency>
+    <!-- Also depend on the XCS common wiki XAR to have our custom content -->
     <dependency>
       <groupId>com.xwikisas</groupId>
       <artifactId>xcs-ui-common</artifactId>
       <version>${project.version}</version>
       <type>xar</type>
     </dependency>
-    <dependency>
-      <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-workspace-ui</artifactId>
-      <version>${platform.version}</version>
-      <type>xar</type>
-    </dependency>
-    <!-- This artifact is used during the build but we don't want it to be a transitive dependency of
-      xcs-ui-mainwiki -->
-    <dependency>
-      <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-ui-wiki-all</artifactId>
-      <version>${project.version}</version>
-      <type>xar</type>
-      <scope>provided</scope>
-    </dependency>
   </dependencies>
   <build>
     <plugins>
-      <!-- Step 1: Get the XCS Wiki XAR and name it "workspace-template.xar"-->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>xcs-xar-workspace-template</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>com.xwikisas</groupId>
-                  <artifactId>xcs-ui-wiki-all</artifactId>
-                  <version>${project.version}</version>
-                  <type>xar</type>
-                  <overWrite>true</overWrite>
-                  <outputDirectory>${project.build.directory}/xcs</outputDirectory>
-                  <destFileName>workspace-template.xar</destFileName>
-                </artifactItem>
-              </artifactItems>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <!-- Step 2: - Unpack the Workspace Application so that we can attach a base template xar to the
-                   WorkspaceManager.Install page
-                   - Also customize the XAR XML pages (custom panel, etc)
-      -->
       <plugin>
         <groupId>org.xwiki.commons</groupId>
         <artifactId>xwiki-commons-tool-xar-plugin</artifactId>
-        <!-- We need to use a recent version since this transformation feature is new, see
-             http://jira.xwiki.org/browse/XCOMMONS-469 -->
-        <version>5.3-SNAPSHOT</version>
-        <executions>
-          <execution>
-            <id>customize-xar</id>
-            <goals>
-              <goal>xar</goal>
-            </goals>
-            <configuration>
-              <transformations>
-                <!-- Specify a custom XWiki SAS Panel -->
-                <transformation>
-                  <artifact>com.xwikisas:xcs-ui-common</artifact>
-                  <file>XWiki/XWikiPreferences.xml</file>
-                  <xpath>/xwikidoc/object/property/rightPanels</xpath>
-                  <value>$1,Panels.XWikiSAS</value>
-                </transformation>
-              </transformations>
-            </configuration>
-          </execution>
-          <execution>
-            <id>unxar-xwiki-platform-workspace-ui</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>unxar</goal>
-            </goals>
-            <configuration>
-              <groupId>org.xwiki.platform</groupId>
-              <artifactId>xwiki-platform-workspace-ui</artifactId>
-              <outputDirectory>${project.build.outputDirectory}</outputDirectory>
-              <includes>
-                <include>WorkspaceManager/Install.xml</include>
-              </includes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <!-- Step 3: Attach Workspace xar to XCS install page -->
-      <plugin>
-        <groupId>org.xwiki.platform</groupId>
-        <artifactId>xwiki-platform-tool-xmldoc-update-plugin</artifactId>
-        <version>${platform.version}</version>
-        <executions>
-          <execution>
-            <phase>generate-resources</phase>
-            <id>attach-xcs-xar-as-workspace-template</id>
-            <goals>
-              <goal>attach</goal>
-            </goals>
-            <configuration>
-              <file>${project.build.directory}/xcs/workspace-template.xar</file>
-              <sourceDocument>${project.build.outputDirectory}/WorkspaceManager/Install.xml</sourceDocument>
-            </configuration>
-          </execution>
-        </executions>
+        <version>${commons.version}</version>
+        <configuration>
+          <transformations>
+            <!-- Specify a custom XWiki SAS Panel -->
+            <transformation>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/rightPanels</xpath>
+              <value>$1,Panels.XWikiSAS</value>
+            </transformation>
+            <!-- Specify a different default Color Theme -->
+            <transformation>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/colorTheme</xpath>
+              <value>ColorThemes.XCSColorTheme</value>
+            </transformation>
+            <!-- Specify a different footer -->
+            <transformation>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/version</xpath>
+              <value><![CDATA[XWiki Collaboration Suite 2014 ($xwiki.getVersion()) - By <a href="http://www.xwiki.com/">XWiki SAS</a>]]></value>
+            </transformation>
+          </transformations>
+        </configuration>
       </plugin>
     </plugins>
   </build>

@@ -27,13 +27,21 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs-ui</artifactId>
-    <version>2013-5.2-1-SNAPSHOT</version>
+    <version>2014-6.2.1-1-SNAPSHOT</version>
   </parent>
   <artifactId>xcs-ui-wiki</artifactId>
   <name>XWiki Collaboration Suite - UI - Wiki</name>
   <packaging>xar</packaging>
   <description>Default set of wiki pages containing both content and default applications for XWiki Collaboration Suite (sub)wiki.</description>
   <dependencies>
+    <!-- Depend on the XE wiki XAR since we want the same default dependencies -->
+    <dependency>
+      <groupId>org.xwiki.enterprise</groupId>
+      <artifactId>xwiki-enterprise-ui-wiki</artifactId>
+      <version>${enterprise.version}</version>
+      <type>xar</type>
+    </dependency>
+    <!-- Also depend on the XCS common wiki XAR to have our custom content -->
     <dependency>
       <groupId>com.xwikisas</groupId>
       <artifactId>xcs-ui-common</artifactId>
@@ -41,4 +49,31 @@
       <type>xar</type>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.xwiki.commons</groupId>
+        <artifactId>xwiki-commons-tool-xar-plugin</artifactId>
+        <version>${commons.version}</version>
+        <configuration>
+          <transformations>
+            <!-- Specify a different default Color Theme -->
+            <transformation>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/colorTheme</xpath>
+              <value>ColorThemes.XCSColorTheme</value>
+            </transformation>
+            <!-- Specify a different footer -->
+            <transformation>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/version</xpath>
+              <value><![CDATA[XWiki Collaboration Suite 2014 ($xwiki.getVersion()) - By <a href="http://www.xwiki.com/">XWiki SAS</a>]]></value>
+            </transformation>
+          </transformations>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
