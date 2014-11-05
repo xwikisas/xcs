@@ -27,7 +27,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs-data</artifactId>
-    <version>2014-6.2.1-1-SNAPSHOT</version>
+    <version>2014-6.2.3-1-SNAPSHOT</version>
   </parent>
   <artifactId>xcs-data-hsqldb</artifactId>
   <name>XWiki Collaboration Suite - Data - HSQLDB</name>

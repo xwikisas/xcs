@@ -27,11 +27,11 @@
   <parent>
     <groupId>org.xwiki.enterprise</groupId>
     <artifactId>xwiki-enterprise</artifactId>
-    <version>6.2.1</version>
+    <version>6.2.3</version>
   </parent>
   <groupId>com.xwikisas</groupId>
   <artifactId>xcs</artifactId>
-  <version>2014-6.2.1-1-SNAPSHOT</version>
+  <version>2014-6.2.3-1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>XWiki Collaboration Suite - Parent POM</name>
   <description>XWiki Collaboration Suite - Parent POM</description>
