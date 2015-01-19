@@ -37,5 +37,6 @@
     <module>xcs-ui-common</module>
     <module>xcs-ui-mainwiki</module>
     <module>xcs-ui-wiki</module>
+    <module>xcs-ui-workspace</module>
   </modules>
 </project>
