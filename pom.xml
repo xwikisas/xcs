@@ -31,7 +31,7 @@
   </parent>
   <groupId>com.xwikisas</groupId>
   <artifactId>xcs</artifactId>
-  <version>2014-6.2.3-1-SNAPSHOT</version>
+  <version>2015-1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>XWiki Collaboration Suite - Parent POM</name>
   <description>XWiki Collaboration Suite - Parent POM</description>
@@ -44,6 +44,22 @@
     <system>jira</system>
     <url>https://jira.xwikisas.com/browse/XCS</url>
   </issueManagement>
+  <distributionManagement>
+    <site>
+      <id>xwikisas-release</id>
+      <url>dav:http://nexus.xwikisas.com/nexus/content/sites/site/</url>
+    </site>
+    <repository>
+      <id>xwikisas-release</id>
+      <name>XWiki SAS Maven Remote Repository for Releases</name>
+      <url>http://nexus.xwikisas.com/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>xwikisas-snapshots</id>
+      <name>XWiki SAS Maven Development Repository for Snapshots</name>
+      <url>http://nexus.xwikisas.com/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
   <modules>
     <!-- Sorted Alphabetically -->
     <module>xcs-data</module>
