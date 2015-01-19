@@ -69,7 +69,7 @@
               <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/colorTheme</xpath>
-              <value>ColorThemes.XCSColorTheme</value>
+              <value>FlamingoThemes.XWikiCSBlue</value>
             </transformation>
             <!-- Specify a different footer -->
             <transformation>
