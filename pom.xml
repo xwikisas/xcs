@@ -46,11 +46,11 @@
   </issueManagement>
   <distributionManagement>
     <site>
-      <id>xwikisas-release</id>
+      <id>xwikisas-releases</id>
       <url>dav:http://nexus.xwikisas.com/nexus/content/sites/site/</url>
     </site>
     <repository>
-      <id>xwikisas-release</id>
+      <id>xwikisas-releases</id>
       <name>XWiki SAS Maven Remote Repository for Releases</name>
       <url>http://nexus.xwikisas.com/nexus/content/repositories/releases/</url>
     </repository>
