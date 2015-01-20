@@ -57,13 +57,6 @@
         <version>${commons.version}</version>
         <configuration>
           <transformations>
-            <!-- Specify a different default Color Theme -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/colorTheme</xpath>
-              <value>ColorThemes.XCSColorTheme</value>
-            </transformation>
             <!-- Specify a different footer -->
             <transformation>
               <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
