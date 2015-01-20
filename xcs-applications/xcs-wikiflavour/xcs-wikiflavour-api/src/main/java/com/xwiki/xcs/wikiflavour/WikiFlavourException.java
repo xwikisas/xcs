@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
- *
+/*
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
  *
@@ -18,21 +16,35 @@
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ */
+package com.xwiki.xcs.wikiflavour;
+
+/**
+ * Exception concerning the Wiki Flavour module.
  *
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.xwikisas</groupId>
-    <artifactId>xcs</artifactId>
-    <version>2015-1-SNAPSHOT</version>
-  </parent>
-  <artifactId>xcs-applications</artifactId>
-  <name>XWiki Collaboration Suite - Applications - Parent POM</name>
-  <packaging>pom</packaging>
-  <description>Parent POM for all applications made for XCS.</description>
-  <modules>
-    <!-- Sorted Alphabetically -->
-    <module>xcs-wikiflavour</module>
-  </modules>
-</project>
+ * @version $Id: $
+ * @since 2015-1-M1
+ */
+public class WikiFlavourException extends Exception
+{
+    /**
+     * Construct a new exception.
+     *
+     * @param message message about the error
+     */
+    public WikiFlavourException(String message)
+    {
+        super(message);
+    }
+
+    /**
+     * Construct a new exception.
+     *
+     * @param message message about the error
+     * @param cause cause of the error
+     */
+    public WikiFlavourException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+}

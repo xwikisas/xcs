@@ -1,0 +1,4 @@
+com.xwiki.xcs.wikiflavour.internal.DefaultWikiCreatorWithFlavour
+com.xwiki.xcs.wikiflavour.internal.FlavourInstaller
+com.xwiki.xcs.wikiflavour.internal.WikiFlavourJob
+com.xwiki.xcs.wikiflavour.script.WikiFlavourScriptServices

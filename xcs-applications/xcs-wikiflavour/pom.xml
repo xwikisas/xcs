@@ -24,15 +24,16 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.xwikisas</groupId>
-    <artifactId>xcs</artifactId>
+    <artifactId>xcs-applications</artifactId>
     <version>2015-1-SNAPSHOT</version>
   </parent>
-  <artifactId>xcs-applications</artifactId>
-  <name>XWiki Collaboration Suite - Applications - Parent POM</name>
+  <artifactId>xcs-wikiflavour</artifactId>
+  <name>XWiki Collaboration Suite - Wiki Flavour - Parent POM</name>
   <packaging>pom</packaging>
-  <description>Parent POM for all applications made for XCS.</description>
+  <description>XWiki Collaboration Suite - Wiki Flavour - Parent POM</description>
   <modules>
     <!-- Sorted Alphabetically -->
-    <module>xcs-wikiflavour</module>
+    <module>xcs-wikiflavour-api</module>
+    <module>xcs-wikiflavour-ui</module>
   </modules>
 </project>
