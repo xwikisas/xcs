@@ -69,7 +69,7 @@
               <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/version</xpath>
-              <value><![CDATA[XWiki Collaboration Suite 2014 ($xwiki.getVersion()) - By <a href="http://www.xwiki.com/">XWiki SAS</a>]]></value>
+              <value>${xcs.footer}</value>
             </transformation>
           </transformations>
         </configuration>

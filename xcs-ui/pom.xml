@@ -40,4 +40,7 @@
     <module>xcs-ui-workspace</module>
     <module>xcs-ui-knowledgebase</module>
   </modules>
+  <properties>
+    <xcs.footer><![CDATA[XWiki Collaboration Suite 2015 ($xwiki.getVersion()) - By <a href="http://www.xwiki.com/">XWiki SAS</a>]]></xcs.footer>
+  </properties>
 </project>
