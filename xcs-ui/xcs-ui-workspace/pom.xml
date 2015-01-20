@@ -41,13 +41,6 @@
       <version>${enterprise.version}</version>
       <type>xar</type>
     </dependency>
-    <!-- Also depend on the XCS common wiki XAR to have our custom content -->
-    <dependency>
-      <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-ui-common</artifactId>
-      <version>${project.version}</version>
-      <type>xar</type>
-    </dependency>
     <!-- Also depend on the XCS wiki XAR to share content across (sub)wikis-->
     <dependency>
       <groupId>com.xwikisas</groupId>
@@ -64,26 +57,12 @@
         <version>${commons.version}</version>
         <configuration>
           <transformations>
-            <!-- Remove right panels -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/showRightPanels</xpath>
-              <value>false</value>
-            </transformation>
             <!-- Specify a different default Color Theme -->
             <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
+              <artifact>com.xwikisas:xcs-ui-wiki</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/colorTheme</xpath>
               <value>FlamingoThemes.XWikiCSBlue</value>
-            </transformation>
-            <!-- Specify a different footer -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/version</xpath>
-              <value><![CDATA[XWiki Collaboration Suite 2014 ($xwiki.getVersion()) - By <a href="http://www.xwiki.com/">XWiki SAS</a>]]></value>
             </transformation>
           </transformations>
         </configuration>
