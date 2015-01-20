@@ -59,7 +59,7 @@
           <transformations>
             <!-- Remove right panels -->
             <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/showRightPanels</xpath>
               <value>false</value>
