@@ -60,12 +60,12 @@
         <version>${commons.version}</version>
         <configuration>
           <transformations>
-            <!-- Specify a custom XWiki SAS Panel -->
+            <!-- Remove right panels -->
             <transformation>
               <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/rightPanels</xpath>
-              <value>$1,Panels.XWikiSAS</value>
+              <xpath>/xwikidoc/object/property/showRightPanels</xpath>
+              <value>false</value>
             </transformation>
             <!-- Specify a different default Color Theme -->
             <transformation>

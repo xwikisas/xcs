@@ -64,6 +64,13 @@
         <version>${commons.version}</version>
         <configuration>
           <transformations>
+            <!-- Remove right panels -->
+            <transformation>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/showRightPanels</xpath>
+              <value>false</value>
+            </transformation>
             <!-- Specify a different default Color Theme -->
             <transformation>
               <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
