@@ -20,31 +20,26 @@
 package com.xwiki.xcs.wikiflavour;
 
 import org.xwiki.component.annotation.Role;
-import org.xwiki.job.Job;
-import org.xwiki.job.event.status.JobStatus;
 
 /**
- * Component to create a wiki and install a flavour in it.
+ * Step to be executed during the wiki creation job.
  *
  * @version $Id: $
  * @since 2015-1-M1
  */
 @Role
-public interface WikiCreatorWithFlavour
+public interface WikiCreationStep
 {
     /**
-     * Start an asynchronous wiki creation filled with a flavour (an extension).
-     *
-     * @param request a wiki creation request containing all the information about the wiki to create
+     * Execute the step.
+     * @param request wiki creation request with all information about the wiki to create
      * @throws WikiFlavourException if problem occurs
-     *
-     * @return the job of the wiki creation
      */
-    Job createWiki(WikiCreationRequest request) throws WikiFlavourException;
+    void execute(WikiCreationRequest request) throws WikiFlavourException;
 
     /**
-     * @param wikiId id of the wiki which is creating by a job
-     * @return the status of the wiki creation job
+     * The creation steps are sorted by order before being executed so this method returns the one  of the current step.
+     * @return the order of the step
      */
-    JobStatus getJobStatus(String wikiId);
+    int getOrder();
 }

@@ -53,6 +53,11 @@
       <version>${enterprise.version}</version>
       <type>war</type>
     </dependency>
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-ui-mainwiki</artifactId>
+      <version>${project.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

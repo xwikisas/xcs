@@ -24,31 +24,31 @@ import java.util.Arrays;
 import javax.inject.Inject;
 
 import org.xwiki.component.annotation.Component;
+import org.xwiki.component.manager.ComponentLookupException;
+import org.xwiki.component.manager.ComponentManager;
 import org.xwiki.extension.ExtensionId;
 import org.xwiki.extension.job.InstallRequest;
 import org.xwiki.extension.job.internal.InstallJob;
 import org.xwiki.job.Job;
-import org.xwiki.job.JobException;
-import org.xwiki.job.JobExecutor;
 import org.xwiki.model.reference.DocumentReference;
 
 import com.xwiki.xcs.wikiflavour.WikiFlavourException;
 
 /**
- * Component that install an extension on a wiki.
+ * Component that installs an extension on a wiki.
  *
  * @version $Id: $
  * @since 2015-1-M1
  */
-@Component(roles = FlavourInstaller.class)
-public class FlavourInstaller
+@Component(roles = ExtensionInstaller.class)
+public class ExtensionInstaller
 {
     private static final String PROPERTY_USERREFERENCE = "user.reference";
 
     private static final DocumentReference SUPERADMIN_REFERENCE = new DocumentReference("xwiki", "XWiki", "superadmin");
 
     @Inject
-    private JobExecutor jobExecutor;
+    private ComponentManager componentManager;
 
     /**
      * Install an extension on a wiki.
@@ -58,20 +58,22 @@ public class FlavourInstaller
      * @return the job of the installation
      * @throws WikiFlavourException if problem occurs
      */
-    public Job installExtension(String wikiId, ExtensionId extensionId) throws WikiFlavourException
+    public void installExtension(String wikiId, ExtensionId extensionId) throws WikiFlavourException
     {
         try {
             // Create the install request
             InstallRequest installRequest = new InstallRequest();
-            installRequest.setId(Arrays.asList(WikiFlavourJob.JOBID_PREFIX, "install", wikiId));
+            installRequest.setId(Arrays.asList(WikiFlavourJob.JOB_ID_PREFIX, "install", wikiId));
             installRequest.addExtension(extensionId);
             installRequest.addNamespace("wiki:" + wikiId);
-            // To avoid problem with
+            // To avoid problem with Programming Rights, we install everything with superadmin
             installRequest.setProperty(PROPERTY_USERREFERENCE, SUPERADMIN_REFERENCE);
-            // Start the job that install the extension
-            return jobExecutor.execute(InstallJob.JOBTYPE, installRequest);
-        } catch (JobException e) {
-            throw new WikiFlavourException("Failed to install the flavour.", e);
+            InstallJob job = componentManager.getInstance(Job.class, InstallJob.JOBTYPE);
+            job.initialize(installRequest);
+            job.run();
+        } catch (ComponentLookupException  e) {
+            throw new WikiFlavourException(String.format("Failed to install the flavour [%s] on the wiki [%].",
+                extensionId.toString(), wikiId), e);
         }
     }
 }

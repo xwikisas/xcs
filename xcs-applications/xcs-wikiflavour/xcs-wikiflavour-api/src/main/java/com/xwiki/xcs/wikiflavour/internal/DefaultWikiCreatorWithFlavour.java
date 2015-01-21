@@ -26,11 +26,13 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
-import org.xwiki.extension.ExtensionId;
 import org.xwiki.job.Job;
 import org.xwiki.job.JobException;
 import org.xwiki.job.JobExecutor;
+import org.xwiki.job.JobStatusStore;
+import org.xwiki.job.event.status.JobStatus;
 
+import com.xwiki.xcs.wikiflavour.WikiCreationRequest;
 import com.xwiki.xcs.wikiflavour.WikiCreatorWithFlavour;
 import com.xwiki.xcs.wikiflavour.WikiFlavourException;
 
@@ -47,26 +49,34 @@ public class DefaultWikiCreatorWithFlavour implements WikiCreatorWithFlavour
     @Inject
     private JobExecutor jobExecutor;
 
+    @Inject
+    private JobStatusStore jobStatusStore;
+
     @Override
-    public Job createWikiWithFlavour(String wikiId, String wikiAlias, ExtensionId extensionId, boolean failOnExist)
-            throws WikiFlavourException
+    public Job createWiki(WikiCreationRequest request) throws WikiFlavourException
     {
         try {
-            return jobExecutor.execute(WikiFlavourJob.JOBTYPE, new WikiFlavourJobRequest(getJobId(wikiId), wikiId,
-                wikiAlias, extensionId, failOnExist));
+            request.setId(getJobId(request.getWikiId()));
+            return jobExecutor.execute(WikiFlavourJob.JOB_TYPE, request);
         } catch (JobException e) {
             throw new WikiFlavourException("Failed to create a new flavoured wiki.", e);
         }
     }
 
     @Override
-    public Job getJob(String wikiId)
+    public JobStatus getJobStatus(String wikiId)
     {
-        return jobExecutor.getJob(getJobId(wikiId));
+        List<String> jobId = getJobId(wikiId);
+        Job job = jobExecutor.getJob(jobId);
+        if (job != null) {
+            return job.getStatus();
+        } else {
+            return jobStatusStore.getJobStatus(jobId);
+        }
     }
 
     private List<String> getJobId(String wikiId)
     {
-        return Arrays.asList(WikiFlavourJob.JOBID_PREFIX, "createandinstall", wikiId);
+        return Arrays.asList(WikiFlavourJob.JOB_ID_PREFIX, "createandinstall", wikiId);
     }
 }

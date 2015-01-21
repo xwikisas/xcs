@@ -31,4 +31,11 @@
   <name>XWiki Collaboration Suite - Wiki Flavour - UI</name>
   <packaging>xar</packaging>
   <description>XWiki Collaboration Suite - Wiki Flavour - UI</description>
+  <dependencies>
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-wikiflavour-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
 </project>

@@ -27,6 +27,8 @@ package com.xwiki.xcs.wikiflavour;
  */
 public class WikiFlavourException extends Exception
 {
+    private static final long serialVersionUID = 2501408208237931530L;
+
     /**
      * Construct a new exception.
      *

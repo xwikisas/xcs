@@ -1,4 +1,7 @@
+com.xwiki.xcs.wikiflavour.internal.steps.CreateWikiStep
+com.xwiki.xcs.wikiflavour.internal.steps.ProvisionWikiStep
+com.xwiki.xcs.wikiflavour.internal.steps.SaveWikiMetaDataStep
 com.xwiki.xcs.wikiflavour.internal.DefaultWikiCreatorWithFlavour
-com.xwiki.xcs.wikiflavour.internal.FlavourInstaller
+com.xwiki.xcs.wikiflavour.internal.ExtensionInstaller
 com.xwiki.xcs.wikiflavour.internal.WikiFlavourJob
 com.xwiki.xcs.wikiflavour.script.WikiFlavourScriptServices

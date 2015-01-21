@@ -24,10 +24,11 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
-import org.xwiki.extension.ExtensionId;
 import org.xwiki.job.Job;
+import org.xwiki.job.event.status.JobStatus;
 import org.xwiki.script.service.ScriptService;
 
+import com.xwiki.xcs.wikiflavour.WikiCreationRequest;
 import com.xwiki.xcs.wikiflavour.WikiCreatorWithFlavour;
 import com.xwiki.xcs.wikiflavour.WikiFlavourException;
 
@@ -48,19 +49,13 @@ public class WikiFlavourScriptServices implements ScriptService
     /**
      * Asynchronously create a wiki with a flavour.
      *
-     * @param wikiId id of the wiki to create
-     * @param wikiAlias alias of the wiki to create
-     * @param extensionId id of the extension to install
-     * @param extensionVersion version of the extension to install
-     * @param failOnExist fail the wiki creation if a database called wikiId already exists
-     * @return the job
+     * @param request creation wiki request containing all information about the wiki to create
+     * @return the job that creates the wiki
      */
-    public Job createWikiWithFlavour(String wikiId, String wikiAlias, String extensionId, String extensionVersion,
-        boolean failOnExist)
+    public Job createWiki(WikiCreationRequest request)
     {
         try {
-            return wikiCreatorWithFlavour.createWikiWithFlavour(wikiId, wikiAlias,
-                new ExtensionId(extensionId, extensionVersion), failOnExist);
+            return wikiCreatorWithFlavour.createWiki(request);
         } catch (WikiFlavourException e) {
             // Todo
         }
@@ -70,10 +65,18 @@ public class WikiFlavourScriptServices implements ScriptService
 
     /**
      * @param wikiId id of the wiki
-     * @return the job corresponding to the creation of the wiki
+     * @return the job status corresponding to the creation of the wiki
      */
-    public Job getJob(String wikiId)
+    public JobStatus getJobStatus(String wikiId)
     {
-        return wikiCreatorWithFlavour.getJob(wikiId);
+        return wikiCreatorWithFlavour.getJobStatus(wikiId);
+    }
+
+    /**
+     * @return a new request for the creation of a new wiki
+     */
+    public WikiCreationRequest newWikiCreationRequest()
+    {
+        return new WikiCreationRequest();
     }
 }

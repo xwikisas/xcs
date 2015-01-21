@@ -19,32 +19,14 @@
  */
 package com.xwiki.xcs.wikiflavour;
 
-import org.xwiki.component.annotation.Role;
-import org.xwiki.job.Job;
-import org.xwiki.job.event.status.JobStatus;
-
 /**
- * Component to create a wiki and install a flavour in it.
+ * The source of provisioning for a wiki.
  *
  * @version $Id: $
  * @since 2015-1-M1
  */
-@Role
-public interface WikiCreatorWithFlavour
+public enum WikiSource
 {
-    /**
-     * Start an asynchronous wiki creation filled with a flavour (an extension).
-     *
-     * @param request a wiki creation request containing all the information about the wiki to create
-     * @throws WikiFlavourException if problem occurs
-     *
-     * @return the job of the wiki creation
-     */
-    Job createWiki(WikiCreationRequest request) throws WikiFlavourException;
-
-    /**
-     * @param wikiId id of the wiki which is creating by a job
-     * @return the status of the wiki creation job
-     */
-    JobStatus getJobStatus(String wikiId);
+    TEMPLATE, // the wiki is filled by a template wiki
+    EXTENSION // the wiki is filled by an extension
 }
