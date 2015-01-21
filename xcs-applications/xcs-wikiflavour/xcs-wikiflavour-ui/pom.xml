@@ -37,5 +37,12 @@
       <artifactId>xcs-wikiflavour-api</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <!-- We rewrite one page of the Wiki Manager Application -->
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-wiki-ui-mainwiki</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
   </dependencies>
 </project>

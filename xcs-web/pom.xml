@@ -34,8 +34,16 @@
   <packaging>war</packaging>
   <description>XWiki Collaboration Suite - Web</description>
   <properties>
-    <!-- By default we don't include Legacy modules and thus we don't need to exclude the non legacy JARs -->
-    <xwiki.war.legacy.excludes />
+    <xwiki.war.legacy.excludes>
+      <!-- Exclude from war non legacy modules that have legacy modules wrapping them -->
+      WEB-INF/lib/xwiki-commons-component-api-*.jar,
+      WEB-INF/lib/xwiki-commons-component-default-*.jar,
+      WEB-INF/lib/xwiki-rendering-api-*.jar,
+      WEB-INF/lib/xwiki-platform-crypto-script-*.jar,
+      WEB-INF/lib/xwiki-platform-oldcore-*.jar,
+      WEB-INF/lib/xwiki-platform-office-importer-*.jar,
+      WEB-INF/lib/xwiki-platform-rendering-macro-include-*.jar
+    </xwiki.war.legacy.excludes>
 
     <!-- We embed XWiki Enterprise -->
     <xwiki.extension.features>org.xwiki.enterprise:xwiki-enterprise-web</xwiki.extension.features>
@@ -53,10 +61,13 @@
       <version>${enterprise.version}</version>
       <type>war</type>
     </dependency>
+    <!-- Add dependencies on the XAR distributions for the mainwiki and for subwikis so that we transitively
+         include all JAR dependencies in the generated WAR -->
     <dependency>
       <groupId>com.xwikisas</groupId>
       <artifactId>xcs-ui-mainwiki</artifactId>
       <version>${project.version}</version>
+      <type>xar</type>
     </dependency>
   </dependencies>
   <build>
@@ -87,6 +98,7 @@
               <targetPath>WEB-INF</targetPath>
               <includes>
                 <include>xwiki.cfg</include>
+                <include>xwiki.properties</include>
               </includes>
             </resource>
             <!-- Include version.properties file -->
@@ -105,11 +117,12 @@
                - Exclude JavaBeans Activation Framework (activation-*.jar) since it's included in Java SE 6.
           -->
           <packagingExcludes>
-            ${xwiki.war.legacy.excludes}
+            ${xwiki.war.legacy.excludes},
             WEB-INF/lib/batik-js-*.jar,
             WEB-INF/lib/commons-logging-*.jar,
             %regex[WEB-INF/lib/log4j-(?!over-slf4j).*.jar],
-            WEB-INF/lib/activation-*.jar
+            WEB-INF/lib/activation-*.jar,
+            WEB-INF/lib/bootstrap-2.3.2.jar
           </packagingExcludes>
         </configuration>
       </plugin>

@@ -469,7 +469,7 @@
   #else
     ## Create a wiki from an extension
     #set($discard = $wikiCreationRequest.setWikiSource('extension'))
-    #set($discard = $wikiCreationRequest.setExtensionId($services.extension.resolve("org.xwiki.enterprise:xwiki-enterprise-ui-wiki", "6.4-rc-1").id))
+    #set($discard = $wikiCreationRequest.setExtensionId($services.extension.resolve("com.xwikisas:xcs-ui-wiki", $xwiki.getVersion()).id))
   #end
   ## Members
   #if ($request.userScope != 'local_only')

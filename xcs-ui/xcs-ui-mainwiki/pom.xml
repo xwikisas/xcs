@@ -37,6 +37,13 @@
     Main Wiki.
   </description>
   <dependencies>
+    <!-- Our flavour application, we put it first to be installed after xwiki-platform-ui-mainwiki-->
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-wikiflavour-ui</artifactId>
+      <version>${project.version}</version>
+      <type>xar</type>
+    </dependency>
     <!-- Depend on the XE mainwiki XAR since we want the same default dependencies -->
     <dependency>
       <groupId>org.xwiki.enterprise</groupId>
