@@ -37,11 +37,5 @@
     Main Wiki and (sub)wikis.
   </description>
   <dependencies>
-    <dependency>
-      <groupId>org.xwiki.enterprise</groupId>
-      <artifactId>xwiki-enterprise-ui-common</artifactId>
-      <version>${enterprise.version}</version>
-      <type>xar</type>
-    </dependency>
   </dependencies>
 </project>
