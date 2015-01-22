@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
@@ -1069,7 +1070,7 @@ XWiki.ProvisioningBar = Class.create({
   },
   _callRefresh : function () {
     // Document URL
-    var document = new XWiki.Document('WikiCreationService', 'WikiFlavourCode');
+    var document = new XWiki.Document('WikiCreationService', 'WikiFlavoursCode');
     var url = document.getURL('get', 'outputSyntax=plain');
     new Ajax.Request(url, {
       method: 'get',

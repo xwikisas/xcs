@@ -57,7 +57,7 @@ import com.xwiki.xcs.wikiflavour.WikiSource;
 @Named("metadata")
 public class SaveWikiMetaDataStep implements WikiCreationStep
 {
-    private final static String WIKI_FLAVOUR_CODE_SPACE = "WikiFlavourCode";
+    private final static String WIKI_FLAVOUR_CODE_SPACE = "WikiFlavoursCode";
 
     @Inject
     private WikiDescriptorManager wikiDescriptorManager;
