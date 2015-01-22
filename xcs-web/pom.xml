@@ -176,4 +176,16 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>snapshotModules</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.xwikisas</groupId>
+          <artifactId>xcs-repositories-snapshots</artifactId>
+          <version>${project.version}</version>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
 </project>

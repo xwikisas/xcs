@@ -65,6 +65,7 @@
     <module>xcs-applications</module>
     <module>xcs-data</module>
     <module>xcs-distribution</module>
+    <module>xcs-repositories</module>
     <module>xcs-ui</module>
     <module>xcs-web</module>
   </modules>

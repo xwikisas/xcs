@@ -1,0 +1,1 @@
+500:com.xwikisas.xcs.repositories.snapshots.internal.SnapshotsDefaultExtensionRepositorySource
