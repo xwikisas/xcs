@@ -34,8 +34,8 @@ import org.xwiki.extension.repository.DefaultExtensionRepositoryDescriptor;
 import org.xwiki.extension.repository.ExtensionRepositoryDescriptor;
 
 /**
- * Provides the XWiki and XCS snapshots repositories as default maven repositories. It overrides the equivalent
- * component from xwiki-commons.
+ * Provides the XCS snapshots repositories as default maven repositories. It overrides the equivalent component from
+ * xwiki-commons (which should not be packaged in XCS anyway since we use stable releases of XWiki as base).
  *
  * @version $Id: $
  * @since 2015-1-M1
