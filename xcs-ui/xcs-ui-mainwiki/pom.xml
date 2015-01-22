@@ -50,13 +50,6 @@
       <artifactId>xwiki-enterprise-ui-mainwiki</artifactId>
       <version>${enterprise.version}</version>
       <type>xar</type>
-      <exclusions>
-        <exclusion>
-          <!-- Remove colibri color theme app (XCS-46). -->
-          <groupId>org.xwiki.platform</groupId>
-          <artifactId>xwiki-platform-colorthemes-ui</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <!-- Also depend on the XCS common wiki XAR to have our custom content -->
     <dependency>
