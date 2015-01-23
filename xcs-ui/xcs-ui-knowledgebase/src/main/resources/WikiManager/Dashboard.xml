@@ -73,6 +73,189 @@
   </object>
   <object>
     <class>
+      <name>Blog.BlogClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <blogType>
+        <cache>0</cache>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>blogType</name>
+        <number>5</number>
+        <picker>0</picker>
+        <prettyName>Blog type</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <sort>none</sort>
+        <tooltip/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>local=Space blog (aggregates posts from its space only)|global=Global blog (aggregates posts from the entire wiki)</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </blogType>
+      <description>
+        <contenttype>FullyRenderedText</contenttype>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <editor>---</editor>
+        <name>description</name>
+        <number>2</number>
+        <picker>0</picker>
+        <prettyName>Description</prettyName>
+        <rows>5</rows>
+        <size>60</size>
+        <tooltip/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </description>
+      <displayType>
+        <cache>0</cache>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>displayType</name>
+        <number>3</number>
+        <picker>0</picker>
+        <prettyName>Index display</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <sort>none</sort>
+        <tooltip/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>paginated=Paginated|weekly=Group posts weekly|monthly=Group posts monthly|all=Show all posts</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </displayType>
+      <itemsPerPage>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <name>itemsPerPage</name>
+        <number>4</number>
+        <numberType>integer</numberType>
+        <prettyName>Items per page (only in the Paginated display mode)</prettyName>
+        <size>2</size>
+        <tooltip/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+      </itemsPerPage>
+      <title>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <name>title</name>
+        <number>1</number>
+        <picker>0</picker>
+        <prettyName>Blog title</prettyName>
+        <size>30</size>
+        <tooltip/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </title>
+    </class>
+    <name>WikiManager.Dashboard</name>
+    <number>0</number>
+    <className>Blog.BlogClass</className>
+    <guid>c6a26702-5071-4525-8e84-185b37200662</guid>
+    <property>
+      <blogType>global</blogType>
+    </property>
+    <property>
+      <description/>
+    </property>
+    <property>
+      <displayType>paginated</displayType>
+    </property>
+    <property>
+      <itemsPerPage>2</itemsPerPage>
+    </property>
+    <property>
+      <title>$services.localization.render('xe.blog.code.title')</title>
+    </property>
+  </object>
+  <object>
+    <class>
+      <name>XWiki.GadgetClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <content>
+        <disabled>0</disabled>
+        <editor>---</editor>
+        <name>content</name>
+        <number>2</number>
+        <picker>0</picker>
+        <prettyName>content</prettyName>
+        <rows>5</rows>
+        <size>40</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </content>
+      <position>
+        <disabled>0</disabled>
+        <name>position</name>
+        <number>3</number>
+        <picker>0</picker>
+        <prettyName>position</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </position>
+      <title>
+        <disabled>0</disabled>
+        <name>title</name>
+        <number>1</number>
+        <picker>0</picker>
+        <prettyName>title</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </title>
+    </class>
+    <name>WikiManager.Dashboard</name>
+    <number>0</number>
+    <className>XWiki.GadgetClass</className>
+    <guid>092deb30-707f-43d3-b4e8-8b01b932c0eb</guid>
+    <property>
+      <content>{{activity/}}</content>
+    </property>
+    <property>
+      <position>1,1</position>
+    </property>
+    <property>
+      <title>$services.localization.render('platform.dashboard.wiki.activity')</title>
+    </property>
+  </object>
+  <object>
+    <class>
       <name>XWiki.GadgetClass</name>
       <customClass/>
       <customMapping/>
@@ -123,15 +306,15 @@
     <name>WikiManager.Dashboard</name>
     <number>1</number>
     <className>XWiki.GadgetClass</className>
-    <guid>092deb30-707f-43d3-b4e8-8b01b932c0eb</guid>
+    <guid>acb59a4e-cbfe-4a33-8a38-1bb6f65efa7b</guid>
     <property>
-      <content>{{activity/}}</content>
+      <content>{{include reference="Blog.BlogSheet"/}}</content>
     </property>
     <property>
-      <position>1,1</position>
+      <position>2, 1</position>
     </property>
     <property>
-      <title>$services.localization.render('platform.dashboard.wiki.activity')</title>
+      <title>$services.localization.render('xe.blog.code.title')</title>
     </property>
   </object>
   <content>{{dashboard/}}</content>
