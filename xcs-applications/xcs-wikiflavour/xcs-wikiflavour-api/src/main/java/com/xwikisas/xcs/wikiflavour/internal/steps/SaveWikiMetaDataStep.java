@@ -89,9 +89,6 @@ public class SaveWikiMetaDataStep implements WikiCreationStep
             // Meta data about the users
             wikiUserManager.setUserScope(wikId, request.getUserScope());
             wikiUserManager.setMembershipType(wikId, request.getMembershipType());
-            if (request.getMembers() != null) {
-                wikiUserManager.addMembers(request.getMembers(), wikId);
-            }
 
             // We also need to store what is the id of the main extension of that wiki
             maybeSaveMainExtensionId(request);

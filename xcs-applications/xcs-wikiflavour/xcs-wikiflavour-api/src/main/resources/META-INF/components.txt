@@ -1,3 +1,4 @@
+com.xwikisas.xcs.wikiflavour.internal.steps.AddUsersStep
 com.xwikisas.xcs.wikiflavour.internal.steps.CreateWikiStep
 com.xwikisas.xcs.wikiflavour.internal.steps.ProvisionWikiStep
 com.xwikisas.xcs.wikiflavour.internal.steps.SaveWikiMetaDataStep

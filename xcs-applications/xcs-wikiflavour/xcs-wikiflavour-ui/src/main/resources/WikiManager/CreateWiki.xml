@@ -277,7 +277,7 @@
             &lt;/dl&gt;
             &lt;p class="xformInline"&gt;
               #set ($isTemplate = '')
-              #if ($request.set_as_template == '1')
+              #if ("$!request.set_as_template" != '')
                 #set ($isTemplate = 'checked="checked"')
               #end
               &lt;input type="checkbox" name="set_as_template" id="set_as_template" $isTemplate/&gt;
@@ -482,9 +482,9 @@
   #set($discard = $wikiCreationRequest.setPrettyName($request.wikiprettyname))
   #set($discard = $wikiCreationRequest.setDescription($request.description))
   #if("$!request.set_as_template" != '')
-    #set($discard = $wikiCreationRequest.setIsTemplate(true))
+    #set($discard = $wikiCreationRequest.setTemplate(true))
   #else
-    #set($discard = $wikiCreationRequest.setIsTemplate(false))
+    #set($discard = $wikiCreationRequest.setTemplate(false))
   #end
   #set($discard = $wikiCreationRequest.setOwnerId($request.ownerId))
   #set($discard = $wikiCreationRequest.setUserScope($request.userScope))
