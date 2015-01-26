@@ -36,18 +36,27 @@ public class Flavour
 
     private String nameTranslationKey;
 
+    private String descriptionTranslationKey;
+
+    private String icon;
+
     /**
      * Construct a new Flavour.
      *
      * @param extensionId id of the main extension
      * @param name technical name of the flavour
      * @param nameTranslationKey translation key for the name of the flavour
+     * @param descriptionTranslationKey translation key for the description of the flavour
+     * @param icon the icon to use top represent the flavour
      */
-    public Flavour(String extensionId, String name, String nameTranslationKey)
+    public Flavour(String extensionId, String name, String nameTranslationKey, String descriptionTranslationKey,
+            String icon)
     {
         this.extensionId = extensionId;
         this.name = name;
         this.nameTranslationKey = nameTranslationKey;
+        this.descriptionTranslationKey = descriptionTranslationKey;
+        this.icon = icon;
     }
 
     /**
@@ -72,5 +81,23 @@ public class Flavour
     public String getNameTranslationKey()
     {
         return nameTranslationKey;
+    }
+
+    /**
+     * @return the translation key for the description of the flavour
+     */
+    public String getDescriptionTranslationKey()
+    {
+        return descriptionTranslationKey;
+    }
+
+    public String getIcon()
+    {
+        return icon;
+    }
+
+    public void setIcon(String icon)
+    {
+        this.icon = icon;
     }
 }

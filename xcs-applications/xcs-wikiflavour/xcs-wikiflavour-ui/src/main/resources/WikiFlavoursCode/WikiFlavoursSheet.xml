@@ -49,7 +49,13 @@
   : $doc.display('extensionId')
   ; &lt;label for="WikiFlavoursCode.WikiFlavoursClass_0_nameTranslationKey"&gt;$escapetool.xml($doc.displayPrettyName('nameTranslationKey', false, false))&lt;/label&gt;
   : $doc.display('nameTranslationKey')
+  ; &lt;label for="WikiFlavoursCode.WikiFlavoursClass_0_descriptionTranslationKey"&gt;$escapetool.xml($doc.displayPrettyName('descriptionTranslationKey', false, false))&lt;/label&gt;
+  : $doc.display('descriptionTranslationKey')
+  ; &lt;label for="WikiFlavoursCode.WikiFlavoursClass_0_icon"&gt;$escapetool.xml($doc.displayPrettyName('icon', false, false))&lt;/label&gt;
+  : $doc.display('icon')
 )))
 {{/html}}
+
+{{iconPicker id="WikiFlavoursCode.WikiFlavoursClass_0_icon" /}}
 {{/velocity}}</content>
 </xwikidoc>

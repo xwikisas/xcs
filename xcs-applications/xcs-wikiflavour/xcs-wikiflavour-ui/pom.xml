@@ -44,5 +44,12 @@
       <version>${platform.version}</version>
       <type>xar</type>
     </dependency>
+    <!-- We use the icon picker -->
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-icon-ui</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
   </dependencies>
 </project>

@@ -39,9 +39,8 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>xcs.wikiflavour.create.wizard.step.type.flavour.label=Flavour
-xcs.wikiflavour.create.wizard.step.type.flavour.flavourHint=Select you flavour
-xcs.wikiflavour.create.wizard.step.type.flavour.noFlavour=No Flavour, use a template instead
+  <content>xcs.wikiflavour.create.wizard.step.type.flavour.label=Type
+xcs.wikiflavour.create.wizard.step.type.flavour.flavourHint=Select the type of wiki that you want to create
 
 xcs.wikiflavour.create.wizard.step.creation=Wiki creation
 xcs.wikiflavour.create.wizard.step.creation.wait=Please wait until the wiki is created.
@@ -50,7 +49,9 @@ xcs.wikiflavour.create.wizard.step.creation.error=The wiki {0} has been created 
 xcs.wikiflavour.create.wizard.step.creation.go=Go to the wiki
 
 xcs.wikiflavour.flavour.workspace=Workspace
-xcs.wikiflavour.flavour.knowledgebase=Knowledge Base</content>
+xcs.wikiflavour.flavour.workspace.description=A workspace - Description to change
+xcs.wikiflavour.flavour.knowledgebase=Knowledge Base
+xcs.wikiflavour.flavour.knowledgebase.description=A Knowledge Base - Description to change</content>
   <object>
     <name>WikiFlavoursCode.Translations</name>
     <number>0</number>

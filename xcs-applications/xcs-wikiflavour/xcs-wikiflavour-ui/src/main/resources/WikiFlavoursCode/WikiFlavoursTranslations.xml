@@ -42,6 +42,8 @@
   <content># Class fields
 WikiFlavoursCode.WikiFlavoursClass_extensionId=Extension ID
 WikiFlavoursCode.WikiFlavoursClass_nameTranslationKey=Name Translation Key
+WikiFlavoursCode.WikiFlavoursClass_descriptionTranslationKey=Description Translation Key
+WikiFlavoursCode.WikiFlavoursClass_icon=Icon
 
 # Live table generic keys
 wikiflavours.livetable.doc.title=Page title
@@ -62,7 +64,9 @@ wikiflavours.livetable.emptyvalue=-
 
 # Live table specific keys
 wikiflavours.livetable.extensionId=Extension ID
-wikiflavours.livetable.nameTranslationKey=Name Translation Key</content>
+wikiflavours.livetable.nameTranslationKey=Name Translation Key
+wikiflavours.livetable.descriptionTranslationKey=Description Translation Key
+wikiflavours.livetable.icon=Icon</content>
   <object>
     <name>WikiFlavoursCode.WikiFlavoursTranslations</name>
     <number>0</number>

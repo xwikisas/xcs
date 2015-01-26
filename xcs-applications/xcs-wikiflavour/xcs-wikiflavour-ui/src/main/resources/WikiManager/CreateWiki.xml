@@ -222,59 +222,61 @@
           &lt;div&gt;
             &lt;dl&gt;
               &lt;dt&gt;
-                &lt;label for="template"&gt;$services.localization.render('xcs.wikiflavour.create.wizard.step.type.flavour.label')&lt;/label&gt;
+                &lt;label for="flavour"&gt;$services.localization.render('xcs.wikiflavour.create.wizard.step.type.flavour.label')&lt;/label&gt;
                 &lt;span class="xHint"&gt;$services.localization.render('xcs.wikiflavour.create.wizard.step.type.flavour.flavourHint')&lt;/span&gt;
               &lt;/dt&gt;
               &lt;dd&gt;
-                
-                  &lt;select name="flavour" id="flavour"&gt;
-                    &lt;option value="xwikinoflavour"&gt;$services.localization.render('xcs.wikiflavour.create.wizard.step.type.flavour.noFlavour')&lt;/option&gt;
+                &lt;div class="custom-radio-buttons"&gt;
+                  &lt;fieldset&gt;
                     #set ($flavours = $services.wikiflavour.flavours)
+                    &lt;p&gt;Default Flavours ($flavours.size())&lt;/p&gt;
                     #foreach ($flavour in $flavours)
                       #set ($extensionId = $flavour.extensionId)
                       #set($selected = '')
-                      #if($request.flavour == $extensionId)
-                        #set($selected = 'selected="selected"')
+                      #if($request.flavour == "extension:${extensionId}")
+                        #set($checked = 'checked="checked"')
+                      #else
+                        #set($checked = '')
                       #end
-                      &lt;option value="$escapetool.xml($extensionId)" $selected&gt;$escapetool.xml($services.localization.render($flavour.nameTranslationKey))&lt;/option&gt;
+                      &lt;div class="custom-radio-buttons-choice"&gt;
+                        &lt;input type="radio" name="flavour" value="extension:$escapetool.xml($extensionId)" id="flavour_${velocityCount}" $checked/&gt;
+                        &lt;span class="custom-radio-buttons-choice-icon"&gt;$services.icon.renderHTML($flavour.icon)&lt;/span&gt;
+                        &lt;label for="flavour_${velocityCount}"&gt;$escapetool.xml($services.localization.render($flavour.nameTranslationKey))&lt;/label&gt;
+                        #set ($hint = $services.localization.render($flavour.descriptionTranslationKey))
+                        #if ("$!hint" != '')
+                          &lt;span class="xHint"&gt;$hint&lt;/span&gt;
+                        #end
+                      &lt;/div&gt;
                     #end
-                  &lt;/select&gt;
-                
-              &lt;/dd&gt;
-            &lt;/dl&gt;
-          &lt;/div&gt;
-          
-          ### TEMPLATE ###
-          #set ($templates = $services.wiki.template.getTemplates())
-          &lt;div&gt;
-            &lt;dl&gt;
-              &lt;dt&gt;
-                #if ($templates.size() &gt; 0)
-                  &lt;label for="template"&gt;$services.localization.render('platform.wiki.create.wizard.template.label')&lt;/label&gt;
-                  &lt;span class="xHint"&gt;$services.localization.render('platform.wiki.create.wizard.desc.newTemplateHint')&lt;/span&gt;
-                #else
-                  &lt;label&gt;$services.localization.render('platform.wiki.create.wizard.template.label')&lt;/label&gt;
-                #end
-              &lt;/dt&gt;
-              &lt;dd&gt;
-                #if ($templates.size() &gt; 0)
-                  &lt;select name="template" id="template"&gt;
-                    &lt;option value="xwikinotemplate"&gt;$services.localization.render('platform.wiki.create.wizard.template.noTemplate')&lt;/option&gt;
+                    #set ($templates = $services.wiki.template.getTemplates())
+                    &lt;p&gt;Templates ($templates.size())&lt;/p&gt;
                     #foreach ($template in $templates)
                       #set ($name = $template.id)
                       #if ($stringtool.isNotBlank("$!template.prettyName"))
                         #set($name = "${template.prettyName} (${name})")
                       #end
                       #set($selected = '')
-                      #if($request.template == $template.id)
-                        #set($selected = 'selected="selected"')
+                      #if($request.flavour == "template:${template.id}")
+                        #set($checked = 'checked="checked"')
+                      #else
+                        #set($checked = '')
                       #end
-                      &lt;option value="${template.id}" $selected&gt;$name&lt;/option&gt;
+                      &lt;div class="custom-radio-buttons-choice"&gt;
+                        &lt;input type="radio" name="flavour" value="template:${template.id}" id="template_${velocityCount}" $checked/&gt;
+                        &lt;span class="custom-radio-buttons-choice-icon"&gt;$services.icon.renderHTML('wiki')&lt;/span&gt;
+                        &lt;label for="template_${velocityCount}"&gt;$name&lt;/label&gt;
+                        &lt;span class="xHint"&gt;$!services.wiki.getById($template.id).description&lt;/span&gt;
+                      &lt;/div&gt;
                     #end
-                  &lt;/select&gt;
-                #end
+                  &lt;/fieldset&gt;
+                &lt;/div&gt;
               &lt;/dd&gt;
             &lt;/dl&gt;
+            
+          &lt;/div&gt;
+          
+          ### TEMPLATE ###
+          &lt;div&gt;
             &lt;p class="xformInline"&gt;
               #set ($isTemplate = '')
               #if ("$!request.set_as_template" != '')
@@ -313,7 +315,6 @@
         &lt;input type="hidden" name="wikialias" value="$!escapetool.xml($request.wikialias)" /&gt;
         &lt;input type="hidden" name="description" value="$!escapetool.xml($request.getParameter('description'))" /&gt;
         &lt;input type="hidden" name="flavour" value="$!escapetool.xml($request.flavour)" /&gt;
-        &lt;input type="hidden" name="template" value="$!escapetool.xml($request.template)" /&gt;
         &lt;input type="hidden" name="set_as_template" value="$!escapetool.xml($request.set_as_template)" /&gt;
         &lt;input type="hidden" name="form_token" value="$!escapetool.xml($services.csrf.getToken())" /&gt;
         #userPicker_import(true)
@@ -490,14 +491,16 @@
   #set($discard = $wikiCreationRequest.setUserScope($request.userScope))
   #set($discard = $wikiCreationRequest.setMembershipType($request.membershipType))
   #set($discard = $wikiCreationRequest.setFailOnExist(true))
-  #if("$!request.template" != '' &amp;&amp; $request.template != 'xwikinotemplate')
+  #if($stringtool.startsWith($request.flavour, 'template:'))
     ## Create a wiki from a template
     #set($discard = $wikiCreationRequest.setWikiSource('template'))
-    #set($discard = $wikiCreationRequest.setTemplateId($request.template))
-  #elseif("$!request.flavour" != '' &amp;&amp; $request.flavour != 'xwikinoflavour')
+    #set($type = 'template:')
+    #set($discard = $wikiCreationRequest.setTemplateId($request.flavour.substring($type.length())))
+  #elseif($stringtool.startsWith($request.flavour, 'extension:'))
     ## Create a wiki from a flavour
     #set($discard = $wikiCreationRequest.setWikiSource('extension'))
-    #set($discard = $wikiCreationRequest.setExtensionId($services.extension.resolve($request.flavour, $xwiki.getVersion()).id))
+    #set($type = 'extension:')
+    #set($discard = $wikiCreationRequest.setExtensionId($services.extension.resolve($request.flavour.substring($type.length()), $xwiki.getVersion()).id))
   #else
     ## Create a wiki from an extension
     #set($discard = $wikiCreationRequest.setWikiSource('extension'))
@@ -1170,6 +1173,124 @@ return XWiki;
   </object>
   <object>
     <name>WikiManager.CreateWiki</name>
+    <number>3</number>
+    <className>XWiki.JavaScriptExtension</className>
+    <guid>c255f383-d0e1-483e-95c1-c60bdd580cf6</guid>
+    <class>
+      <name>XWiki.JavaScriptExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <disabled>0</disabled>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage|onDemand|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <property>
+      <cache>long</cache>
+    </property>
+    <property>
+      <code>require(['jquery'], function($) {
+
+  /**
+   * Wait until all the DOM elements we want to initialize are ready.
+   * We cannot rely on $(window).load() or $(window).ready() because of the asynchronous nature of requirejs
+   * (see: http://requirejs.org/docs/api.html#pageload).
+   */
+  var waitDOMReady = function(callback) {
+    // if the dom elements that we want to initialize are not loaded
+    if ($('.custom-radio-buttons-choice').length == 0) {
+      // then retry in 100ms
+      setTimeout(function(){waitDOMReady(callback);}, 100);
+    } else {
+       callback();
+    }
+  }
+
+  waitDOMReady(function() {
+    $('.custom-radio-buttons-choice').click(function (event) {
+      console.log('hello');
+      console.log($($(this).find('input')));
+      $($(this).find('input')).prop('checked', true);
+    });
+  });
+
+});
+</code>
+    </property>
+    <property>
+      <name>Nice Picker</name>
+    </property>
+    <property>
+      <parse/>
+    </property>
+    <property>
+      <use>currentPage</use>
+    </property>
+  </object>
+  <object>
+    <name>WikiManager.CreateWiki</name>
     <number>0</number>
     <className>XWiki.StyleSheetExtension</className>
     <guid>15ff9185-1a9c-44a2-9cf0-13329d0b3a03</guid>
@@ -1264,17 +1385,63 @@ return XWiki;
       <cache>long</cache>
     </property>
     <property>
-      <code>#contentmenu, #hierarchy, #document-info, #xdocFooter{
+      <code>#template('colorThemeInit.vm')
+
+#contentmenu, #hierarchy, #document-info, #xdocFooter {
   display: none;
 }
 
-#label_set_as_template, #set_as_template{
+#label_set_as_template, #set_as_template {
   display: inline;
   text-transform: none;
 }
 
-.whatnext{
+.whatnext {
   margin: 1em;
+}
+
+.custom-radio-buttons {
+  padding: 5px;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.custom-radio-buttons input[type="radio"] { 
+  display: none;
+} 
+
+.custom-radio-buttons input[type="radio"]:checked+span { 
+  color: red;
+} 
+
+.custom-radio-buttons-choice {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.custom-radio-buttons-choice, .custom-radio-buttons-choice &gt; label {
+  cursor: pointer;
+}
+
+.custom-radio-buttons-choice-icon {
+  font-size: 30px;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.custom-radio-buttons-choice-icon &gt; img{
+  width 30px;
+  height: 30px;
+}
+
+.custom-radio-buttons-choice:hover {
+  background-color: $theme.highlightColor;
+}
+
+.custom-radio-buttons &gt; p {
+  clear: left;
 }</code>
     </property>
     <property>
@@ -1284,7 +1451,7 @@ return XWiki;
       <name>CSS</name>
     </property>
     <property>
-      <parse>0</parse>
+      <parse>1</parse>
     </property>
     <property>
       <use>currentPage</use>

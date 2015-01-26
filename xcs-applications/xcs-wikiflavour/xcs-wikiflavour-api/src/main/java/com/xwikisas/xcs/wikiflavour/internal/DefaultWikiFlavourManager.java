@@ -81,11 +81,13 @@ public class DefaultWikiFlavourManager implements WikiFlavourManager
 
             // Query to get all flavour documents
             Query query = queryManager.createQuery(
-                    "SELECT obj.extensionId, doc.name, obj.nameTranslationKey FROM Document doc, "
-                    + "doc.object(WikiFlavoursCode.WikiFlavoursClass) obj WHERE doc.space = 'WikiFlavours'",
+                    "SELECT obj.extensionId, doc.name, obj.nameTranslationKey, obj.descriptionTranslationKey, obj.icon "
+                    + "FROM Document doc, doc.object(WikiFlavoursCode.WikiFlavoursClass) obj "
+                    + "WHERE doc.space = 'WikiFlavours'",
                     Query.XWQL).setWiki(mainWikiId);
             for (Object[] result : query.<Object[]>execute()) {
-                Flavour flavour = new Flavour((String)result[0], (String)result[1], (String)result[2]);
+                Flavour flavour = new Flavour((String)result[0], (String)result[1], (String)result[2],
+                        (String) result[3], (String) result[4]);
 
                 // Check that the flavour document have been saved with programming right
                 DocumentReference documentReference = new DocumentReference(mainWikiId, "WikiFlavours",

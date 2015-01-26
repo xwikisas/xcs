@@ -49,6 +49,19 @@
     <defaultWeb/>
     <nameField/>
     <validationScript/>
+    <descriptionTranslationKey>
+      <customDisplay/>
+      <disabled>0</disabled>
+      <name>descriptionTranslationKey</name>
+      <number>3</number>
+      <picker>0</picker>
+      <prettyName>Description Translation Key</prettyName>
+      <size>30</size>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+    </descriptionTranslationKey>
     <extensionId>
       <customDisplay/>
       <disabled>0</disabled>
@@ -62,6 +75,19 @@
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
     </extensionId>
+    <icon>
+      <customDisplay/>
+      <disabled>0</disabled>
+      <name>icon</name>
+      <number>4</number>
+      <picker>0</picker>
+      <prettyName>Icon</prettyName>
+      <size>30</size>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+    </icon>
     <nameTranslationKey>
       <customDisplay/>
       <disabled>0</disabled>
