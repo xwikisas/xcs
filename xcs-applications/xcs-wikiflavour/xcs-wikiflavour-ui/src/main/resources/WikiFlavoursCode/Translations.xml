@@ -27,12 +27,12 @@
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1421850090000</creationDate>
+  <creationDate>1421846490000</creationDate>
   <parent>Main.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1421850892000</date>
-  <contentUpdateDate>1421850824000</contentUpdateDate>
+  <date>1422294260000</date>
+  <contentUpdateDate>1422293816000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
@@ -41,6 +41,8 @@
   <hidden>true</hidden>
   <content>xcs.wikiflavour.create.wizard.step.type.flavour.label=Type
 xcs.wikiflavour.create.wizard.step.type.flavour.flavourHint=Select the type of wiki that you want to create
+xcs.wikiflavour.create.wizard.step.type.flavour.flavours=Default Flavours
+xcs.wikiflavour.create.wizard.step.type.flavour.templates=Templates
 
 xcs.wikiflavour.create.wizard.step.creation=Wiki creation
 xcs.wikiflavour.create.wizard.step.creation.wait=Please wait until the wiki is created.
