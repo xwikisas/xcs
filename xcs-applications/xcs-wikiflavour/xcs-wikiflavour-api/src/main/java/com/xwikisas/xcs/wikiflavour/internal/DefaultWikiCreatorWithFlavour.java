@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour.internal;
+package com.xwikisas.xcs.wikiflavour.internal;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,12 +32,12 @@ import org.xwiki.job.JobExecutor;
 import org.xwiki.job.JobStatusStore;
 import org.xwiki.job.event.status.JobStatus;
 
-import com.xwiki.xcs.wikiflavour.WikiCreationRequest;
-import com.xwiki.xcs.wikiflavour.WikiCreatorWithFlavour;
-import com.xwiki.xcs.wikiflavour.WikiFlavourException;
+import com.xwikisas.xcs.wikiflavour.WikiCreationRequest;
+import com.xwikisas.xcs.wikiflavour.WikiCreatorWithFlavour;
+import com.xwikisas.xcs.wikiflavour.WikiFlavourException;
 
 /**
- * Default implementation for {@link com.xwiki.xcs.wikiflavour.WikiCreatorWithFlavour}.
+ * Default implementation for {@link com.xwikisas.xcs.wikiflavour.WikiCreatorWithFlavour}.
  *
  * @version $Id: $
  * @since 2015-1-M1

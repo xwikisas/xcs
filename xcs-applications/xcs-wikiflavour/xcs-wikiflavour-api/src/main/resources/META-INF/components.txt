@@ -1,7 +1,8 @@
-com.xwiki.xcs.wikiflavour.internal.steps.CreateWikiStep
-com.xwiki.xcs.wikiflavour.internal.steps.ProvisionWikiStep
-com.xwiki.xcs.wikiflavour.internal.steps.SaveWikiMetaDataStep
-com.xwiki.xcs.wikiflavour.internal.DefaultWikiCreatorWithFlavour
-com.xwiki.xcs.wikiflavour.internal.ExtensionInstaller
-com.xwiki.xcs.wikiflavour.internal.WikiFlavourJob
-com.xwiki.xcs.wikiflavour.script.WikiFlavourScriptServices
+com.xwikisas.xcs.wikiflavour.internal.steps.CreateWikiStep
+com.xwikisas.xcs.wikiflavour.internal.steps.ProvisionWikiStep
+com.xwikisas.xcs.wikiflavour.internal.steps.SaveWikiMetaDataStep
+com.xwikisas.xcs.wikiflavour.internal.DefaultWikiCreatorWithFlavour
+com.xwikisas.xcs.wikiflavour.internal.DefaultWikiFlavourManager
+com.xwikisas.xcs.wikiflavour.internal.ExtensionInstaller
+com.xwikisas.xcs.wikiflavour.internal.WikiFlavourJob
+com.xwikisas.xcs.wikiflavour.script.WikiFlavourScriptServices

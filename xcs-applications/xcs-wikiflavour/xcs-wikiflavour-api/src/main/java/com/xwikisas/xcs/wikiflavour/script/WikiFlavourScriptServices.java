@@ -17,20 +17,25 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour.script;
+package com.xwikisas.xcs.wikiflavour.script;
+
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
+import org.xwiki.extension.ExtensionId;
 import org.xwiki.job.Job;
 import org.xwiki.job.event.status.JobStatus;
 import org.xwiki.script.service.ScriptService;
 
-import com.xwiki.xcs.wikiflavour.WikiCreationRequest;
-import com.xwiki.xcs.wikiflavour.WikiCreatorWithFlavour;
-import com.xwiki.xcs.wikiflavour.WikiFlavourException;
+import com.xwikisas.xcs.wikiflavour.Flavour;
+import com.xwikisas.xcs.wikiflavour.WikiCreationRequest;
+import com.xwikisas.xcs.wikiflavour.WikiCreatorWithFlavour;
+import com.xwikisas.xcs.wikiflavour.WikiFlavourException;
+import com.xwikisas.xcs.wikiflavour.WikiFlavourManager;
 
 /**
  * Script services for the creation of flavoured wikis.
@@ -46,6 +51,9 @@ public class WikiFlavourScriptServices implements ScriptService
     @Inject
     private WikiCreatorWithFlavour wikiCreatorWithFlavour;
 
+    @Inject
+    private WikiFlavourManager wikiFlavourManager;
+
     /**
      * Asynchronously create a wiki with a flavour.
      *
@@ -55,6 +63,12 @@ public class WikiFlavourScriptServices implements ScriptService
     public Job createWiki(WikiCreationRequest request)
     {
         try {
+            if (request.getExtensionId() != null) {
+                if (!isAuthorizedFlavour(request.getExtensionId())) {
+                    // The extension id is not an authorized flavour, we do not install it
+                    return null;
+                }
+            }
             return wikiCreatorWithFlavour.createWiki(request);
         } catch (WikiFlavourException e) {
             // Todo
@@ -78,5 +92,29 @@ public class WikiFlavourScriptServices implements ScriptService
     public WikiCreationRequest newWikiCreationRequest()
     {
         return new WikiCreationRequest();
+    }
+
+    /**
+     * @return the list of available flavours
+     */
+    public List<Flavour> getFlavours()
+    {
+        try {
+            return wikiFlavourManager.getFlavours();
+        } catch (WikiFlavourException e) {
+            // Todo
+        }
+
+        return null;
+    }
+
+    private boolean isAuthorizedFlavour(ExtensionId extensionId) throws WikiFlavourException
+    {
+        for (Flavour flavour : wikiFlavourManager.getFlavours()) {
+            if (flavour.getExtensionId().equals(extensionId.getId())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

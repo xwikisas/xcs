@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour.internal.steps;
+package com.xwikisas.xcs.wikiflavour.internal.steps;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -28,9 +28,9 @@ import org.xwiki.component.descriptor.ComponentInstantiationStrategy;
 import org.xwiki.wiki.manager.WikiManager;
 import org.xwiki.wiki.manager.WikiManagerException;
 
-import com.xwiki.xcs.wikiflavour.WikiCreationRequest;
-import com.xwiki.xcs.wikiflavour.WikiCreationStep;
-import com.xwiki.xcs.wikiflavour.WikiFlavourException;
+import com.xwikisas.xcs.wikiflavour.WikiCreationRequest;
+import com.xwikisas.xcs.wikiflavour.WikiCreationStep;
+import com.xwikisas.xcs.wikiflavour.WikiFlavourException;
 
 /**
  * Step that create a wiki.

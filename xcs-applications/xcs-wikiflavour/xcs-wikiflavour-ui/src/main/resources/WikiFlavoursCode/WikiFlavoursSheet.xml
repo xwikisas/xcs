@@ -45,8 +45,6 @@
 #set ($discard = $services.localization.use('document', 'WikiFlavoursCode.WikiFlavoursTranslations'))
 (% class="xform" %)
 (((
-  ; &lt;label for="WikiFlavoursCode.WikiFlavoursClass_0_name"&gt;$escapetool.xml($doc.displayPrettyName('name', false, false))&lt;/label&gt;
-  : $doc.display('name')
   ; &lt;label for="WikiFlavoursCode.WikiFlavoursClass_0_extensionId"&gt;$escapetool.xml($doc.displayPrettyName('extensionId', false, false))&lt;/label&gt;
   : $doc.display('extensionId')
   ; &lt;label for="WikiFlavoursCode.WikiFlavoursClass_0_nameTranslationKey"&gt;$escapetool.xml($doc.displayPrettyName('nameTranslationKey', false, false))&lt;/label&gt;

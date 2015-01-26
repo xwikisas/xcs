@@ -53,7 +53,7 @@
       <customDisplay/>
       <disabled>0</disabled>
       <name>extensionId</name>
-      <number>2</number>
+      <number>1</number>
       <picker>0</picker>
       <prettyName>Extension ID</prettyName>
       <size>30</size>
@@ -62,24 +62,11 @@
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
     </extensionId>
-    <name>
-      <customDisplay/>
-      <disabled>0</disabled>
-      <name>name</name>
-      <number>1</number>
-      <picker>0</picker>
-      <prettyName>Name</prettyName>
-      <size>30</size>
-      <unmodifiable>0</unmodifiable>
-      <validationMessage/>
-      <validationRegExp/>
-      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </name>
     <nameTranslationKey>
       <customDisplay/>
       <disabled>0</disabled>
       <name>nameTranslationKey</name>
-      <number>3</number>
+      <number>2</number>
       <picker>0</picker>
       <prettyName>Name Translation Key</prettyName>
       <size>30</size>

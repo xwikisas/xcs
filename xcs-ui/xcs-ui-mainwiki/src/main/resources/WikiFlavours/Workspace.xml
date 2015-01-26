@@ -21,30 +21,30 @@
 -->
 
 <xwikidoc version="1.1">
-  <web>WikiFlavoursCode</web>
-  <name>WikiFlavoursTemplate</name>
+  <web>WikiFlavours</web>
+  <name>Workspace</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1421938375000</creationDate>
-  <parent>WikiFlavoursClass</parent>
+  <creationDate>1421940389000</creationDate>
+  <parent>WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1421938375000</date>
-  <contentUpdateDate>1421938375000</contentUpdateDate>
+  <date>1421941132000</date>
+  <contentUpdateDate>1421940518000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>true</hidden>
+  <hidden>false</hidden>
   <content/>
   <object>
-    <name>WikiFlavoursCode.WikiFlavoursTemplate</name>
+    <name>WikiFlavours.Workspace</name>
     <number>0</number>
     <className>WikiFlavoursCode.WikiFlavoursClass</className>
-    <guid>00fc1687-cd8c-48bb-848c-9c32bc8b8d76</guid>
+    <guid>f8a3222c-8590-410d-a76a-f002637d2257</guid>
     <class>
       <name>WikiFlavoursCode.WikiFlavoursClass</name>
       <customClass/>
@@ -82,13 +82,10 @@
       </nameTranslationKey>
     </class>
     <property>
-      <extensionId/>
+      <extensionId>com.xwikisas:xcs-ui-workspace</extensionId>
     </property>
     <property>
-      <name/>
-    </property>
-    <property>
-      <nameTranslationKey/>
+      <nameTranslationKey>xcs.wikiflavour.flavour.workspace</nameTranslationKey>
     </property>
   </object>
 </xwikidoc>

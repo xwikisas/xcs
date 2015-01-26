@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour.internal;
+package com.xwikisas.xcs.wikiflavour.internal;
 
 import java.util.Arrays;
 
@@ -32,7 +32,7 @@ import org.xwiki.extension.job.internal.InstallJob;
 import org.xwiki.job.Job;
 import org.xwiki.model.reference.DocumentReference;
 
-import com.xwiki.xcs.wikiflavour.WikiFlavourException;
+import com.xwikisas.xcs.wikiflavour.WikiFlavourException;
 
 /**
  * Component that installs an extension on a wiki.

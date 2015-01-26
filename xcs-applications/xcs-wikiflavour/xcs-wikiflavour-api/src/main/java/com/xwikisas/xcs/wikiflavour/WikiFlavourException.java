@@ -17,16 +17,39 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour;
+package com.xwikisas.xcs.wikiflavour;
+
+import org.xwiki.stability.Unstable;
 
 /**
- * The source of provisioning for a wiki.
+ * Exception concerning the Wiki Flavour module.
  *
  * @version $Id: $
  * @since 2015-1-M1
  */
-public enum WikiSource
+@Unstable
+public class WikiFlavourException extends Exception
 {
-    TEMPLATE, // the wiki is filled by a template wiki
-    EXTENSION // the wiki is filled by an extension
+    private static final long serialVersionUID = 2501408208237931530L;
+
+    /**
+     * Construct a new exception.
+     *
+     * @param message message about the error
+     */
+    public WikiFlavourException(String message)
+    {
+        super(message);
+    }
+
+    /**
+     * Construct a new exception.
+     *
+     * @param message message about the error
+     * @param cause cause of the error
+     */
+    public WikiFlavourException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
 }

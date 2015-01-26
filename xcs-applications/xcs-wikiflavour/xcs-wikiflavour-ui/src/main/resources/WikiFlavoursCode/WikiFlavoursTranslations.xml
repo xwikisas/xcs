@@ -40,7 +40,6 @@
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
   <content># Class fields
-WikiFlavoursCode.WikiFlavoursClass_name=Name
 WikiFlavoursCode.WikiFlavoursClass_extensionId=Extension ID
 WikiFlavoursCode.WikiFlavoursClass_nameTranslationKey=Name Translation Key
 
@@ -62,7 +61,6 @@ wikiflavours.livetable._actions.delete=Delete
 wikiflavours.livetable.emptyvalue=-
 
 # Live table specific keys
-wikiflavours.livetable.name=Name
 wikiflavours.livetable.extensionId=Extension ID
 wikiflavours.livetable.nameTranslationKey=Name Translation Key</content>
   <object>

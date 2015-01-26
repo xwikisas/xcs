@@ -17,12 +17,13 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour;
+package com.xwikisas.xcs.wikiflavour;
 
 import java.util.List;
 
 import org.xwiki.extension.ExtensionId;
 import org.xwiki.job.AbstractRequest;
+import org.xwiki.stability.Unstable;
 import org.xwiki.wiki.user.MembershipType;
 import org.xwiki.wiki.user.UserScope;
 
@@ -32,6 +33,7 @@ import org.xwiki.wiki.user.UserScope;
  * @version $Id: $
  * @since 2015-1-M1
  */
+@Unstable
 public class WikiCreationRequest extends AbstractRequest
 {
     private static final long serialVersionUID = -1887940302223327347L;

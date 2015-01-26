@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour.internal;
+package com.xwikisas.xcs.wikiflavour.internal;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -32,9 +32,9 @@ import org.xwiki.component.manager.ComponentLookupException;
 import org.xwiki.job.internal.AbstractJob;
 import org.xwiki.job.internal.DefaultJobStatus;
 
-import com.xwiki.xcs.wikiflavour.WikiCreationRequest;
-import com.xwiki.xcs.wikiflavour.WikiCreationStep;
-import com.xwiki.xcs.wikiflavour.WikiFlavourException;
+import com.xwikisas.xcs.wikiflavour.WikiCreationRequest;
+import com.xwikisas.xcs.wikiflavour.WikiCreationStep;
+import com.xwikisas.xcs.wikiflavour.WikiFlavourException;
 
 /**
  * Job that create a wiki and execute the WikiCreationSteps.

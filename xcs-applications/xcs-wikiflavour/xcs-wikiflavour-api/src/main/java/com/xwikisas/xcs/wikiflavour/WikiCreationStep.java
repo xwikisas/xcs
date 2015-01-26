@@ -17,9 +17,10 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour;
+package com.xwikisas.xcs.wikiflavour;
 
 import org.xwiki.component.annotation.Role;
+import org.xwiki.stability.Unstable;
 
 /**
  * Step to be executed during the wiki creation job.
@@ -28,6 +29,7 @@ import org.xwiki.component.annotation.Role;
  * @since 2015-1-M1
  */
 @Role
+@Unstable
 public interface WikiCreationStep
 {
     /**

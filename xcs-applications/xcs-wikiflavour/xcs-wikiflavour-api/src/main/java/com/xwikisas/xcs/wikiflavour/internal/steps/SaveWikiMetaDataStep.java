@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour.internal.steps;
+package com.xwikisas.xcs.wikiflavour.internal.steps;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -40,10 +40,10 @@ import com.xpn.xwiki.XWikiContext;
 import com.xpn.xwiki.XWikiException;
 import com.xpn.xwiki.doc.XWikiDocument;
 import com.xpn.xwiki.objects.BaseObject;
-import com.xwiki.xcs.wikiflavour.WikiCreationRequest;
-import com.xwiki.xcs.wikiflavour.WikiCreationStep;
-import com.xwiki.xcs.wikiflavour.WikiFlavourException;
-import com.xwiki.xcs.wikiflavour.WikiSource;
+import com.xwikisas.xcs.wikiflavour.WikiCreationRequest;
+import com.xwikisas.xcs.wikiflavour.WikiCreationStep;
+import com.xwikisas.xcs.wikiflavour.WikiFlavourException;
+import com.xwikisas.xcs.wikiflavour.WikiSource;
 
 /**
  * Component that save the metadata of the wiki (pretty name, description, etc...) as well as the configuration (user

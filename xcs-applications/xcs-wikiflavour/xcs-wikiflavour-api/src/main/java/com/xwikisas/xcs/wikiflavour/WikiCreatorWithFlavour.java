@@ -17,11 +17,12 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.xwiki.xcs.wikiflavour;
+package com.xwikisas.xcs.wikiflavour;
 
 import org.xwiki.component.annotation.Role;
 import org.xwiki.job.Job;
 import org.xwiki.job.event.status.JobStatus;
+import org.xwiki.stability.Unstable;
 
 /**
  * Component to create a wiki and install a flavour in it.
@@ -30,6 +31,7 @@ import org.xwiki.job.event.status.JobStatus;
  * @since 2015-1-M1
  */
 @Role
+@Unstable
 public interface WikiCreatorWithFlavour
 {
     /**

@@ -39,12 +39,18 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>xcs.wikiflavour.create.wizard.step.creation=Wiki creation
+  <content>xcs.wikiflavour.create.wizard.step.type.flavour.label=Flavour
+xcs.wikiflavour.create.wizard.step.type.flavour.flavourHint=Select you flavour
+xcs.wikiflavour.create.wizard.step.type.flavour.noFlavour=No Flavour, use a template instead
+
+xcs.wikiflavour.create.wizard.step.creation=Wiki creation
 xcs.wikiflavour.create.wizard.step.creation.wait=Please wait until the wiki is created.
 xcs.wikiflavour.create.wizard.step.creation.complete=The wiki {0} has been successfully created. You can now access it.
 xcs.wikiflavour.create.wizard.step.creation.error=The wiki {0} has been created but some documents have not been installed. In consequence, the wiki might behave erroneously and you should probably delete it.
 xcs.wikiflavour.create.wizard.step.creation.go=Go to the wiki
-</content>
+
+xcs.wikiflavour.flavour.workspace=Workspace
+xcs.wikiflavour.flavour.knowledgebase=Knowledge Base</content>
   <object>
     <name>WikiFlavoursCode.Translations</name>
     <number>0</number>
