@@ -231,7 +231,7 @@
                     &lt;option value="xwikinoflavour"&gt;$services.localization.render('xcs.wikiflavour.create.wizard.step.type.flavour.noFlavour')&lt;/option&gt;
                     #set ($flavours = $services.wikiflavour.flavours)
                     #foreach ($flavour in $flavours)
-                      #set ($extensionId = $flavourObj.extensionId)
+                      #set ($extensionId = $flavour.extensionId)
                       #set($selected = '')
                       #if($request.flavour == $extensionId)
                         #set($selected = 'selected="selected"')
