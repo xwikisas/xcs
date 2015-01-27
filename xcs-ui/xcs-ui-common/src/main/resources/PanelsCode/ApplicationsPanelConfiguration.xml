@@ -177,7 +177,7 @@
       </applicationId>
     </class>
     <property>
-      <applicationId>platform.panels.WikiFlavoursApplication</applicationId>
+      <applicationId>platform.panels.WikiFlavorsApplication</applicationId>
     </property>
   </object>
   <object>

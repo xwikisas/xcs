@@ -1,0 +1,9 @@
+com.xwikisas.xcs.wikiflavor.internal.steps.AddUsersStep
+com.xwikisas.xcs.wikiflavor.internal.steps.CreateWikiStep
+com.xwikisas.xcs.wikiflavor.internal.steps.ProvisionWikiStep
+com.xwikisas.xcs.wikiflavor.internal.steps.SaveWikiMetaDataStep
+com.xwikisas.xcs.wikiflavor.internal.DefaultFlavoredWikiCreator
+com.xwikisas.xcs.wikiflavor.internal.DefaultWikiFlavorManager
+com.xwikisas.xcs.wikiflavor.internal.ExtensionInstaller
+com.xwikisas.xcs.wikiflavor.internal.WikiFlavorJob
+com.xwikisas.xcs.wikiflavor.script.WikiFlavorScriptServices

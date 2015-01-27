@@ -24,15 +24,32 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.xwikisas</groupId>
-    <artifactId>xcs</artifactId>
+    <artifactId>xcs-wikiflavor</artifactId>
     <version>2015-1-SNAPSHOT</version>
   </parent>
-  <artifactId>xcs-applications</artifactId>
-  <name>XWiki Collaboration Suite - Applications - Parent POM</name>
-  <packaging>pom</packaging>
-  <description>Parent POM for all applications made for XCS.</description>
-  <modules>
-    <!-- Sorted Alphabetically -->
-    <module>xcs-wikiflavor</module>
-  </modules>
+  <artifactId>xcs-wikiflavor-ui</artifactId>
+  <name>XWiki Collaboration Suite - Wiki Flavor - UI</name>
+  <packaging>xar</packaging>
+  <description>XWiki Collaboration Suite - Wiki Flavor - UI</description>
+  <dependencies>
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-wikiflavor-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <!-- We rewrite one page of the Wiki Manager Application -->
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-wiki-ui-mainwiki</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
+    <!-- We use the icon picker -->
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-icon-ui</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
+  </dependencies>
 </project>
