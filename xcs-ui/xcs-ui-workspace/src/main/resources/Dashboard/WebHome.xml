@@ -243,12 +243,75 @@
     <name>Dashboard.WebHome</name>
     <number>0</number>
     <className>XWiki.GadgetClass</className>
+    <guid>a9e3b9c9-3f56-4a69-8b48-80cf75089c33</guid>
+    <property>
+      <content>{{display reference="Main.Welcome"/}}</content>
+    </property>
+    <property>
+      <position>1, 1</position>
+    </property>
+    <property>
+      <title>$services.localization.render('platform.dashboard.wiki.welcome')</title>
+    </property>
+  </object>
+  <object>
+    <class>
+      <name>XWiki.GadgetClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <content>
+        <disabled>0</disabled>
+        <editor>---</editor>
+        <name>content</name>
+        <number>2</number>
+        <picker>0</picker>
+        <prettyName>content</prettyName>
+        <rows>5</rows>
+        <size>40</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </content>
+      <position>
+        <disabled>0</disabled>
+        <name>position</name>
+        <number>3</number>
+        <picker>0</picker>
+        <prettyName>position</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </position>
+      <title>
+        <disabled>0</disabled>
+        <name>title</name>
+        <number>1</number>
+        <picker>0</picker>
+        <prettyName>title</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </title>
+    </class>
+    <name>Dashboard.WebHome</name>
+    <number>1</number>
+    <className>XWiki.GadgetClass</className>
     <guid>f1f2d0c5-19fe-4dae-97a0-4ac137e1b939</guid>
     <property>
       <content>{{nextmeetings homelink="show" status="show"/}}</content>
     </property>
     <property>
-      <position>1,1</position>
+      <position>1, 2</position>
     </property>
     <property>
       <title>$services.localization.render('contrib.meeting.panel.title')</title>
@@ -304,14 +367,14 @@
       </title>
     </class>
     <name>Dashboard.WebHome</name>
-    <number>1</number>
+    <number>2</number>
     <className>XWiki.GadgetClass</className>
     <guid>30cadb61-756c-4987-b61a-e61f7f26806d</guid>
     <property>
       <content>{{filemanagerrecent/}}</content>
     </property>
     <property>
-      <position>1,2</position>
+      <position>1, 3</position>
     </property>
     <property>
       <title>$services.localization.render('filemanager.recentfiles.title')</title>
@@ -367,14 +430,14 @@
       </title>
     </class>
     <name>Dashboard.WebHome</name>
-    <number>2</number>
+    <number>3</number>
     <className>XWiki.GadgetClass</className>
     <guid>5011027d-fcae-43bd-bdc3-6dadc0e0eb88</guid>
     <property>
       <content>{{pollsrecent/}}</content>
     </property>
     <property>
-      <position>1,3</position>
+      <position>1, 4</position>
     </property>
     <property>
       <title>$services.localization.render('polls.recentpolls.title')</title>
@@ -430,14 +493,14 @@
       </title>
     </class>
     <name>Dashboard.WebHome</name>
-    <number>3</number>
+    <number>4</number>
     <className>XWiki.GadgetClass</className>
     <guid>207d11c6-6619-4fef-bd15-be1954854e3e</guid>
     <property>
       <content>{{ideasrecent/}}</content>
     </property>
     <property>
-      <position>1,4</position>
+      <position>1, 5</position>
     </property>
     <property>
       <title>$services.localization.render('ideas.recentideas.title')</title>
@@ -493,7 +556,7 @@
       </title>
     </class>
     <name>Dashboard.WebHome</name>
-    <number>4</number>
+    <number>5</number>
     <className>XWiki.GadgetClass</className>
     <guid>acb59a4e-cbfe-4a33-8a38-1bb6f65efa7b</guid>
     <property>

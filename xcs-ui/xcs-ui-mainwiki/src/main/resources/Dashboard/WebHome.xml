@@ -242,12 +242,75 @@
     <name>Dashboard.WebHome</name>
     <number>0</number>
     <className>XWiki.GadgetClass</className>
+    <guid>a9e3b9c9-3f56-4a69-8b48-80cf75089c33</guid>
+    <property>
+      <content>{{display reference="Main.Welcome"/}}</content>
+    </property>
+    <property>
+      <position>1, 1</position>
+    </property>
+    <property>
+      <title>$services.localization.render('platform.dashboard.wiki.welcome')</title>
+    </property>
+  </object>
+  <object>
+    <class>
+      <name>XWiki.GadgetClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <content>
+        <disabled>0</disabled>
+        <editor>---</editor>
+        <name>content</name>
+        <number>2</number>
+        <picker>0</picker>
+        <prettyName>content</prettyName>
+        <rows>5</rows>
+        <size>40</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </content>
+      <position>
+        <disabled>0</disabled>
+        <name>position</name>
+        <number>3</number>
+        <picker>0</picker>
+        <prettyName>position</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </position>
+      <title>
+        <disabled>0</disabled>
+        <name>title</name>
+        <number>1</number>
+        <picker>0</picker>
+        <prettyName>title</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </title>
+    </class>
+    <name>Dashboard.WebHome</name>
+    <number>1</number>
+    <className>XWiki.GadgetClass</className>
     <guid>97097f8e-471b-44bc-aaa9-2d926b0650ff</guid>
     <property>
       <content>{{include document="WikiManager.WikisMacro"/}}</content>
     </property>
     <property>
-      <position>1, 1</position>
+      <position>1, 2</position>
     </property>
     <property>
       <title>$services.localization.render('rendering.macro.wikis.name')</title>
@@ -303,7 +366,7 @@
       </title>
     </class>
     <name>Dashboard.WebHome</name>
-    <number>1</number>
+    <number>2</number>
     <className>XWiki.GadgetClass</className>
     <guid>acb59a4e-cbfe-4a33-8a38-1bb6f65efa7b</guid>
     <property>
