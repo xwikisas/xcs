@@ -21,8 +21,8 @@
 -->
 
 <xwikidoc>
-  <web>WikiManager</web>
-  <name>Dashboard</name>
+  <web>Dashboard</web>
+  <name>WebHome</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
@@ -63,7 +63,7 @@
         <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
       </defaultEditMode>
     </class>
-    <name>WikiManager.Dashboard</name>
+    <name>Dashboard.WebHome</name>
     <number>0</number>
     <className>XWiki.EditModeClass</className>
     <guid>22045e2a-e5ac-4b9e-9ff7-10ee2b62624c</guid>
@@ -171,7 +171,7 @@
         <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
       </title>
     </class>
-    <name>WikiManager.Dashboard</name>
+    <name>Dashboard.WebHome</name>
     <number>0</number>
     <className>Blog.BlogClass</className>
     <guid>c6a26702-5071-4525-8e84-185b37200662</guid>
@@ -240,7 +240,7 @@
         <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
       </title>
     </class>
-    <name>WikiManager.Dashboard</name>
+    <name>Dashboard.WebHome</name>
     <number>0</number>
     <className>XWiki.GadgetClass</className>
     <guid>092deb30-707f-43d3-b4e8-8b01b932c0eb</guid>
@@ -303,7 +303,7 @@
         <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
       </title>
     </class>
-    <name>WikiManager.Dashboard</name>
+    <name>Dashboard.WebHome</name>
     <number>1</number>
     <className>XWiki.GadgetClass</className>
     <guid>acb59a4e-cbfe-4a33-8a38-1bb6f65efa7b</guid>
