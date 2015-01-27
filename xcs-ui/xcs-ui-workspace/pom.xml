@@ -55,6 +55,13 @@
       <type>xar</type>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>org.xwiki.contrib.forum</groupId>
+      <artifactId>application-forum</artifactId>
+      <version>1.9</version>
+      <type>xar</type>
+      <scope>runtime</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
