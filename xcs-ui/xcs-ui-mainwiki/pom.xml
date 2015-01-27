@@ -44,18 +44,19 @@
       <version>${project.version}</version>
       <type>xar</type>
     </dependency>
+    <!-- Also depend on the XCS common wiki XAR to have our custom content, we put it there to be installed after
+     xwiki-platform-panels-ui -->
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-ui-common</artifactId>
+      <version>${project.version}</version>
+      <type>xar</type>
+    </dependency>
     <!-- Depend on the XE mainwiki XAR since we want the same default dependencies -->
     <dependency>
       <groupId>org.xwiki.enterprise</groupId>
       <artifactId>xwiki-enterprise-ui-mainwiki</artifactId>
       <version>${enterprise.version}</version>
-      <type>xar</type>
-    </dependency>
-    <!-- Also depend on the XCS common wiki XAR to have our custom content -->
-    <dependency>
-      <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-ui-common</artifactId>
-      <version>${project.version}</version>
       <type>xar</type>
     </dependency>
   </dependencies>
