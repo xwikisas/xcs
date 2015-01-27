@@ -38,7 +38,12 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.0</syntaxId>
   <hidden>false</hidden>
-  <content>{{include reference="Dashboard.WebHome" context="new"/}}</content>
+  <content>{{include reference="Dashboard.WebHome" context="new"/}}
+
+{{velocity}}
+## Disable doc extras
+#set($docextras = [])
+{{/velocity}}</content>
   <object>
     <name>Main.WebHome</name>
     <number>0</number>
