@@ -42,16 +42,48 @@
       <version>${project.version}</version>
       <type>xar</type>
     </dependency>
-    <!-- Depend on the XE wiki XAR since we want the same default dependencies -->
+    <!-- We take the list from xwiki-enterprise-ui-wiki but we remove some modules. Must be maintained at each upgrade.
+     -->
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-wiki-ui-wiki</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
+    <!-- See below why we mark this dependency as provided -->
     <dependency>
       <groupId>org.xwiki.enterprise</groupId>
       <artifactId>xwiki-enterprise-ui-wiki</artifactId>
       <version>${enterprise.version}</version>
       <type>xar</type>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
   <build>
     <plugins>
+      <!-- We also need the pages contained by xwiki-enterprise-ui-common, but we do not want to depend on it, because
+        we do not want to share its dependencies. Of course, we can exclude some dependencies in the pom.xml file, but
+        Distribution Wizards ignores the exclusions and looks for the missing apps. That is why we manage our own list
+        of dependencies and why we copy the pages from xwiki-enteprise-ui-common. -->
+      <plugin>
+        <groupId>org.xwiki.commons</groupId>
+        <artifactId>xwiki-commons-tool-xar-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unxar-xwiki-enterprise-ui-wiki</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unxar</goal>
+            </goals>
+            <configuration>
+              <groupId>org.xwiki.enterprise</groupId>
+              <artifactId>xwiki-enterprise-ui-wiki</artifactId>
+              <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Perform some transformations specific to XCS -->
       <plugin>
         <groupId>org.xwiki.commons</groupId>
         <artifactId>xwiki-commons-tool-xar-plugin</artifactId>
