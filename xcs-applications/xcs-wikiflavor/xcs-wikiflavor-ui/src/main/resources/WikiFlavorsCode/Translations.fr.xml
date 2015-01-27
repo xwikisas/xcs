@@ -39,7 +39,7 @@
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
   <content>xcs.wikiflavor.create.wizard.step.type.flavor.label=Type
-xcs.wikiflavor.create.wizard.step.type.flavor.flavorHint=Choisissez le type de wiki que vous voulez créer
+xcs.wikiflavor.create.wizard.step.type.flavor.flavorHint=Choisissez le type de wiki que vous voulez créer.
 xcs.wikiflavor.create.wizard.step.type.flavor.flavors=Modèles par défaut
 xcs.wikiflavor.create.wizard.step.type.flavor.templates=Vos modèles
 
