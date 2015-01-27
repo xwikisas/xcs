@@ -89,40 +89,33 @@
               <groupId>org.xwiki.enterprise</groupId>
               <artifactId>xwiki-enterprise-ui-mainwiki</artifactId>
               <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+              <!-- Perform some transformations specific to XCS -->
+              <transformations>
+                <!-- Remove right panels -->
+                <transformation>
+                  <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
+                  <file>XWiki/XWikiPreferences.xml</file>
+                  <xpath>/xwikidoc/object/property/showRightPanels</xpath>
+                  <value>false</value>
+                </transformation>
+                <!-- Specify a different default Color Theme -->
+                <transformation>
+                  <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
+                  <file>XWiki/XWikiPreferences.xml</file>
+                  <xpath>/xwikidoc/object/property/colorTheme</xpath>
+                  <value>FlamingoThemes.XWikiCSGray</value>
+                </transformation>
+                <!-- Specify a different footer -->
+                <transformation>
+                  <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
+                  <file>XWiki/XWikiPreferences.xml</file>
+                  <xpath>/xwikidoc/object/property/version</xpath>
+                  <value>${xcs.footer}</value>
+                </transformation>
+              </transformations>
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <!-- Perform some transformations specific to XCS -->
-      <plugin>
-        <groupId>org.xwiki.commons</groupId>
-        <artifactId>xwiki-commons-tool-xar-plugin</artifactId>
-        <version>${commons.version}</version>
-        <configuration>
-          <transformations>
-            <!-- Remove right panels -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/showRightPanels</xpath>
-              <value>false</value>
-            </transformation>
-            <!-- Specify a different default Color Theme -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/colorTheme</xpath>
-              <value>FlamingoThemes.XWikiCSGray</value>
-            </transformation>
-            <!-- Specify a different footer -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/version</xpath>
-              <value>${xcs.footer}</value>
-            </transformation>
-          </transformations>
-        </configuration>
       </plugin>
     </plugins>
   </build>
