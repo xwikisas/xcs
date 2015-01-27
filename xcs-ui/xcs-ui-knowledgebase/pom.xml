@@ -34,14 +34,7 @@
   <packaging>xar</packaging>
   <description>Default set of wiki pages containing both content and default applications for XWiki Collaboration Suite Knowledge Base (sub)wiki.</description>
   <dependencies>
-    <!-- Depend on the XE wiki XAR since we want the same default dependencies -->
-    <dependency>
-      <groupId>org.xwiki.enterprise</groupId>
-      <artifactId>xwiki-enterprise-ui-wiki</artifactId>
-      <version>${enterprise.version}</version>
-      <type>xar</type>
-    </dependency>
-    <!-- Also depend on the XCS wiki XAR to share content across (sub)wikis-->
+    <!-- Depend on the XCS wiki XAR to share content across (sub)wikis-->
     <dependency>
       <groupId>com.xwikisas</groupId>
       <artifactId>xcs-ui-wiki</artifactId>
