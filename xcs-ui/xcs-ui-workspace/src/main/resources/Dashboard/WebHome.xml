@@ -497,7 +497,14 @@
     <className>XWiki.GadgetClass</className>
     <guid>acb59a4e-cbfe-4a33-8a38-1bb6f65efa7b</guid>
     <property>
-      <content>{{include reference="Blog.BlogSheet"/}}</content>
+      <content>{{include reference="Blog.BlogCode"/}}{{velocity}}
+{{html clean="false" wiki="true"}}
+{{include reference="Blog.CreatePost" context="new"/}}
+#getBlogEntries($doc $entries)
+#displayBlog($entries 'index' true true)
+#displayNavigationLinks($doc)
+{{/html}}
+{{/velocity}}</content>
     </property>
     <property>
       <position>2, 1</position>
