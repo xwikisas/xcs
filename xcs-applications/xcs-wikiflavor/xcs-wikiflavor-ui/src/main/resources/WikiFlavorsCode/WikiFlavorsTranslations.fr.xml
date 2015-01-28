@@ -28,6 +28,7 @@
   <translation>1</translation>
   <creator>xwiki:XWiki.Admin</creator>
   <creationDate>1422377274000</creationDate>
+  <parent>WikiFlavorsClass</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <date>1422377274000</date>
