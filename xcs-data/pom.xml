@@ -156,5 +156,6 @@
   </profiles>
   <modules>
     <module>xcs-data-hsqldb</module>
+    <module>xcs-data-xardependencies</module>
   </modules>
 </project>

@@ -102,6 +102,14 @@
       <outputDirectory>/${xwikiDataDir}/</outputDirectory>
       <unpack>true</unpack>
     </dependencySet>
+    <!-- Unpack the dependencies files to package them in the distribution -->
+    <dependencySet>
+      <includes>
+        <include>com.xwikisas:xcs-data-xardependencies</include>
+      </includes>
+      <outputDirectory>/${xwikiDataDir}/</outputDirectory>
+      <unpack>true</unpack>
+    </dependencySet>
   </dependencySets>
   <!-- Add Hibernate configuration file -->
   <files>

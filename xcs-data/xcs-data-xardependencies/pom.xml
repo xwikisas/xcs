@@ -25,45 +25,46 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
+    <artifactId>xcs-data</artifactId>
     <groupId>com.xwikisas</groupId>
-    <artifactId>xcs-jetty</artifactId>
     <version>2015-1-SNAPSHOT</version>
   </parent>
-  <artifactId>xcs-jetty-hsqldb</artifactId>
-  <name>XWiki Collaboration Suite - Distribution - Jetty - HSQLDB</name>
+  <artifactId>xcs-data-xardependencies</artifactId>
+  <name>XWiki Collaboration Suite - Data - XAR Dependencies</name>
   <packaging>pom</packaging>
-  <description>XWiki Collaboration Suite - Distribution - Jetty - HSQLDB</description>
+  <description>Copy all flavors XAR dependencies in the Extension Manager folder so that EM does not need to download them at runtime.</description>
   <dependencies>
     <dependency>
       <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-data-hsqldb</artifactId>
+      <artifactId>xcs-ui-knowledgebase</artifactId>
       <version>${project.version}</version>
-      <type>zip</type>
-      <optional>true</optional>
+      <type>xar</type>
     </dependency>
     <dependency>
       <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-data-xardependencies</artifactId>
+      <artifactId>xcs-ui-workspace</artifactId>
       <version>${project.version}</version>
-      <type>zip</type>
-      <optional>true</optional>
+      <type>xar</type>
     </dependency>
   </dependencies>
   <build>
     <plugins>
-      <!-- Inject Hibernate's configuration for the specified database -->
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-remote-resources-plugin</artifactId>
+        <groupId>com.xwikisas</groupId>
+        <artifactId>xcs-tools-dependenciespackager</artifactId>
+        <version>${project.version}</version>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>package-xar-dependencies</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptors>
-            <descriptor>src/assemble/application.xml</descriptor>
-          </descriptors>
-        </configuration>
       </plugin>
     </plugins>
   </build>
