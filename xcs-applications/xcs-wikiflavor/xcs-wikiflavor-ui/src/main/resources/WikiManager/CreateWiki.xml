@@ -516,11 +516,11 @@
     ## Create a wiki from a flavor
     #set($discard = $wikiCreationRequest.setWikiSource('extension'))
     #set($type = 'extension:')
-    #set($discard = $wikiCreationRequest.setExtensionId($services.extension.resolve($request.flavor.substring($type.length()), $xwiki.getVersion()).id))
+    #set($discard = $wikiCreationRequest.setExtensionId($request.flavor.substring($type.length()), $xwiki.getVersion()))
   #else
     ## Create a wiki from an extension
     #set($discard = $wikiCreationRequest.setWikiSource('extension'))
-    #set($discard = $wikiCreationRequest.setExtensionId($services.extension.resolve("com.xwikisas:xcs-ui-wiki", $xwiki.getVersion()).id))
+    #set($discard = $wikiCreationRequest.setExtensionId("com.xwikisas:xcs-ui-wiki", $xwiki.getVersion()))
   #end
   ## Members
   #if ($request.userScope != 'local_only')

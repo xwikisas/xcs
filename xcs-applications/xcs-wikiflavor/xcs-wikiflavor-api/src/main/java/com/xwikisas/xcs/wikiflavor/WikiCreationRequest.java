@@ -179,6 +179,16 @@ public class WikiCreationRequest extends AbstractRequest
     }
 
     /**
+     * Set the id of the main extension of the wiki to create. Do not forget to use setWikiSource() too.
+     * @param extensionId id of the main extension of the wiki to create
+     * @param version version of the extension
+     */
+    public void setExtensionId(String extensionId, String version)
+    {
+        this.extensionId = new ExtensionId(extensionId, version);
+    }
+
+    /**
      * @return id of the owner of the wiki to create
      */
     public String getOwnerId()
