@@ -22,7 +22,8 @@
  *
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.xwikisas</groupId>
@@ -68,6 +69,119 @@
       <artifactId>xcs-ui-mainwiki</artifactId>
       <version>${project.version}</version>
       <type>xar</type>
+      <exclusions>
+        <!-- Exclusions of dependencies of xcs-ui-common -->
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-search-lucene-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-office-importer</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-ui-knowledgebase</artifactId>
+      <version>${project.version}</version>
+      <type>xar</type>
+      <exclusions>
+        <!-- Exclusions of dependencies of xcs-ui-common -->
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-search-lucene-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-office-importer</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-ui-workspace</artifactId>
+      <version>${project.version}</version>
+      <type>xar</type>
+      <!-- We exclude the platform JARS to not have them dupplicated in the WAR -->
+      <exclusions>
+        <!-- Exclusions of dependencies of application-forum -->
+        <exclusion>
+          <groupId>org.xwiki.commons</groupId>
+          <artifactId>xwiki-commons-component-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.commons</groupId>
+          <artifactId>xwiki-commons-logging-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-oldcore</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-bridge</artifactId>
+        </exclusion>
+        <!-- Exclusions of dependencies of application-meeting-ui -->
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-mail-send-default</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-rendering-macro-velocity</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-rendering-macro-code</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-rendering-macro-include</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.rendering</groupId>
+          <artifactId>xwiki-rendering-macro-html</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-rendering-macro-script</artifactId>
+        </exclusion>
+        <!-- Exclusions of dependencies of application-filemanager-ui -->
+        <exclusion>
+          <groupId>org.xwiki.commons</groupId>
+          <artifactId>xwiki-commons-job</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-localization-source-wiki</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-jodatime</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-office-macro</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.webjars</groupId>
+          <artifactId>bootstrap</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-model</artifactId>
+        </exclusion>
+        <!-- Exclusions of dependencies of xcs-ui-common -->
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-search-lucene-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-office-importer</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
   <build>
@@ -170,6 +284,345 @@
                   </excludes>
                 </xwikiBannedDependencies>
               </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Ensure we do not have duplicated classes coming from dependencies -->
+      <plugin>
+        <groupId>com.ning.maven.plugins</groupId>
+        <artifactId>maven-duplicate-finder-plugin</artifactId>
+        <version>1.0.9</version>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
+              <exceptions>
+                <!-- Xalan bundles a lot of other projects: org/apache/xml/**, org/apache/bcel/**, JLex/**,
+                     java_cup/**, org/apache/regexp/**. In addition, it even has these jars in its source tree without
+                     any indication about their versions... Thus there's isn't much we can do ATM but it means there's
+                     an uncertainty about which version of those classes are used at runtime.
+                     TODO: Find an alternative to Xalan or find a good maven packaging of it -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>xalan</groupId>
+                      <artifactId>xalan</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>jakarta-regexp</groupId>
+                      <artifactId>jakarta-regexp</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <packages>
+                    <package>org.apache.regexp</package>
+                  </packages>
+                </exception>
+                <!-- css4j:0.13 depends on jclf:2.3.0 so the duplicate classes must be the same ones. -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>info.informatica</groupId>
+                      <artifactId>css4j</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>info.informatica</groupId>
+                      <artifactId>jclf</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <classes>
+                    <class>info.informatica.doc.DocumentException</class>
+                    <class>info.informatica.doc.RenderingException</class>
+                  </classes>
+                </exception>
+                <!-- These 4 deps seems mostly compatible according to
+                     http://ispras.linuxbase.org/index.php/Java_API_Compliance_Checker. There's just a change
+                     between Stax 1.0.1 and 1.0.2 where FactoryConfigurationError seems to have had Serializable
+                     superinterface removed. -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>javax.xml.stream</groupId>
+                      <artifactId>stax-api</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>org.apache.geronimo.specs</groupId>
+                      <artifactId>geronimo-stax-api_1.0_spec</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>xml-apis</groupId>
+                      <artifactId>xml-apis</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>org.python</groupId>
+                      <artifactId>jython-standalone</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <packages>
+                    <package>javax.xml.stream</package>
+                  </packages>
+                </exception>
+                <!-- Jython emmbedd tons of third party XML dependencies. See http://bugs.jython.org/issue2121. -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>xml-apis</groupId>
+                      <artifactId>xml-apis</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>org.python</groupId>
+                      <artifactId>jython-standalone</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <packages>
+                    <package>javax.xml</package>
+                    <package>org.w3c.dom</package>
+                    <package>org.xml.sax</package>
+                  </packages>
+                  <classes>
+                    <class>org.apache.xmlcommons.Version</class>
+                  </classes>
+                </exception>
+                <!-- This is a PITA. The classes are actually incompatible! We should do something about it but I
+                     don't see a solution ATM... In addition these classes are also present in the JDK, see
+                     http://docs.oracle.com/javase/6/docs/api/org/w3c/dom/package-summary.html which may yet be
+                     another version and I don't have any clue which version is actually used at runtime...
+                     Note that the XMLBeans issue is fixed in https://issues.apache.org/jira/browse/XMLBEANS-484 but
+                     it's drawn by org.apache.poi:poi-ooxml itself drawn by tika parsers and they need to release -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>org.apache.xmlbeans</groupId>
+                      <artifactId>xmlbeans</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>xml-apis</groupId>
+                      <artifactId>xml-apis</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>org.python</groupId>
+                      <artifactId>jython-standalone</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <classes>
+                    <class>org.w3c.dom.DOMConfiguration</class>
+                    <class>org.w3c.dom.DOMStringList</class>
+                    <class>org.w3c.dom.TypeInfo</class>
+                    <class>org.w3c.dom.UserDataHandler</class>
+                  </classes>
+                </exception>
+                <!-- None of these should bundle org.w3c classes but at least they seem compatible.
+                     See https://issues.apache.org/bugzilla/show_bug.cgi?id=49897,
+                     https://issues.apache.org/bugzilla/show_bug.cgi?id=49206 and http://bugs.jython.org/issue2121 -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>org.apache.xmlgraphics</groupId>
+                      <artifactId>batik-ext</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>xml-apis</groupId>
+                      <artifactId>xml-apis</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>org.python</groupId>
+                      <artifactId>jython-standalone</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <classes>
+                    <class>org.w3c.dom.ElementTraversal</class>
+                    <class>org.w3c.dom.events.DocumentEvent</class>
+                    <class>org.w3c.dom.events.Event</class>
+                    <class>org.w3c.dom.events.EventException</class>
+                    <class>org.w3c.dom.events.EventListener</class>
+                    <class>org.w3c.dom.events.EventTarget</class>
+                    <class>org.w3c.dom.events.MouseEvent</class>
+                    <class>org.w3c.dom.events.MutationEvent</class>
+                    <class>org.w3c.dom.events.UIEvent</class>
+                  </classes>
+                </exception>
+                <!-- Jython should not bundle org.w3c classes but at least they seem compatible.
+                     See http://bugs.jython.org/issue2121.
+                 -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>org.python</groupId>
+                      <artifactId>jython-standalone</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>xerces</groupId>
+                      <artifactId>xercesImpl</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <classes>
+                    <class>org.w3c.dom.html.HTMLDOMImplementation</class>
+                  </classes>
+                </exception>
+                <!-- This is a PITA. The classes are actually incompatible! We should do something about it but I
+                     don't see a solution ATM... -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>org.w3c.css</groupId>
+                      <artifactId>sac</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>xml-apis</groupId>
+                      <artifactId>xml-apis-ext</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <packages>
+                    <package>org.w3c.css.sac</package>
+                  </packages>
+                </exception>
+                <!-- The classes below are incompatible. The legacy query plugin should be retired but Ludovic Dubost
+                     doesn't agree with it, see http://jira.xwiki.org/browse/XWIKI-8660. I don't see how the query
+                     plugin could work with such JCR incompatibilities though... While this is being discussed all
+                     we can do is silently ignore the incompatibility and hope that WebDAV support is still working
+                     (since jackrabbit-jrc-commons is used by our WebDAV module). -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>org.apache.jackrabbit</groupId>
+                      <artifactId>jackrabbit-core</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>org.apache.jackrabbit</groupId>
+                      <artifactId>jackrabbit-jcr-commons</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <packages>
+                    <package>org.apache.jackrabbit</package>
+                  </packages>
+                </exception>
+                <!-- Logging shouldn't be configured by libraries! In any case since we route everything through
+                     SLF4J, logging is configured by the SLF4J implementation used (e.g. Logback). -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>org.apache.axis</groupId>
+                      <artifactId>axis</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>radeox</groupId>
+                      <artifactId>radeox</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <resources>
+                    <resource>simplelog.properties</resource>
+                  </resources>
+                </exception>
+                <!-- The files are different but removing them would mean repackaging the JARs which is PITA.
+                     Since the versions are the same for bc (1.49) there's a good chance the files are compatible. -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>org.bouncycastle</groupId>
+                      <artifactId>bcmail-jdk15on</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>org.bouncycastle</groupId>
+                      <artifactId>bcpkix-jdk15on</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>org.bouncycastle</groupId>
+                      <artifactId>bcprov-jdk15on</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <resources>
+                    <resource>META-INF/BCKEY.DSA</resource>
+                    <resource>META-INF/BCKEY.SF</resource>
+                  </resources>
+                </exception>
+                <!-- XStream includes both xapp and xmlpull and XAPP bundle somes classes of xmlpull.
+                     See http://jira.codehaus.org/browse/XSTR-689 for more.
+                 -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>xmlpull</groupId>
+                      <artifactId>xmlpull</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>xpp3</groupId>
+                      <artifactId>xpp3_min</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <packages>
+                    <package>org.xmlpull.v1</package>
+                  </packages>
+                </exception>
+                <!-- See https://github.com/sirthias/parboiled/issues/67 -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>org.parboiled</groupId>
+                      <artifactId>parboiled-core</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>org.parboiled</groupId>
+                      <artifactId>parboiled-java</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <classes>
+                    <class>org.parboiled.Action</class>
+                    <class>org.parboiled.Context</class>
+                    <class>org.parboiled.ContextAware</class>
+                    <class>org.parboiled.MatchHandler</class>
+                    <class>org.parboiled.MatcherContext</class>
+                    <class>org.parboiled.Node</class>
+                    <class>org.parboiled.NodeImpl</class>
+                    <class>org.parboiled.ParserStatistics</class>
+                    <class>org.parboiled.Rule</class>
+                    <class>org.parboiled.SkippableAction</class>
+                  </classes>
+                </exception>
+                <!-- See https://sourceforge.net/p/findbugs/bugs/1284/ -->
+                <exception>
+                  <conflictingDependencies>
+                    <dependency>
+                      <groupId>com.google.code.findbugs</groupId>
+                      <artifactId>annotations</artifactId>
+                    </dependency>
+                    <dependency>
+                      <groupId>net.jcip</groupId>
+                      <artifactId>jcip-annotations</artifactId>
+                    </dependency>
+                  </conflictingDependencies>
+                  <classes>
+                    <class>net.jcip.annotations.GuardedBy</class>
+                    <class>net.jcip.annotations.Immutable</class>
+                    <class>net.jcip.annotations.NotThreadSafe</class>
+                    <class>net.jcip.annotations.ThreadSafe</class>
+                  </classes>
+                </exception>
+              </exceptions>
+              <ignoredResources>
+                <!-- Exclude XWiki's Component registration file -->
+                <ignoredResource>META-INF/components.txt</ignoredResource>
+                <!-- Several libs have a README file -->
+                <ignoredResource>META-INF/README.txt</ignoredResource>
+                <!-- Several libs have a RELEASENOTES file -->
+                <ignoredResource>RELEASE_NOTES.TXT</ignoredResource>
+                <!-- JAXB2 plugin resources. TODO: Exclude them from the XWiki JARs -->
+                <ignoredResource>META-INF/sun-jaxb.episode</ignoredResource>
+                <ignoredResource>simple.xjb</ignoredResource>
+                <!-- JDOM resources -->
+                <ignoredResource>META-INF/jdom-info.xml</ignoredResource>
+                <!-- Sisu components -->
+                <ignoredResource>META-INF/sisu/javax.inject.Named</ignoredResource>
+                <!-- Eclipse projects generally contains about.html file -->
+                <ignoredResource>about.html</ignoredResource>
+                <!-- ApplicationResources.properties is duplicated but that's ok since it's how we want it work, see:
+                     http://extensions.xwiki.org/xwiki/bin/view/Extension/Localization+Module#HProvidetranslationbundleinajar
+                 -->
+                <ignoredResource>ApplicationResources(_.*)?\.properties</ignoredResource>
+              </ignoredResources>
             </configuration>
           </execution>
         </executions>
