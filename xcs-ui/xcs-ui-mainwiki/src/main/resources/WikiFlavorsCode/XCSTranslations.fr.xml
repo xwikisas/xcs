@@ -22,31 +22,27 @@
 
 <xwikidoc version="1.1">
   <web>WikiFlavorsCode</web>
-  <name>Translations</name>
+  <name>XCSTranslations</name>
   <language>fr</language>
   <defaultLanguage>en</defaultLanguage>
   <translation>1</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1422376878000</creationDate>
-  <parent>WikiFlavorsCode.WikiFlavorsClass</parent>
+  <creationDate>1422525834000</creationDate>
   <author>xwiki:XWiki.Admin</author>
+  <parent>WikiFlavors.WebHome</parent>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1422377004000</date>
-  <contentUpdateDate>1422377004000</contentUpdateDate>
+  <date>1422525834000</date>
+  <contentUpdateDate>1422525834000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>xcs.wikiflavor.create.wizard.step.type.flavor.label=Type
-xcs.wikiflavor.create.wizard.step.type.flavor.flavorHint=Choisissez le type de wiki que vous voulez créer.
-xcs.wikiflavor.create.wizard.step.type.flavor.flavors=Modèles par défaut
-xcs.wikiflavor.create.wizard.step.type.flavor.templates=Vos modèles
-
-xcs.wikiflavor.create.wizard.step.creation=Création du wiki
-xcs.wikiflavor.create.wizard.step.creation.wait=Merci de patienter pendant la phase de création de votre wiki.
-xcs.wikiflavor.create.wizard.step.creation.complete=Le wiki {0} a été créé avec succès. Vous pouvez maintenant y accéder.
-xcs.wikiflavor.create.wizard.step.creation.error=Le wiki {0} a bien été créé mais certains documents n'ont pas été installés. Par conséquent, ce wiki peut avoir un fonctionnement défaillant. Vous devriez probablement le supprimer.
-xcs.wikiflavor.create.wizard.step.creation.go=Aller sur le wiki</content>
+  <content>xcs.wikiflavor.flavor.standard=Wiki standard
+xcs.wikiflavor.flavor.standard.description=Est un wiki de base avec les applications par défaut
+xcs.wikiflavor.flavor.workspace=Espace de travail
+xcs.wikiflavor.flavor.workspace.description=Offre un ensemble d'applications permettant de collaborer sur un projet
+xcs.wikiflavor.flavor.knowledgebase=Base de connaissances
+xcs.wikiflavor.flavor.knowledgebase.description=Permet de collecter, organiser et partager des informations sur un ou plusieurs sujets</content>
 </xwikidoc>
