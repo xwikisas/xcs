@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.1">
+  <web>WikiFlavors</web>
+  <name>StandardWiki</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1422525216000</creationDate>
+  <parent>WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1422525409000</date>
+  <contentUpdateDate>1422525409000</contentUpdateDate>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>false</hidden>
+  <content/>
+  <object>
+    <name>WikiFlavors.StandardWiki</name>
+    <number>0</number>
+    <className>WikiFlavorsCode.WikiFlavorsClass</className>
+    <guid>147994cd-02f8-4be4-9942-610b408a153e</guid>
+    <class>
+      <name>WikiFlavorsCode.WikiFlavorsClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <descriptionTranslationKey>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <name>descriptionTranslationKey</name>
+        <number>3</number>
+        <picker>0</picker>
+        <prettyName>Description Translation Key</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </descriptionTranslationKey>
+      <extensionId>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <name>extensionId</name>
+        <number>1</number>
+        <picker>0</picker>
+        <prettyName>Extension ID</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </extensionId>
+      <icon>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <name>icon</name>
+        <number>4</number>
+        <picker>0</picker>
+        <prettyName>Icon</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </icon>
+      <nameTranslationKey>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <name>nameTranslationKey</name>
+        <number>2</number>
+        <picker>0</picker>
+        <prettyName>Name Translation Key</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </nameTranslationKey>
+    </class>
+    <property>
+      <descriptionTranslationKey>xcs.wikiflavor.flavor.standard.description</descriptionTranslationKey>
+    </property>
+    <property>
+      <extensionId>com.xwikisas:xcs-ui-wiki</extensionId>
+    </property>
+    <property>
+      <icon>file-white</icon>
+    </property>
+    <property>
+      <nameTranslationKey>xcs.wikiflavor.flavor.standard</nameTranslationKey>
+    </property>
+  </object>
+</xwikidoc>
