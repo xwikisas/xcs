@@ -30,7 +30,11 @@
   <artifactId>xcs-wikiflavor-ui</artifactId>
   <name>XWiki Collaboration Suite - Wiki Flavor - UI</name>
   <packaging>xar</packaging>
-  <description>XWiki Collaboration Suite - Wiki Flavor - UI</description>
+  <description>Manage a list of flavors for the creation of new wikis.</description>
+  <properties>
+    <!-- Name to display by the Extension Manager -->
+    <xwiki.extension.name>XCS Wiki Flavor Application</xwiki.extension.name>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>com.xwikisas</groupId>
