@@ -47,6 +47,8 @@
 (((
   ; &lt;label for="WikiFlavorsCode.WikiFlavorsClass_0_extensionId"&gt;$escapetool.xml($doc.displayPrettyName('extensionId', false, false))&lt;/label&gt;
   : $doc.display('extensionId')
+  ; &lt;label for="WikiFlavorsCode.WikiFlavorsClass_0_extensionVersion"&gt;$escapetool.xml($doc.displayPrettyName('extensionVersion', false, false))&lt;/label&gt; &lt;span class="xHint"&gt;$services.localization.render('WikiFlavorsCode.WikiFlavorsClass_extensionVersion.hint')&lt;/span&gt;
+  : $doc.display('extensionVersion')
   ; &lt;label for="WikiFlavorsCode.WikiFlavorsClass_0_nameTranslationKey"&gt;$escapetool.xml($doc.displayPrettyName('nameTranslationKey', false, false))&lt;/label&gt;
   : $doc.display('nameTranslationKey')
   ; &lt;label for="WikiFlavorsCode.WikiFlavorsClass_0_descriptionTranslationKey"&gt;$escapetool.xml($doc.displayPrettyName('descriptionTranslationKey', false, false))&lt;/label&gt;
@@ -56,6 +58,5 @@
 )))
 {{/html}}
 
-{{iconPicker id="WikiFlavorsCode.WikiFlavorsClass_0_icon" /}}
 {{/velocity}}</content>
 </xwikidoc>

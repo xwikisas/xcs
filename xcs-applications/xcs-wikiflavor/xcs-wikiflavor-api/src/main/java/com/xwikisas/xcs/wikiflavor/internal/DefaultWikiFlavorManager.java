@@ -29,6 +29,7 @@ import javax.inject.Singleton;
 import org.slf4j.Logger;
 import org.xwiki.component.annotation.Component;
 import org.xwiki.model.reference.DocumentReference;
+import org.xwiki.model.reference.DocumentReferenceResolver;
 import org.xwiki.model.reference.WikiReference;
 import org.xwiki.query.Query;
 import org.xwiki.query.QueryException;
@@ -41,6 +42,7 @@ import com.xpn.xwiki.XWiki;
 import com.xpn.xwiki.XWikiContext;
 import com.xpn.xwiki.XWikiException;
 import com.xpn.xwiki.doc.XWikiDocument;
+import com.xpn.xwiki.objects.BaseObject;
 import com.xwikisas.xcs.wikiflavor.Flavor;
 import com.xwikisas.xcs.wikiflavor.WikiFlavorException;
 import com.xwikisas.xcs.wikiflavor.WikiFlavorManager;
@@ -65,6 +67,9 @@ public class DefaultWikiFlavorManager implements WikiFlavorManager
     private AuthorizationManager authorizationManager;
 
     @Inject
+    private DocumentReferenceResolver<String> documentReferenceResolver;
+
+    @Inject
     private Provider<XWikiContext> xcontextProvider;
 
     @Inject
@@ -81,25 +86,30 @@ public class DefaultWikiFlavorManager implements WikiFlavorManager
 
             // Query to get all flavor documents
             Query query = queryManager.createQuery(
-                    "SELECT obj.extensionId, doc.name, obj.nameTranslationKey, obj.descriptionTranslationKey, obj.icon "
-                    + "FROM Document doc, doc.object(WikiFlavorsCode.WikiFlavorsClass) obj "
-                    + "WHERE doc.space = 'WikiFlavors'",
+                    "FROM doc.object(WikiFlavorsCode.WikiFlavorsClass) obj WHERE doc.space = 'WikiFlavors'",
                     Query.XWQL).setWiki(mainWikiId);
-            for (Object[] result : query.<Object[]>execute()) {
-                Flavor flavor = new Flavor((String)result[0], (String)result[1], (String)result[2],
-                        (String) result[3], (String) result[4]);
-
-                // Check that the flavor document have been saved with programming right
-                DocumentReference documentReference = new DocumentReference(mainWikiId, "WikiFlavors",
-                    flavor.getName());
+            for (String result : query.<String>execute()) {
                 try {
-                    XWikiDocument document = xwiki.getDocument(documentReference, xcontext);
+                    XWikiDocument document =
+                            xwiki.getDocument(documentReferenceResolver.resolve(result), xcontext);
+                    DocumentReference classReference =
+                            new DocumentReference(mainWikiId, "WikiFlavorsCode", "WikiFlavorsClass");
+                    BaseObject obj = document.getXObject(classReference);
+
+                    Flavor flavor =
+                            new Flavor(obj.getStringValue("extensionId"), obj.getStringValue("extensionVersion"),
+                                    obj.getStringValue("nameTranslationKey"),
+                                    obj.getStringValue("descriptionTranslationKey"),
+                                    obj.getStringValue("icon"));
+
+                    // Check that the flavor document have been saved with programming right
                     if (authorizationManager.hasAccess(Right.PROGRAM, document.getAuthorReference(),
-                            new WikiReference(mainWikiId))) {
+                            new WikiReference(mainWikiId)))
+                    {
                         results.add(flavor);
                     }
                 } catch (XWikiException e) {
-                    logger.warn("Unable to read the Wiki Flavor Document [{}]", documentReference, e);
+                    logger.warn("Unable to read the Wiki Flavor Document [{}]", result, e);
                 }
             }
 

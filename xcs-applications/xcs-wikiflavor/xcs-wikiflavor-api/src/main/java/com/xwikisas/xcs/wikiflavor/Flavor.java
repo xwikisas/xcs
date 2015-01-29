@@ -32,6 +32,8 @@ public class Flavor
 {
     private String extensionId;
 
+    private String extensionVersion;
+
     private String name;
 
     private String nameTranslationKey;
@@ -44,16 +46,16 @@ public class Flavor
      * Construct a new Flavor.
      *
      * @param extensionId id of the main extension
-     * @param name technical name of the flavor
+     * @param extensionVersion version of the main extension
      * @param nameTranslationKey translation key for the name of the flavor
      * @param descriptionTranslationKey translation key for the description of the flavor
      * @param icon the icon to use top represent the flavor
      */
-    public Flavor(String extensionId, String name, String nameTranslationKey, String descriptionTranslationKey,
-            String icon)
+    public Flavor(String extensionId, String extensionVersion, String nameTranslationKey,
+        String descriptionTranslationKey, String icon)
     {
         this.extensionId = extensionId;
-        this.name = name;
+        this.extensionVersion = extensionVersion;
         this.nameTranslationKey = nameTranslationKey;
         this.descriptionTranslationKey = descriptionTranslationKey;
         this.icon = icon;
@@ -68,11 +70,11 @@ public class Flavor
     }
 
     /**
-     * @return the technical name of the flavor
+     * @return the extension version
      */
-    public String getName()
+    public String getExtensionVersion()
     {
-        return name;
+        return extensionVersion;
     }
 
     /**

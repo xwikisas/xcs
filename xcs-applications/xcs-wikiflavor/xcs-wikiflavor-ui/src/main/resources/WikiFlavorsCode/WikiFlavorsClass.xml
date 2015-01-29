@@ -53,7 +53,7 @@
       <customDisplay/>
       <disabled>0</disabled>
       <name>descriptionTranslationKey</name>
-      <number>3</number>
+      <number>4</number>
       <picker>0</picker>
       <prettyName>Description Translation Key</prettyName>
       <size>30</size>
@@ -75,11 +75,24 @@
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
     </extensionId>
+    <extensionVersion>
+      <customDisplay/>
+      <disabled>0</disabled>
+      <name>extensionVersion</name>
+      <number>2</number>
+      <picker>0</picker>
+      <prettyName>Extension Version</prettyName>
+      <size>30</size>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+    </extensionVersion>
     <icon>
       <customDisplay/>
       <disabled>0</disabled>
       <name>icon</name>
-      <number>4</number>
+      <number>5</number>
       <picker>0</picker>
       <prettyName>Icon</prettyName>
       <size>30</size>
@@ -92,7 +105,7 @@
       <customDisplay/>
       <disabled>0</disabled>
       <name>nameTranslationKey</name>
-      <number>2</number>
+      <number>3</number>
       <picker>0</picker>
       <prettyName>Name Translation Key</prettyName>
       <size>30</size>

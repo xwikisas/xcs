@@ -41,6 +41,8 @@
   <hidden>true</hidden>
   <content># Class fields
 WikiFlavorsCode.WikiFlavorsClass_extensionId=Extension ID
+WikiFlavorsCode.WikiFlavorsClass_extensionVersion=Extension Version
+WikiFlavorsCode.WikiFlavorsClass_extensionVersion.hint=Let it empty to use the version corresponding to the XWiki instance.
 WikiFlavorsCode.WikiFlavorsClass_nameTranslationKey=Name Translation Key
 WikiFlavorsCode.WikiFlavorsClass_descriptionTranslationKey=Description Translation Key
 WikiFlavorsCode.WikiFlavorsClass_icon=Icon
@@ -64,6 +66,7 @@ wikiflavors.livetable.emptyvalue=-
 
 # Live table specific keys
 wikiflavors.livetable.extensionId=Extension ID
+wikiflavors.livetable.extensionVersion=Extension Version
 wikiflavors.livetable.nameTranslationKey=Name Translation Key
 wikiflavors.livetable.descriptionTranslationKey=Description Translation Key
 wikiflavors.livetable.icon=Icon</content>

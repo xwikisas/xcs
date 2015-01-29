@@ -233,7 +233,7 @@
                 #set ($flavorCategory = { 'categoryName' : $services.localization.render('xcs.wikiflavor.create.wizard.step.type.flavor.flavors'), 'options' : [] })
                 #foreach ($flavor in $flavors)
                   #set ($discard = $flavorCategory.options.add({
-                    'value' : "extension:$escapetool.xml($flavor.extensionId)",
+                    'value' : "extension:$escapetool.xml($flavor.extensionId)::$escapetool.xml($flavor.extensionVersion)",
                     'icon'  : $flavor.icon,
                     'name'  : $services.localization.render($flavor.nameTranslationKey),
                     'hint'  : $services.localization.render($flavor.descriptionTranslationKey)
@@ -486,7 +486,15 @@
     ## Create a wiki from a flavor
     #set($discard = $wikiCreationRequest.setWikiSource('extension'))
     #set($type = 'extension:')
-    #set($discard = $wikiCreationRequest.setExtensionId($request.flavor.substring($type.length()), $xwiki.getVersion()))
+    #set($extensionSplit = $request.flavor.substring($type.length()).split('::'))
+    #set($extensionId = $extensionSplit[0])
+    #if($extensionSplit.size() &gt; 1 &amp;&amp; "$!extensionSplit" != '')
+      #set($extensionVersion = $extensionSplit[1])
+    #else
+      ## Use the version of XWiki
+      #set($extensionVersion = $xwiki.version)
+    #end
+    #set($discard = $wikiCreationRequest.setExtensionId($extensionId, $extensionVersion))
   #else
     ## Create a wiki from an extension
     #set($discard = $wikiCreationRequest.setWikiSource('extension'))
