@@ -5,5 +5,6 @@ com.xwikisas.xcs.wikiflavor.internal.steps.SaveWikiMetaDataStep
 com.xwikisas.xcs.wikiflavor.internal.DefaultFlavoredWikiCreator
 com.xwikisas.xcs.wikiflavor.internal.DefaultWikiFlavorManager
 com.xwikisas.xcs.wikiflavor.internal.ExtensionInstaller
+500:com.xwikisas.xcs.wikiflavor.internal.HackedDistributionScriptService
 com.xwikisas.xcs.wikiflavor.internal.WikiFlavorJob
 com.xwikisas.xcs.wikiflavor.script.WikiFlavorScriptServices
