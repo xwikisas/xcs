@@ -182,6 +182,34 @@
   </object>
   <object>
     <name>PanelsCode.ApplicationsPanelConfiguration</name>
+    <number>5</number>
+    <className>PanelsCode.ApplicationsPanelBlackListClass</className>
+    <guid>1092b42b-1861-4f1f-b0dd-ad37999c6e3f</guid>
+    <class>
+      <name>PanelsCode.ApplicationsPanelBlackListClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <applicationId>
+        <disabled>0</disabled>
+        <name>applicationId</name>
+        <number>1</number>
+        <prettyName>applicationId</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </applicationId>
+    </class>
+    <property>
+      <applicationId>platform.panels.AdminApplication</applicationId>
+    </property>
+  </object>
+  <object>
+    <name>PanelsCode.ApplicationsPanelConfiguration</name>
     <number>0</number>
     <className>XWiki.ConfigurableClass</className>
     <guid>45461230-f358-4b62-81e1-35e3d67ea690</guid>
