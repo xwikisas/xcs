@@ -37,6 +37,13 @@
     Main Wiki.
   </description>
   <dependencies>
+    <!-- This is important to have this module in the first position, if we want XWiki.Admin to be installed first -->
+    <dependency>
+      <groupId>org.xwiki.enterprise</groupId>
+      <artifactId>xwiki-enterprise-ui-admin-user</artifactId>
+      <version>${enterprise.version}</version>
+      <type>xar</type>
+    </dependency>
     <!-- Our flavour application, we put it first to be installed after xwiki-platform-ui-mainwiki-->
     <dependency>
       <groupId>com.xwikisas</groupId>
@@ -50,14 +57,6 @@
       <groupId>com.xwikisas</groupId>
       <artifactId>xcs-ui-common</artifactId>
       <version>${project.version}</version>
-      <type>xar</type>
-    </dependency>
-    <!-- We take the list from xwiki-enterprise-ui-mainwiki but we remove some modules. Must be maintained
-      at each upgrade. -->
-    <dependency>
-      <groupId>org.xwiki.enterprise</groupId>
-      <artifactId>xwiki-enterprise-ui-admin-user</artifactId>
-      <version>${enterprise.version}</version>
       <type>xar</type>
     </dependency>
     <!-- See below why we mark this dependency as provided -->
