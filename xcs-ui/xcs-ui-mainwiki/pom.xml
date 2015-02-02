@@ -46,9 +46,9 @@
     </dependency>
     <!-- Our flavour application, we put it first to be installed after xwiki-platform-ui-mainwiki-->
     <dependency>
-      <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-wikiflavor-ui</artifactId>
-      <version>${project.version}</version>
+      <groupId>org.xwiki.contrib</groupId>
+      <artifactId>application-wikiflavor-ui</artifactId>
+      <version>1.0</version>
       <type>xar</type>
     </dependency>
     <!-- Also depend on the XCS common wiki XAR to have our custom content, we put it there to be installed after

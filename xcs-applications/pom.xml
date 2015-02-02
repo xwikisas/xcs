@@ -33,6 +33,5 @@
   <description>Parent POM for all applications made for XCS.</description>
   <modules>
     <!-- Sorted Alphabetically -->
-    <module>xcs-wikiflavor</module>
   </modules>
 </project>
