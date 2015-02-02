@@ -577,7 +577,6 @@
     </property>
   </object>
   <content>{{velocity}}
-#set($discard = $services.localization.use('document', 'FileManagerCode.Translations'))
 #set($displayDashboard = true)
 #if ($xcontext.user != 'XWiki.XWikiGuest')
   ## get the preferences of the current user
