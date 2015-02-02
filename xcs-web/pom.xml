@@ -186,6 +186,56 @@
   </dependencies>
   <build>
     <plugins>
+      <!-- XCS-66: We manually apply a fix for http://jira.xwiki.org/browse/XWIKI-11732 until XWiki 6.4.1 is released -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack-dependencies</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <!-- Unpack the XE war-->
+                <artifactItem>
+                  <groupId>org.xwiki.enterprise</groupId>
+                  <artifactId>xwiki-enterprise-web</artifactId>
+                  <type>war</type>
+                  <outputDirectory>${project.build.directory}/xe-web</outputDirectory>
+                  <includes>**/macros.vm</includes>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.google.code.maven-replacer-plugin</groupId>
+        <artifactId>replacer</artifactId>
+        <version>1.5.3</version>
+        <executions>
+          <execution>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>replace</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <basedir>${basedir}/target/xe-web/</basedir>
+          <filesToInclude>skins/flamingo/macros.vm,templates/macros.vm</filesToInclude>
+          <regex>false</regex>
+          <replacements>
+            <replacement>
+              <token>#set ($groupReference = $services.model.resolveDocument($user, 'group/current'))</token>
+              <value>#set ($groupReference = $services.model.resolveDocument($group, 'group/current'))</value>
+            </replacement>
+          </replacements>
+        </configuration>
+      </plugin>
       <!-- Inject XWiki's configuration (only xwiki.cfg, not hibernate.cfg.xml) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -220,6 +270,11 @@
               <directory>${basedir}/src/main/webInfResources</directory>
               <targetPath>WEB-INF</targetPath>
               <filtering>true</filtering>
+            </resource>
+            <!-- XCS-66 -->
+            <resource>
+              <directory>${basedir}/target/xe-web</directory>
+              <targetPath>/</targetPath>
             </resource>
           </webResources>
           <!-- - Exclude JCL and LOG4J since we want all logging to go through SLF4J. Note that we're excluding
