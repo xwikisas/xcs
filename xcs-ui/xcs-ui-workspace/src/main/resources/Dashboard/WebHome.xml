@@ -371,13 +371,13 @@
     <className>XWiki.GadgetClass</className>
     <guid>30cadb61-756c-4987-b61a-e61f7f26806d</guid>
     <property>
-      <content>{{filemanagerrecent/}}</content>
+      <content>{{fileManager.recentFiles/}}</content>
     </property>
     <property>
       <position>1, 3</position>
     </property>
     <property>
-      <title>$services.localization.render('filemanager.recentfiles.title')</title>
+      <title>$services.localization.render('rendering.macro.fileManager.recentFiles.name')</title>
     </property>
   </object>
   <object>
@@ -577,6 +577,7 @@
     </property>
   </object>
   <content>{{velocity}}
+#set($discard = $services.localization.use('document', 'FileManagerCode.Translations'))
 #set($displayDashboard = true)
 #if ($xcontext.user != 'XWiki.XWikiGuest')
   ## get the preferences of the current user
