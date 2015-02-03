@@ -62,6 +62,11 @@
       <version>${enterprise.version}</version>
       <type>war</type>
     </dependency>
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-repositories-releases</artifactId>
+      <version>${project.version}</version>
+    </dependency>
     <!-- Add dependencies on the XAR distributions for the mainwiki and for subwikis so that we transitively
          include all JAR dependencies in the generated WAR -->
     <dependency>
@@ -186,6 +191,16 @@
   </dependencies>
   <build>
     <plugins>
+      <!-- Inject XWiki's configuration (only xwiki.cfg, not hibernate.cfg.xml) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-remote-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>xwiki-configuration-resources</id>
+          </execution>
+        </executions>
+      </plugin>
       <!-- XCS-66: We manually apply a fix for http://jira.xwiki.org/browse/XWIKI-11732 until XWiki 6.4.1 is released -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -225,26 +240,28 @@
           </execution>
         </executions>
         <configuration>
-          <basedir>${basedir}/target/xe-web/</basedir>
-          <filesToInclude>skins/flamingo/macros.vm,templates/macros.vm</filesToInclude>
+          <basedir>${basedir}/target/</basedir>
+          <filesToInclude>xe-web/skins/flamingo/macros.vm,xe-web/templates/macros.vm,maven-shared-archive-resources/xwiki.properties</filesToInclude>
           <regex>false</regex>
+          <commentsEnabled>false</commentsEnabled>
           <replacements>
+            <!-- XCS-66: We manually apply a fix for http://jira.xwiki.org/browse/XWIKI-11732 until XWiki 6.4.1 is released -->
             <replacement>
               <token>#set ($groupReference = $services.model.resolveDocument($user, 'group/current'))</token>
               <value>#set ($groupReference = $services.model.resolveDocument($group, 'group/current'))</value>
             </replacement>
+            <!-- Add the XWiki SAS repository to the comment about default extension repositories in xwiki.properties -->
+            <replacement>
+              <token>#-# When not set the following is taken:
+# extension.repositories=maven-xwiki:maven:http://nexus.xwiki.org/nexus/content/groups/public
+# extension.repositories=extensions.xwiki.org:xwiki:http://extensions.xwiki.org/xwiki/rest/</token>
+              <value>#-# When not set the following is taken:
+# extension.repositories=maven-xwiki:maven:http://nexus.xwiki.org/nexus/content/groups/public
+# extension.repositories=extensions.xwiki.org:xwiki:http://extensions.xwiki.org/xwiki/rest/
+# extension.repositories=maven-xwikisas:maven:http://nexus.xwikisas.com/nexus/content/repositories/releases</value>
+            </replacement>
           </replacements>
         </configuration>
-      </plugin>
-      <!-- Inject XWiki's configuration (only xwiki.cfg, not hibernate.cfg.xml) -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-remote-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>xwiki-configuration-resources</id>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

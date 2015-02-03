@@ -1,0 +1,1 @@
+com.xwikisas.xcs.repositories.releases.internal.XWikiSASReleasesDefaultExtensionRepositorySource
