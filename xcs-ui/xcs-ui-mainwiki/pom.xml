@@ -48,7 +48,7 @@
     <dependency>
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>application-wikiflavor-ui</artifactId>
-      <version>1.0</version>
+      <version>1.1</version>
       <type>xar</type>
     </dependency>
     <!-- Also depend on the XCS common wiki XAR to have our custom content, we put it there to be installed after
