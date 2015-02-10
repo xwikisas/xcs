@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ *
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.xwikisas</groupId>
+    <artifactId>xcs</artifactId>
+    <version>2015-1-SNAPSHOT</version>
+  </parent>
+  <artifactId>xcs-test</artifactId>
+  <name>XWiki Collaboration Suite - Functional Tests - Parent POM</name>
+  <packaging>pom</packaging>
+  <description>Integration tests for XCS.</description>
+  <dependencies>
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-test</artifactId>
+      <version>${platform.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <testSourceDirectory>src/test/it</testSourceDirectory>
+    <pluginManagement>
+      <plugins>
+        <!--  Force compilation of tests as the packaging being pom tests won't be compiled
+          with the default pom lifecycle -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>testCompile</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <!--  Force copy of test resources file as the packaging being pom resource files won't
+          be copied with the default pom lifecycle -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>testResources</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <!-- Create jar containing integration tests which will be installed -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>test-jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <!-- Unpack the XWiki application -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>unzip-application</id>
+              <phase>pre-integration-test</phase>
+              <goals>
+                <goal>unpack</goal>
+              </goals>
+              <configuration>
+                <artifactItems>
+                  <artifactItem>
+                    <groupId>com.xwikisas</groupId>
+                    <artifactId>xcs-jetty-${xwiki.db}</artifactId>
+                    <version>${project.version}</version>
+                    <type>zip</type>
+                  </artifactItem>
+                </artifactItems>
+                <outputDirectory>${project.build.directory}</outputDirectory>
+                <!-- Allow skipping the unpack -->
+                <skip>${xwiki.test.skipUnpack}</skip>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <!-- Start XWiki, Execute the tests and Stop XWiki.
+          Note: To execute a single test case run mvn install -Dpattern=<test class name> -DpatternMethod=<test method name>
+          For example: mvn install -Dpattern=DeletePageTest -DpatternMethod=testDeletePageCanDoRedirect
+          For example: mvn install -Dpattern=.*Wysiwyg.*
+        -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <executions>
+            <execution>
+              <phase>integration-test</phase>
+              <goals>
+                <goal>test</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <includes>
+              <include>**/AllTests.java</include>
+            </includes>
+            <systemProperties combine.children="append">
+              <property>
+                <name>pattern</name>
+                <value>${pattern}</value>
+              </property>
+              <property>
+                <name>patternMethod</name>
+                <value>${patternMethod}</value>
+              </property>
+              <property>
+                <name>xwiki.test.baseURL</name>
+                <value>${xwiki.test.baseURL}</value>
+              </property>
+              <property>
+                <name>xwikiPort</name>
+                <value>${port}</value>
+              </property>
+              <property>
+                <name>xwikiStopPort</name>
+                <value>${stopport}</value>
+              </property>
+              <property>
+                <name>seleniumPort</name>
+                <value>${seleniumPort}</value>
+              </property>
+              <property>
+                <name>rmiPort</name>
+                <value>${rmiport}</value>
+              </property>
+              <property>
+                <name>xwikiExecutionDirectory</name>
+                <value>${basedir}/target/xcs-jetty-${xwiki.db}-${project.version}</value>
+              </property>
+              <property>
+                <name>screenshotDirectory</name>
+                <value>${basedir}/target/screenshots</value>
+              </property>
+              <property>
+                <name>xwikiExecutionStartCommand</name>
+                <value>${xwikiExecutionStartCommand}</value>
+              </property>
+              <property>
+                <name>xwikiExecutionStopCommand</name>
+                <value>${xwikiExecutionStopCommand}</value>
+              </property>
+              <property>
+                <name>debug</name>
+                <value>${debug}</value>
+              </property>
+              <property>
+                <name>browser</name>
+                <value>${browser}</value>
+              </property>
+              <!-- Avoid running tests with snapshots extension repository enabled. -->
+              <property>
+                <name>skipSnapshotModules</name>
+                <value>true</value>
+              </property>
+            </systemProperties>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-utils</artifactId>
+        <version>1.5.15</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <properties>
+    <!-- This is to allow users to override this property on the command line to choose what
+      test to run. For example to run only the DeletePageTest#testDeletePageCanDoRedirect()
+      you would type:
+      mvn install -Dpattern=DeletePageTest -DpatternMethod=testDeletePageCanDoRedirect
+    -->
+    <pattern>.*</pattern>
+    <patternMethod>.*</patternMethod>
+    <port>8080</port>
+    <stopport>8079</stopport>
+    <rmiport>6666</rmiport>
+    <seleniumPort>4444</seleniumPort>
+    <!-- Allow skipping the unpack -->
+    <xwiki.test.skipUnpack>false</xwiki.test.skipUnpack>
+    <!-- Specify the part of the URL before the port number where the XWiki instance is running. This is used when running tests on a remote instance.
+         Do not add a trailing slash. Example:
+         http://localhost
+         https://testmachine.mynetwork.net
+         See also "port" for defining the port to connect to.
+    -->
+    <xwiki.test.baseURL>http://localhost</xwiki.test.baseURL>
+    <!-- Run tests on Firefox by default. You can use a different browser by activating the corresponding profile,
+         e.g. -Pchrome -->
+    <browser>*firefox</browser>
+  </properties>
+  <profiles>
+    <profile>
+      <id>unix</id>
+      <activation>
+        <os>
+          <family>unix</family>
+        </os>
+      </activation>
+      <properties>
+        <xwikiExecutionStartCommand>bash start_xwiki.sh -p ${port} -sp ${stopport}</xwikiExecutionStartCommand>
+        <xwikiExecutionStopCommand>bash stop_xwiki.sh -p ${port} -sp ${stopport}</xwikiExecutionStopCommand>
+      </properties>
+    </profile>
+    <profile>
+      <id>mac</id>
+      <activation>
+        <os>
+          <family>mac</family>
+        </os>
+      </activation>
+      <properties>
+        <xwikiExecutionStartCommand>bash start_xwiki.sh -p ${port} -sp ${stopport}</xwikiExecutionStartCommand>
+        <xwikiExecutionStopCommand>bash stop_xwiki.sh -p ${port} -sp ${stopport}</xwikiExecutionStopCommand>
+      </properties>
+    </profile>
+    <!-- This profile must come after the "mac" profile so that it overrides it when it's active.
+         Note: You must define the ${profilePath} property in your settings.xml file or in a
+         profiles.xml one. For example in settings.xml:
+
+           <settings>
+             <profiles>
+               <profile>
+                 <id>xwiki</id>
+                 <properties>
+                   <profilerPath>/Applications/YourKit Java Profiler 7.0.11.app/bin/mac</profilerPath>
+                 </properties>
+             [...]
+             <activeProfiles>
+               <activeProfile>xwiki</activeProfile>
+             [...]
+    -->
+    <profile>
+      <id>macprofiler</id>
+      <properties>
+        <xwikiExecutionStartCommand>sh start_xwiki_debug.sh ${port} ${stopport} profiler "${profilerPath}"</xwikiExecutionStartCommand>
+        <xwikiExecutionStopCommand>sh stop_xwiki.sh ${stopport}</xwikiExecutionStopCommand>
+      </properties>
+    </profile>
+    <profile>
+      <id>windows</id>
+      <activation>
+        <os>
+          <family>windows</family>
+        </os>
+      </activation>
+      <properties>
+        <xwikiExecutionStartCommand>cmd /c start_xwiki.bat ${port} ${stopport}</xwikiExecutionStartCommand>
+        <xwikiExecutionStopCommand>cmd /c stop_xwiki.bat ${stopport}</xwikiExecutionStopCommand>
+      </properties>
+    </profile>
+    <!-- This profile must come after the "windows" profile so that it overrides it when it's active.
+         Note: You must define the ${profilePath} property in your settings.xml file or in a
+         profiles.xml one. No spaces are allowed in this path, 8.3 DOS path format should be used.
+         Use the "dir /X" command (in command prompt) within a directory to get 8.3 DOS path.
+         For example (win32) in settings.xml:
+           <settings>
+             <profiles>
+               <profile>
+                 <id>xwiki</id>
+                 <properties>
+                   <profilerPath>C:\PROGRA~1\YOURKI~1.11\bin\win32</profilerPath>
+                 </properties>
+             [...]
+             <activeProfiles>
+               <activeProfile>xwiki</activeProfile>
+             [...]
+    -->
+    <profile>
+      <id>winprofiler</id>
+      <properties>
+        <xwikiExecutionStartCommand>cmd /c start_xwiki_debug.bat ${port} ${stopport} profiler ${profilerPath}</xwikiExecutionStartCommand>
+        <xwikiExecutionStopCommand>cmd /c stop_xwiki.bat ${stopport}</xwikiExecutionStopCommand>
+      </properties>
+    </profile>
+    <profile>
+      <!-- Make sure we add the Clover JAR to the classpath since instrumented code will need it -->
+      <id>clover</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.cenqua.clover</groupId>
+          <artifactId>clover</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+    <!-- Browser profiles for both Selenium 1 and Selenium 2 tests. -->
+    <profile>
+      <id>firefox</id>
+      <!-- Not necessary to define the browser property since it's defined to be firefox by default. We keep this
+           profile simply to be symmetrical with other profiles -->
+    </profile>
+    <profile>
+      <id>iexplore</id>
+      <properties>
+        <browser>*iexplore</browser>
+      </properties>
+    </profile>
+    <profile>
+      <id>chrome</id>
+      <properties>
+        <browser>*chrome</browser>
+      </properties>
+    </profile>
+    <profile>
+      <id>otherbrowser</id>
+      <properties>
+        <browser>*custom ${browserPath}</browser>
+      </properties>
+    </profile>
+  </profiles>
+  <modules>
+    <!-- Sorted Alphabetically -->
+    <module>xcs-test-ui</module>
+  </modules>
+</project>

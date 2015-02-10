@@ -71,6 +71,16 @@
     <module>xcs-ui</module>
     <module>xcs-web</module>
   </modules>
+  <profiles>
+    <profile>
+      <!-- Temporary called functional-test until I find why the profile
+           'integration-tests' is bugged -->
+      <id>functional-tests</id>
+      <modules>
+        <module>xcs-test</module>
+      </modules>
+    </profile>
+  </profiles>
   <build>
     <plugins>
       <plugin>
