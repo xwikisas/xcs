@@ -83,7 +83,7 @@
               <artifact>com.xwikisas:xcs-ui-wiki</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/colorTheme</xpath>
-              <value>FlamingoThemes.XWikiCSGreen</value>
+              <value>FlamingoThemes.XCS-Green</value>
             </transformation>
           </transformations>
         </configuration>

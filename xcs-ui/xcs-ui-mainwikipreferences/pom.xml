@@ -71,7 +71,7 @@
               <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/colorTheme</xpath>
-              <value>FlamingoThemes.XWikiCSGray</value>
+              <value>FlamingoThemes.XCS-Charcoal</value>
             </transformation>
             <!-- Specify a different footer copyright -->
             <transformation>

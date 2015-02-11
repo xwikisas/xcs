@@ -97,7 +97,7 @@
               <artifact>com.xwikisas:xcs-ui-wiki</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/colorTheme</xpath>
-              <value>FlamingoThemes.XWikiCSBlue</value>
+              <value>FlamingoThemes.XCS-Blue</value>
             </transformation>
           </transformations>
         </configuration>
