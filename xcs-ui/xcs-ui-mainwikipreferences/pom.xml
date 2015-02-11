@@ -59,6 +59,13 @@
         <configuration>
           <!-- Perform some transformations specific to XCS -->
           <transformations>
+            <!-- Remove left panels -->
+            <transformation>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/showLeftPanels</xpath>
+              <value>false</value>
+            </transformation>
             <!-- Remove right panels -->
             <transformation>
               <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
@@ -75,7 +82,7 @@
             </transformation>
             <!-- Specify a different footer copyright -->
             <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/webcopyright</xpath>
               <value>${xcs.footer.webcopyright}</value>
