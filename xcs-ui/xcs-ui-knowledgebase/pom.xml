@@ -69,14 +69,14 @@
               <artifact>com.xwikisas:xcs-ui-wiki</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/leftPanels</xpath>
-              <value>Panels.Navigation,Panels.TagCloud</value>
+              <value>Panels.XCSNavigation,Panels.TagCloud</value>
             </transformation>
             <!-- Change the width of left panels in order to accomodate the content -->
             <transformation>
               <artifact>com.xwikisas:xcs-ui-wiki</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/leftPanelsWidth</xpath>
-              <value>Medium</value>
+              <value>Large</value>
             </transformation>
             <!-- Specify a different default Color Theme -->
             <transformation>
