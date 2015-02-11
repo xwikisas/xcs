@@ -36,11 +36,12 @@
     Main Wiki.
   </description>
   <dependencies>
-    <!-- This is important to have this module in the first position, if we want XWiki.Admin to be installed first -->
+    <!-- This is important to have this module in the first position, if we want XWiki.Admin and XWiki.XWikiPreferences
+    to be installed first -->
     <dependency>
-      <groupId>org.xwiki.enterprise</groupId>
-      <artifactId>xwiki-enterprise-ui-admin-user</artifactId>
-      <version>${enterprise.version}</version>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-ui-mainwikipreferences</artifactId>
+      <version>${project.version}</version>
       <type>xar</type>
     </dependency>
     <!-- Also depend on the XCS common wiki XAR to have our custom content, we put it there to be installed after
@@ -90,39 +91,6 @@
             </configuration>
           </execution>
         </executions>
-        <configuration>
-          <!-- Perform some transformations specific to XCS -->
-          <transformations>
-            <!-- Remove right panels -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/showRightPanels</xpath>
-              <value>false</value>
-            </transformation>
-            <!-- Specify a different default Color Theme -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/colorTheme</xpath>
-              <value>FlamingoThemes.XWikiCSGray</value>
-            </transformation>
-            <!-- Specify a different footer copyright -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/webcopyright</xpath>
-              <value>${xcs.footer.webcopyright}</value>
-            </transformation>
-            <!-- Specify a different footer version -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>/xwikidoc/object/property/version</xpath>
-              <value>${xcs.footer.version}</value>
-            </transformation>
-          </transformations>
-        </configuration>
       </plugin>
     </plugins>
   </build>
