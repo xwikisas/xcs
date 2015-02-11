@@ -73,9 +73,7 @@
   </modules>
   <profiles>
     <profile>
-      <!-- Temporary called functional-test until I find why the profile
-           'integration-tests' is bugged -->
-      <id>functional-tests</id>
+      <id>integration-tests</id>
       <modules>
         <module>xcs-test</module>
       </modules>
