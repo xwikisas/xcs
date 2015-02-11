@@ -43,19 +43,19 @@
       <version>${enterprise.version}</version>
       <type>xar</type>
     </dependency>
-    <!-- Our flavour application, we put it first to be installed after xwiki-platform-ui-mainwiki-->
-    <dependency>
-      <groupId>org.xwiki.contrib</groupId>
-      <artifactId>application-wikiflavor-ui</artifactId>
-      <version>1.3</version>
-      <type>xar</type>
-    </dependency>
     <!-- Also depend on the XCS common wiki XAR to have our custom content, we put it there to be installed after
      xwiki-platform-panels-ui -->
     <dependency>
       <groupId>com.xwikisas</groupId>
       <artifactId>xcs-ui-common</artifactId>
       <version>${project.version}</version>
+      <type>xar</type>
+    </dependency>
+    <!-- Our flavour application -->
+    <dependency>
+      <groupId>org.xwiki.contrib</groupId>
+      <artifactId>application-wikiflavor-ui</artifactId>
+      <version>1.3</version>
       <type>xar</type>
     </dependency>
     <!-- See below why we mark this dependency as provided -->

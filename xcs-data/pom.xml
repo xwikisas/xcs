@@ -83,6 +83,42 @@
               <artifactId>xwiki-platform-rendering-wikimacro-store</artifactId>
               <version>${platform.version}</version>
             </dependency>
+            <!-- Instance module has its own Hibernate mapping file -->
+            <dependency>
+              <groupId>org.xwiki.platform</groupId>
+              <artifactId>xwiki-platform-instance</artifactId>
+              <version>${platform.version}</version>
+            </dependency>
+            <!-- Wiki Workspaces migrator migrates subwikis -->
+            <dependency>
+              <groupId>org.xwiki.platform</groupId>
+              <artifactId>xwiki-platform-wiki-workspaces-migrator</artifactId>
+              <version>${platform.version}</version>
+            </dependency>
+            <!-- Wiki User Default implementation has a migrator to upgrade subwikis -->
+            <dependency>
+              <groupId>org.xwiki.platform</groupId>
+              <artifactId>xwiki-platform-wiki-user-default</artifactId>
+              <version>${platform.version}</version>
+            </dependency>
+            <!-- Wiki Template Default implementation has a migrator to create WikiManager.WikiTemplateClass objects -->
+            <dependency>
+              <groupId>org.xwiki.platform</groupId>
+              <artifactId>xwiki-platform-wiki-template-default</artifactId>
+              <version>${platform.version}</version>
+            </dependency>
+            <!-- Wiki Default implementation has a migrator to set pretty names to wikis that does not have -->
+            <dependency>
+              <groupId>org.xwiki.platform</groupId>
+              <artifactId>xwiki-platform-wiki-default</artifactId>
+              <version>${platform.version}</version>
+            </dependency>
+            <!-- Mail Sender module has its own Hibernate mapping file -->
+            <dependency>
+              <groupId>org.xwiki.platform</groupId>
+              <artifactId>xwiki-platform-mail-send-storage</artifactId>
+              <version>${platform.version}</version>
+            </dependency>
             <!-- We need the Servlet API dep since it's used by the Packager and since it has
                  a provided scope in XWiki core it's not inherited as part of transitive deps -->
             <dependency>
