@@ -41,6 +41,7 @@
     <module>xcs-ui-knowledgebase</module>
   </modules>
   <properties>
-    <xcs.footer><![CDATA[XWiki Collaboration Suite 2015 ($xwiki.getVersion()) - By <a href="http://www.xwiki.com/">XWiki SAS</a>]]></xcs.footer>
+    <xcs.footer.webcopyright><![CDATA[$services.localization.render('xcs.footer.webcopyright',["<a rel='license' href='http://creativecommons.org/licenses/by/2.0/'>",'</a>'])]]></xcs.footer.webcopyright>
+    <xcs.footer.version><![CDATA[$services.localization.render('xcs.footer.version',["$xwiki.getVersion()","<a href='http://www.xwiki.com/'>",'</a>'])]]></xcs.footer.version>
   </properties>
 </project>

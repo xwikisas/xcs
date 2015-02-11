@@ -92,12 +92,19 @@
               <xpath>/xwikidoc/object/property/showRightPanels</xpath>
               <value>false</value>
             </transformation>
-            <!-- Specify a different footer -->
+            <!-- Specify a different footer copyright -->
+            <transformation>
+              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
+              <file>XWiki/XWikiPreferences.xml</file>
+              <xpath>/xwikidoc/object/property/webcopyright</xpath>
+              <value>${xcs.footer.webcopyright}</value>
+            </transformation>
+            <!-- Specify a different footer version -->
             <transformation>
               <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-wiki</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>/xwikidoc/object/property/version</xpath>
-              <value>${xcs.footer}</value>
+              <value>${xcs.footer.version}</value>
             </transformation>
           </transformations>
         </configuration>
