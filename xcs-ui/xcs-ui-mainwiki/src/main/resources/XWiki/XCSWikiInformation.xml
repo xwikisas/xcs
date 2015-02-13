@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.1">
+  <web>XWiki</web>
+  <name>XCSWikiInformation</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1423832598000</creationDate>
+  <parent>Main.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1423836574000</date>
+  <contentUpdateDate>1423834898000</contentUpdateDate>
+  <version>1.1</version>
+  <title>XCS WikiInformation</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>= Usage =
+
+{{code language="none"}}
+{{wiki.information/}}
+{{/code}}
+</content>
+  <object>
+    <name>XWiki.XCSWikiInformation</name>
+    <number>0</number>
+    <className>XWiki.WikiMacroClass</className>
+    <guid>cf427b44-8057-4541-8fc3-776c2b2b7ac5</guid>
+    <class>
+      <name>XWiki.WikiMacroClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <code>
+        <disabled>0</disabled>
+        <name>code</name>
+        <number>9</number>
+        <prettyName>Macro code</prettyName>
+        <rows>20</rows>
+        <size>40</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <contentDescription>
+        <disabled>0</disabled>
+        <name>contentDescription</name>
+        <number>8</number>
+        <prettyName>Content description (Not applicable for "No content" type)</prettyName>
+        <rows>5</rows>
+        <size>40</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </contentDescription>
+      <contentType>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>contentType</name>
+        <number>7</number>
+        <prettyName>Macro content type</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator>|</separator>
+        <separators>|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>Optional|Mandatory|No content</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </contentType>
+      <defaultCategory>
+        <disabled>0</disabled>
+        <name>defaultCategory</name>
+        <number>4</number>
+        <prettyName>Default category</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </defaultCategory>
+      <description>
+        <disabled>0</disabled>
+        <name>description</name>
+        <number>3</number>
+        <prettyName>Macro description</prettyName>
+        <rows>5</rows>
+        <size>40</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </description>
+      <id>
+        <disabled>0</disabled>
+        <name>id</name>
+        <number>1</number>
+        <prettyName>Macro id</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </id>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>2</number>
+        <prettyName>Macro name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <supportsInlineMode>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>supportsInlineMode</name>
+        <number>5</number>
+        <prettyName>Supports inline mode</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </supportsInlineMode>
+      <visibility>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>visibility</name>
+        <number>6</number>
+        <prettyName>Macro visibility</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator>|</separator>
+        <separators>|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>Current User|Current Wiki|Global</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </visibility>
+    </class>
+    <property>
+      <code>{{velocity}}
+#set ($currentWiki = $services.wiki.currentWikiId)
+##
+## TODO: use a dependency check macro.
+##
+#set ($wiki = $services.wiki.getById($currentWiki))
+#if (!$wiki)
+  {{error}}{{translation key="platform.workspace.wikiNotWorkspace"/}}{{/error}}
+#else
+  #set($displayName = $wiki.prettyName)
+  #if ("$!displayName" == '')
+    #set($displayName = $currentWiki)
+  #end
+  $services.localization.render('platform.wiki.currentwiki.welcome', ['**', $displayName, '**'])
+  #set ($wikiDescriptrion = $wiki.description)
+  #if ("$!wikiDescriptrion" != '')
+
+    $wikiDescriptrion
+  #end
+  ## User's rights
+  #set ($currentUser = "#if($xcontext.isMainWiki())${services.wiki.mainWikiId}:${xcontext.user}#{else}${xcontext.user}#end")
+  #set ($hasOwner = ($wiki.ownerId.equals($currentUser)))
+  #if (!$isGuest)
+    #if ($hasOwner)
+
+      {{translation key="platform.wiki.currentwiki.currentUserIsOwner"/}}
+    #elseif ($hasAdmin)
+
+      {{translation key="platform.wiki.currentwiki.currentUserIsAdmin"/}}
+    #end
+  #end
+
+  ## Join/Leave
+  #if ($isGuest)
+    {{translation key="platform.wiki.currentwiki.joinNeedToLogin"/}}
+  #elseif("$!xcontext.userReference.wikiReference.name" == "$!services.wiki.mainWikiId")
+    ## The user is global
+    #set ($members = $services.wiki.user.getMembers($currentWiki))
+    #set ($hasJoin = $members &amp;&amp; !$members.contains($currentUser))
+    #if ($hasJoin)
+      #set ($joinPageReference = $services.model.createDocumentReference(${services.wiki.mainWikiId}, 'WikiManager', 'JoinWiki'))
+      #set ($joinUrl = $xwiki.getURL($joinPageReference, 'view', "wikiId=${currentWiki}"))
+      {{translation key="platform.wiki.currentwiki.currentUserNotMember"/}} $services.localization.render('platform.wiki.currentwiki.currentuserCanJoin', ['[[', "&gt;&gt;path:$joinUrl]]"])
+    #elseif (!$hasOwner)
+      #set ($leavePageReference = $services.model.createDocumentReference(${services.wiki.mainWikiId}, 'WikiManager', 'LeaveWiki'))
+      #set ($leaveUrl = $xwiki.getURL($leavePageReference, 'view', "wikiId=${currentWiki}"))
+      {{translation key="platform.wiki.currentwiki.currentUserIsMember"/}} $services.localization.render('platform.wiki.currentwiki.currentUserCanLeave', ['[[', "&gt;&gt;path:$leaveUrl]]"])
+    #end
+  #end
+#end
+{{/velocity}}</code>
+    </property>
+    <property>
+      <contentDescription/>
+    </property>
+    <property>
+      <contentType>No content</contentType>
+    </property>
+    <property>
+      <defaultCategory>__other</defaultCategory>
+    </property>
+    <property>
+      <description>Displays the wiki information, allowing the user to join or leave the wiki</description>
+    </property>
+    <property>
+      <id>wiki.information</id>
+    </property>
+    <property>
+      <name>Wiki Information</name>
+    </property>
+    <property>
+      <supportsInlineMode>0</supportsInlineMode>
+    </property>
+    <property>
+      <visibility>Global</visibility>
+    </property>
+  </object>
+</xwikidoc>
