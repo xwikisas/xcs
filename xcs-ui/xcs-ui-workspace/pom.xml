@@ -65,7 +65,7 @@
     <dependency>
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>application-xpoll</artifactId>
-      <version>1.6.1</version>
+      <version>1.6.2</version>
       <type>xar</type>
       <scope>runtime</scope>
     </dependency>
