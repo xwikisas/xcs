@@ -46,7 +46,7 @@
     <dependency>
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>xwiki-application-admintools</artifactId>
-      <version>4.1</version>
+      <version>4.1.1</version>
       <type>xar</type>
     </dependency>
     <!-- We take the list from xwiki-enterprise-ui-common but we remove some modules. Must be maintained
