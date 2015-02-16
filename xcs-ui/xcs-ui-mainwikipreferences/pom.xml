@@ -94,20 +94,6 @@
               <xpath>/xwikidoc/object/property/version</xpath>
               <value>${xcs.footer.version}</value>
             </transformation>
-            <!-- Specify different rights for XWiki.XWikiGuest -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>xwikidoc/object[property/users[text()="XWiki.XWikiGuest"]]/property/levels</xpath>
-              <value>none</value>
-            </transformation>
-            <!-- Specify different rights for XWiki.XWikiAllGroup -->
-            <transformation>
-              <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-admin-user</artifact>
-              <file>XWiki/XWikiPreferences.xml</file>
-              <xpath>xwikidoc/object[property/groups[contains(text(),"XWiki.XWikiAllGroup")]]/property/levels</xpath>
-              <value>view,edit,comment,undelete</value>
-            </transformation>
           </transformations>
         </configuration>
       </plugin>
