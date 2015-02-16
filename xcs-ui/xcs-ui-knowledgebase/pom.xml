@@ -27,7 +27,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs-ui</artifactId>
-    <version>2015-1-SNAPSHOT</version>
+    <version>2015-1-milestone-2</version>
   </parent>
   <artifactId>xcs-ui-knowledgebase</artifactId>
   <name>XWiki Collaboration Suite - UI - Knowledge Base</name>
