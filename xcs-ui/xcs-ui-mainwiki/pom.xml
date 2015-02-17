@@ -52,7 +52,7 @@
       <version>${project.version}</version>
       <type>xar</type>
     </dependency>
-    <!-- Our flavour application -->
+    <!-- Our flavor application -->
     <dependency>
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>application-wikiflavor-ui</artifactId>
