@@ -27,11 +27,11 @@
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1252454400000</creationDate>
+  <creationDate>1421922600000</creationDate>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1421922671000</date>
-  <contentUpdateDate>1421922671000</contentUpdateDate>
+  <date>1421922600000</date>
+  <contentUpdateDate>1421922600000</contentUpdateDate>
   <version>1.1</version>
   <title>$services.localization.render('xe.home.title')</title>
   <comment/>
