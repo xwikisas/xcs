@@ -22,19 +22,19 @@
 
 <xwikidoc version="1.1">
   <web>FlamingoThemes</web>
-  <name>XCS-Blue</name>
+  <name>XCS-Red</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1423670013000</creationDate>
+  <creationDate>1424280106000</creationDate>
   <parent>FlamingoThemes.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1424279074000</date>
-  <contentUpdateDate>1424083491000</contentUpdateDate>
+  <date>1424281470000</date>
+  <contentUpdateDate>1424280106000</contentUpdateDate>
   <version>1.1</version>
-  <title>XCS-Blue</title>
+  <title>XCS-Red</title>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
@@ -50,10 +50,10 @@
     <filesize>6674</filesize>
   </attachment>
   <object>
-    <name>FlamingoThemes.XCS-Blue</name>
+    <name>FlamingoThemes.XCS-Red</name>
     <number>0</number>
     <className>FlamingoThemesCode.ThemeClass</className>
-    <guid>4c9bc49f-8953-4e26-945d-d8f3e79f7aa3</guid>
+    <guid>832194f4-df00-48f2-884c-d43ffe8d0087</guid>
     <class>
       <name>FlamingoThemesCode.ThemeClass</name>
       <customClass/>
@@ -830,13 +830,13 @@
       <btn-danger-color/>
     </property>
     <property>
-      <btn-default-bg>#e8e8e8</btn-default-bg>
+      <btn-default-bg>#ECECEC</btn-default-bg>
     </property>
     <property>
       <btn-default-border/>
     </property>
     <property>
-      <btn-default-color>#333333</btn-default-color>
+      <btn-default-color>#555655</btn-default-color>
     </property>
     <property>
       <btn-font-weight/>
@@ -848,16 +848,16 @@
       <btn-info-color>#FFFFFF</btn-info-color>
     </property>
     <property>
-      <btn-primary-bg>#0072ab</btn-primary-bg>
+      <btn-primary-bg>#333</btn-primary-bg>
     </property>
     <property>
       <btn-primary-color>#FFFFFF</btn-primary-color>
     </property>
     <property>
-      <btn-success-bg>#333333</btn-success-bg>
+      <btn-success-bg>#ffa600</btn-success-bg>
     </property>
     <property>
-      <btn-success-color>#ffffff</btn-success-color>
+      <btn-success-color>#FFFFFF</btn-success-color>
     </property>
     <property>
       <btn-warning-bg/>
@@ -1110,6 +1110,7 @@ border-bottom: none;
 
 
 
+
 </lessCode>
     </property>
     <property>
@@ -1119,7 +1120,7 @@ border-bottom: none;
       <logo>logo.png</logo>
     </property>
     <property>
-      <navbar-default-bg>#00a8e0</navbar-default-bg>
+      <navbar-default-bg>#b50000</navbar-default-bg>
     </property>
     <property>
       <navbar-default-color>#FFFFFF</navbar-default-color>
