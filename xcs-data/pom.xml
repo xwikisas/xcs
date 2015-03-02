@@ -24,7 +24,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs</artifactId>
-    <version>2015-1-rc-1</version>
+    <version>2015-1-SNAPSHOT</version>
   </parent>
   <artifactId>xcs-data</artifactId>
   <name>XWiki Collaboration Suite - Data - Parent POM</name>
