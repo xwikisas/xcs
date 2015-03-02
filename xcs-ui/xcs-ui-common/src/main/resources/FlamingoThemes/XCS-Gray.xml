@@ -1305,9 +1305,8 @@ border-bottom: none;
   </object>
   <object>
     <name>FlamingoThemes.XCS-Gray</name>
-    <number>1</number>
+    <number>2</number>
     <className>XWiki.XWikiRights</className>
-    <guid>714a583f-ab11-4c4b-a130-7d1429756b5a</guid>
     <class>
       <name>XWiki.XWikiRights</name>
       <customClass/>
