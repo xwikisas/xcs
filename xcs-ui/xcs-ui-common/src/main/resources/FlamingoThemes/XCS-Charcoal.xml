@@ -1132,7 +1132,7 @@ border-bottom: none;
       <navbar-height/>
     </property>
     <property>
-      <panel-bg>transparent</panel-bg>
+      <panel-bg>#F5F5F5</panel-bg>
     </property>
     <property>
       <panel-default-text>#333333</panel-default-text>
