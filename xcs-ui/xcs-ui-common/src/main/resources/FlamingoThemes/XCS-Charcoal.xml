@@ -991,7 +991,6 @@ border:@light-border;
 background:@gadget-bg;
 }
 div.container-columns .column{
-width: 49.75%;
 padding-right:@padd-right-column;
 padding-left: @padd-left-column;
 }
