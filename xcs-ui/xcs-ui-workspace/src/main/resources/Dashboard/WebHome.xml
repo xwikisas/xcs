@@ -529,7 +529,9 @@
     <property>
       <content>{{include reference="Blog.BlogCode"/}}{{velocity}}
 {{html clean="false" wiki="true"}}
-{{include reference="Blog.CreatePost" context="new"/}}
+## The create post form should not be visible when we edit the dashboard, because nested forms are forbidden, it creates
+## bugs and writing a blog post while editing the dashboard has no sense.
+#if($xcontext.action == 'view'){{include reference="Blog.CreatePost" context="new"/}}#end
 #getBlogEntries($doc $entries)
 #displayBlog($entries 'index' true true)
 #displayNavigationLinks($doc)
