@@ -25,7 +25,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs-tools</artifactId>
-    <version>2015-1.1-SNAPSHOT</version>
+    <version>2015-2-SNAPSHOT</version>
   </parent>
   <artifactId>xcs-tools-dependenciespackager</artifactId>
   <name>XWiki Collaboration Suite - Tools - Dependencies Packager</name>
