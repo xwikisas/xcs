@@ -25,7 +25,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs-test</artifactId>
-    <version>2015-3-SNAPSHOT</version>
+    <version>2015-4-SNAPSHOT</version>
   </parent>
   <artifactId>xcs-test-ui</artifactId>
   <name>XWiki Collaboration Suite - Functional Tests - UI</name>
