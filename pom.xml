@@ -31,7 +31,7 @@
   </parent>
   <groupId>com.xwikisas</groupId>
   <artifactId>xcs</artifactId>
-  <version>2015-3-SNAPSHOT</version>
+  <version>2015-3</version>
   <packaging>pom</packaging>
   <name>XWiki Collaboration Suite - Parent POM</name>
   <description>XWiki Collaboration Suite - Parent POM</description>
@@ -39,7 +39,7 @@
     <connection>scm:git:git://github.com/xwikisas/xcs.git</connection>
     <developerConnection>scm:git:git@github.com:xwikisas/xcs.git</developerConnection>
     <url>http://github.com/xwikisas/xcs</url>
-    <tag>HEAD</tag>
+    <tag>xcs-2015-3</tag>
   </scm>
   <issueManagement>
     <system>jira</system>
