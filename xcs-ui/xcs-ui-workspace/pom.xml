@@ -51,7 +51,7 @@
     <dependency>
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>application-ideas</artifactId>
-      <version>1.8.3</version>
+      <version>1.8.4</version>
       <type>xar</type>
       <scope>runtime</scope>
     </dependency>
