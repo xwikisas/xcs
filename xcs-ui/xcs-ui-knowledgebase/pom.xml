@@ -33,6 +33,9 @@
   <name>XWiki Collaboration Suite - UI - Knowledge Base</name>
   <packaging>xar</packaging>
   <description>Default set of wiki pages containing both content and default applications for XWiki Collaboration Suite Knowledge Base (sub)wiki.</description>
+  <properties>
+    <xwiki.extension.category>flavor</xwiki.extension.category>
+  </properties>
   <dependencies>
     <!-- Depend on the XCS wiki XAR to share content across (sub)wikis-->
     <dependency>

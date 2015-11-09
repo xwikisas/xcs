@@ -33,6 +33,9 @@
   <name>XWiki Collaboration Suite - UI - Wiki</name>
   <packaging>xar</packaging>
   <description>Default set of wiki pages containing both content and default applications for XWiki Collaboration Suite (sub)wiki.</description>
+  <properties>
+    <xwiki.extension.category>flavor</xwiki.extension.category>
+  </properties>
   <dependencies>
     <!-- Also depend on the XCS common wiki XAR to have our custom content, we put it there to be installed after
      xwiki-platform-panels-ui -->

@@ -35,6 +35,9 @@
   <description>Default set of wiki pages containing both content and default applications for XWiki Collaboration Suite
     Main Wiki.
   </description>
+  <properties>
+    <xwiki.extension.category>flavor</xwiki.extension.category>
+  </properties>
   <dependencies>
     <!-- This is important to have this module in the first position, if we want XWiki.Admin and XWiki.XWikiPreferences
     to be installed first -->
