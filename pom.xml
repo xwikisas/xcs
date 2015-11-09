@@ -312,6 +312,16 @@
         <version>${platform.version}</version>
         <type>xar</type>
       </dependency>
+      <dependency>
+        <groupId>org.xwiki.platform</groupId>
+        <artifactId>xwiki-platform-display-macro</artifactId>
+        <version>${platform.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.xwiki.platform</groupId>
+        <artifactId>xwiki-platform-ratings-api</artifactId>
+        <version>${platform.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>
