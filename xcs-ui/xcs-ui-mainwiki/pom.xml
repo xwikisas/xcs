@@ -91,6 +91,12 @@
               <groupId>org.xwiki.enterprise</groupId>
               <artifactId>xwiki-enterprise-ui-mainwiki</artifactId>
               <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+              <!-- We exclude some pages that are overwritten in this module so we are sure we end up with the correct
+                   version, without any additional translations that would not be overwritten. -->
+              <excludes>
+                <exclude>Dashboard/WebHome*.xml</exclude>
+                <exclude>Main/WebHome*.xml</exclude>
+              </excludes>
             </configuration>
           </execution>
         </executions>

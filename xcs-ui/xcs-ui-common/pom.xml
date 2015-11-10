@@ -284,6 +284,12 @@
               <groupId>org.xwiki.enterprise</groupId>
               <artifactId>xwiki-enterprise-ui-common</artifactId>
               <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+              <!-- We exclude some pages that are overwritten in this module so we are sure we end up with the correct
+                   version, without any additional translations that would not be overwritten. -->
+              <excludes>
+                <exclude>Main/Welcome*.xml</exclude>
+                <exclude>PanelsCode/ApplicationsPanelConfigurations*.xml</exclude>
+              </excludes>
             </configuration>
           </execution>
         </executions>
