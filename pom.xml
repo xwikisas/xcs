@@ -27,11 +27,11 @@
   <parent>
     <groupId>org.xwiki.enterprise</groupId>
     <artifactId>xwiki-enterprise</artifactId>
-    <version>6.4.6</version>
+    <version>7.4-milestone-2</version>
   </parent>
   <groupId>com.xwikisas</groupId>
   <artifactId>xcs</artifactId>
-  <version>2015-5-SNAPSHOT</version>
+  <version>2016-1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>XWiki Collaboration Suite - Parent POM</name>
   <description>XWiki Collaboration Suite - Parent POM</description>
@@ -192,6 +192,11 @@
       <dependency>
         <groupId>org.xwiki.platform</groupId>
         <artifactId>xwiki-platform-rendering-macro-context</artifactId>
+        <version>${platform.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.xwiki.platform</groupId>
+        <artifactId>xwiki-platform-rendering-macro-include</artifactId>
         <version>${platform.version}</version>
       </dependency>
       <dependency>

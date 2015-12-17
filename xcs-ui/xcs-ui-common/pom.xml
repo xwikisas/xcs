@@ -27,7 +27,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs-ui</artifactId>
-    <version>2015-5-SNAPSHOT</version>
+    <version>2016-1-SNAPSHOT</version>
   </parent>
   <artifactId>xcs-ui-common</artifactId>
   <name>XWiki Collaboration Suite - UI - Common</name>
@@ -54,6 +54,12 @@
     <dependency>
       <groupId>org.xwiki.platform</groupId>
       <artifactId>xwiki-platform-administration-ui</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-skin-ui</artifactId>
       <version>${platform.version}</version>
       <type>xar</type>
     </dependency>
@@ -90,12 +96,6 @@
     <dependency>
       <groupId>org.xwiki.platform</groupId>
       <artifactId>xwiki-platform-statistics-ui</artifactId>
-      <version>${platform.version}</version>
-      <type>xar</type>
-    </dependency>
-    <dependency>
-      <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-search-lucene-ui</artifactId>
       <version>${platform.version}</version>
       <type>xar</type>
     </dependency>
@@ -239,19 +239,37 @@
     </dependency>
     <dependency>
       <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-flamingo-theme</artifactId>
+      <artifactId>xwiki-platform-flamingo-theme-ui</artifactId>
       <version>${platform.version}</version>
       <type>xar</type>
     </dependency>
     <dependency>
       <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-flamingo-bootswatchthemes</artifactId>
+      <artifactId>xwiki-platform-flamingo-theme-bootswatch</artifactId>
       <version>${platform.version}</version>
       <type>xar</type>
     </dependency>
     <dependency>
       <groupId>org.xwiki.platform</groupId>
       <artifactId>xwiki-platform-mail-ui</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-sharepage-ui</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-xclass-ui</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-refactoring-ui</artifactId>
       <version>${platform.version}</version>
       <type>xar</type>
     </dependency>
@@ -262,6 +280,15 @@
       <version>${enterprise.version}</version>
       <type>xar</type>
       <scope>provided</scope>
+    </dependency>
+    <!-- JAR dependencies -->
+    <!-- With strict versions so that XE XAR extension is marked as invalid when they change (upgrading the WAR) -->
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-oldcore</artifactId>
+      <version>[${platform.version}]</version>
+      <type>jar</type>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
   <build>
