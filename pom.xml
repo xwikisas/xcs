@@ -27,7 +27,7 @@
   <parent>
     <groupId>org.xwiki.enterprise</groupId>
     <artifactId>xwiki-enterprise</artifactId>
-    <version>7.4-milestone-2</version>
+    <version>7.4-rc-1</version>
   </parent>
   <groupId>com.xwikisas</groupId>
   <artifactId>xcs</artifactId>
@@ -35,6 +35,12 @@
   <packaging>pom</packaging>
   <name>XWiki Collaboration Suite - Parent POM</name>
   <description>XWiki Collaboration Suite - Parent POM</description>
+  <developers>
+    <developer>
+      <id>xwikisas</id>
+      <name>XWiki SAS</name>
+    </developer>
+  </developers>
   <scm>
     <connection>scm:git:git://github.com/xwikisas/xcs.git</connection>
     <developerConnection>scm:git:git@github.com:xwikisas/xcs.git</developerConnection>
