@@ -59,7 +59,7 @@
     <dependency>
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>application-wikiflavor-ui</artifactId>
-      <version>2.1</version>
+      <version>${wikiflavorapplication.version}</version>
       <type>xar</type>
     </dependency>
     <!-- See below why we mark this dependency as provided -->

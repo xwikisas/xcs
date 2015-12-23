@@ -67,6 +67,9 @@
       <url>http://nexus.xwikisas.com/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
+  <properties>
+    <wikiflavorapplication.version>2.1</wikiflavorapplication.version>
+  </properties>
   <modules>
     <!-- Sorted Alphabetically -->
     <module>xcs-applications</module>

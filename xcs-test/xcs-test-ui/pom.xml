@@ -40,15 +40,14 @@
     </dependency>
     <dependency>
       <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-test</artifactId>
+      <artifactId>xwiki-platform-test-ui</artifactId>
       <version>${platform.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>application-wikiflavor-test-pageobjects</artifactId>
-      <!-- Temporary set to a snapshot version until I release a new version of the Wiki Flavor Application -->
-      <version>1.3</version>
+      <version>${wikiflavorapplication.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
