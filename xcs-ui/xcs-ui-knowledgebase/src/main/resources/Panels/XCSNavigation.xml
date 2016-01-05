@@ -123,10 +123,19 @@
     </property>
     <property>
       <content>{{velocity}}
+##------------------------
+## Same code than Panels.Navigation (from XWiki Enterprise) except that the "compact" mode of the document tree 
+## macro is not used.
+## The reasoning is that it looks better especially since the panels column is large on this flavor.
+##
+## An other reason for keeping this panel (instead of using Panels.Navigation) is to not break wikis after an upgrade.
+## In XCS-2015, this panel was displayed by default on this flavor, and upgrading XWiki.XWikiPreferences is always 
+## dangerous since the user might have changed the panels configuration.
+##------------------------
 #panelheader($services.localization.render('xe.panels.navigation'))
 ## Escape special characters in macro parameter values.
 #set ($openToDoc = $doc.documentReference.toString().replaceAll('([~"])', '~$1'))
-{{documentTree root="document:Main.WebHome" showTranslations="false" showAttachments="false" openTo="document:$openToDoc" /}}
+{{documentTree showTranslations="false" showAttachments="false" openTo="document:$openToDoc" /}}
 #panelfooter()
 {{/velocity}}</content>
     </property>
