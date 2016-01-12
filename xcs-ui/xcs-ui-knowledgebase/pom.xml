@@ -47,7 +47,7 @@
     <dependency>
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>xwiki-macro-pdfviewer</artifactId>
-      <version>1.4.1</version>
+      <version>1.5</version>
       <type>xar</type>
       <scope>runtime</scope>
     </dependency>
