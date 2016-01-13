@@ -821,7 +821,7 @@
       <breadcrumb-color>#333333</breadcrumb-color>
     </property>
     <property>
-      <breadcrumb-separator>&gt;</breadcrumb-separator>
+      <breadcrumb-separator></breadcrumb-separator>
     </property>
     <property>
       <btn-danger-bg/>
