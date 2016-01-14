@@ -954,10 +954,6 @@
 @border-footer:3px solid @navbar-default-bg;
 @footer-bg:#000000;
 
-// Breadcrumb
-ol#hierarchy {
-border:@light-border;
-}
 // Home - gadget 
 h1.gadget-title {
 margin-top: 0;
