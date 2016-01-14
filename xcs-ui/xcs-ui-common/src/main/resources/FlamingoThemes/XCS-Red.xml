@@ -815,10 +815,10 @@
       <brand-warning>#D09000</brand-warning>
     </property>
     <property>
-      <breadcrumb-bg>#FFFFFF</breadcrumb-bg>
+      <breadcrumb-bg></breadcrumb-bg>
     </property>
     <property>
-      <breadcrumb-color>#333333</breadcrumb-color>
+      <breadcrumb-color></breadcrumb-color>
     </property>
     <property>
       <breadcrumb-separator></breadcrumb-separator>
