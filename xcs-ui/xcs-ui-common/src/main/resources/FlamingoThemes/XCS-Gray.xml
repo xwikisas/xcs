@@ -815,13 +815,13 @@
       <brand-warning>#D09000</brand-warning>
     </property>
     <property>
-      <breadcrumb-bg>#FFFFFF</breadcrumb-bg>
+      <breadcrumb-bg></breadcrumb-bg>
     </property>
     <property>
-      <breadcrumb-color>#333333</breadcrumb-color>
+      <breadcrumb-color></breadcrumb-color>
     </property>
     <property>
-      <breadcrumb-separator>&gt;</breadcrumb-separator>
+      <breadcrumb-separator></breadcrumb-separator>
     </property>
     <property>
       <btn-danger-bg/>
@@ -953,10 +953,6 @@
 @border-footer:3px solid @navbar-default-bg;
 @footer-bg:#000000;
 
-// Breadcrumb
-ol#hierarchy {
-border:@light-border;
-}
 // Home - gadget 
 h1.gadget-title {
 margin-top: 0;
