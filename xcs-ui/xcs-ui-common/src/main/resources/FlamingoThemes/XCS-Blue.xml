@@ -946,9 +946,8 @@
 @gadget-shadow:none;
 /* livetable */
 @th-livetable-border:2px solid #999;
-@th-livetable-bg:#FFFFFF;
 @td-livetable-border:1px solid #ccc;
-@td-livetable-padd-btm:10px;
+@td-livetable-padd:5px 5px 5px 0;
 /* Footer */
 @border-footer:3px solid @navbar-default-bg;
 @footer-bg:#000000;
@@ -1001,7 +1000,6 @@ body table.xwiki-livetable tbody.xwiki-livetable-display-body td{
 border-bottom: @td-livetable-border;
 }
 body table.xwiki-livetable th.xwiki-livetable-display-header-text {
-background-color: @th-livetable-bg;
 border: none;
 border-top: @td-livetable-border !important;
 font-weight: bold;
@@ -1010,10 +1008,7 @@ table.xwiki-livetable th.xwiki-livetable-display-header-text * {
 font-weight: bold;
 }
 table.xwiki-livetable td.xwiki-livetable-display-header-filter {
-padding-bottom: @td-livetable-padd-btm !important;
-}
-body.skin-flamingo .xwiki-livetable-display-header tr th.xwiki-livetable-display-header-text{
-background-color: @th-livetable-bg;
+padding: @td-livetable-padd !important;
 }
 
 // Panels 
