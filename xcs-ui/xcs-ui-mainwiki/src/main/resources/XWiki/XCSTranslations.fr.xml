@@ -39,6 +39,6 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>xcs.footer.version=XWiki Collaboration Suite 2015 ({0}) - par {1}XWiki SAS{2}
+  <content>xcs.footer.version=XWiki Collaboration Suite 2016 ({0}) - par {1}XWiki SAS{2}
 xcs.footer.webcopyright=Ce wiki est distribué sous licence {0}Creative Commons 2.0{1}</content>
 </xwikidoc>
