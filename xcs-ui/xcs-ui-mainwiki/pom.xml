@@ -62,6 +62,13 @@
       <version>${wikiflavorapplication.version}</version>
       <type>xar</type>
     </dependency>
+    <!-- The tour application -->
+    <dependency>
+      <groupId>org.xwiki.contrib</groupId>
+      <artifactId>application-tour-ui</artifactId>
+      <version>${tourapplication.version}</version>
+      <type>xar</type>
+    </dependency>
     <!-- See below why we mark this dependency as provided -->
     <dependency>
       <groupId>org.xwiki.enterprise</groupId>
