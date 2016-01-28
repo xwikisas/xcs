@@ -348,6 +348,7 @@
   </profiles>
   <modules>
     <!-- Sorted Alphabetically -->
+    <module>xcs-test-pageobjects</module>
     <module>xcs-test-ui</module>
   </modules>
 </project>

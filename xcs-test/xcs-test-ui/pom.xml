@@ -39,6 +39,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-test-pageobjects</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.xwiki.platform</groupId>
       <artifactId>xwiki-platform-test-ui</artifactId>
       <version>${platform.version}</version>
@@ -48,6 +54,12 @@
       <groupId>org.xwiki.contrib</groupId>
       <artifactId>application-wikiflavor-test-pageobjects</artifactId>
       <version>${wikiflavorapplication.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.contrib</groupId>
+      <artifactId>application-tour-test-pageobjects</artifactId>
+      <version>${tourapplication.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
