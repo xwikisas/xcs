@@ -69,6 +69,13 @@
       <version>${tourapplication.version}</version>
       <type>xar</type>
     </dependency>
+    <!-- The menu application -->
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-menu-ui</artifactId>
+      <version>${platform.version}</version>
+      <type>xar</type>
+    </dependency>
     <!-- See below why we mark this dependency as provided -->
     <dependency>
       <groupId>org.xwiki.enterprise</groupId>

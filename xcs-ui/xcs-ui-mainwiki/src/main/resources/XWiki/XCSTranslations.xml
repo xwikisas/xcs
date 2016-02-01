@@ -61,6 +61,11 @@ xcs.tour.main.stepWelcomeMessage.content2=As Administrator, you can change this 
 xcs.tour.main.stepWikis.title=Wikis
 xcs.tour.main.stepWikis.content1=This the list of available wikis. As Administrator you can create new wikis to match your needs.
 xcs.tour.main.stepWikis.content2=Click on a Wiki to learn more about its particularities.
+    
+xcs.menu.globalmenu.blog=News
+xcs.menu.globalmenu.people=People
+xcs.menu.globalmenu.people.invite=Invite new users
+xcs.menu.globalmenu.wikis=Wikis
 </content>
   <object>
     <name>XWiki.XCSTranslations</name>

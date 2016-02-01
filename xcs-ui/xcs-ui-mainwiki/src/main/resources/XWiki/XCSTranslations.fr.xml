@@ -61,5 +61,10 @@ xcs.tour.main.stepWelcomeMessage.content2=En tant qu'administrateur, vous pouvez
 xcs.tour.main.stepWikis.title=Wikis
 xcs.tour.main.stepWikis.content1=Voici la liste des wikis disponibles. En tant qu'administrateur, vous pouvez en créer de nouveaux pour répondre à vos besoins.
 xcs.tour.main.stepWikis.content2=Si vous en voyez, cliquez sur un wiki pour en apprendre d'avantage sur ses particularités.
+
+xcs.menu.globalmenu.blog=Actualités
+xcs.menu.globalmenu.people=Utilisateurs
+xcs.menu.globalmenu.people.invite=Inviter de nouveaux utilisateurs
+xcs.menu.globalmenu.wikis=Wikis
 </content>
 </xwikidoc>
