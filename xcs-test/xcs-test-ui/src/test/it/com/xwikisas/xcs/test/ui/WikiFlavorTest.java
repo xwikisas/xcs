@@ -26,6 +26,7 @@ import org.contrib.wikiflavor.tests.po.Flavor;
 import org.contrib.wikiflavor.tests.po.Template;
 import org.junit.Rule;
 import org.junit.Test;
+import org.xwiki.contrib.tour.test.po.PageWithTour;
 import org.xwiki.test.ui.AbstractTest;
 import org.xwiki.test.ui.AdminAuthenticationRule;
 import org.xwiki.test.ui.po.editor.WikiEditPage;
@@ -34,6 +35,8 @@ import org.xwiki.wiki.test.po.WikiCreationPage;
 import org.xwiki.wiki.test.po.WikiHomePage;
 import org.xwiki.wiki.test.po.WikiIndexPage;
 import org.xwiki.wiki.test.po.WikiLink;
+
+import com.xwikisas.xcs.test.po.tour.XCSPageWithTour;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
