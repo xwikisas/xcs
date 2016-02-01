@@ -49,6 +49,10 @@ public class TourTest extends AbstractTest
     public void testMainTour() throws Exception
     {
         PageWithTour homePage = XCSPageWithTour.gotoPage("Main", "WebHome");
+        assertTrue(homePage.isTourDisplayed() || homePage.hasResumeButton());
+        if (!homePage.isTourDisplayed()) {
+            homePage.resume();
+        }
         assertTrue(homePage.isTourDisplayed());
         
         // Step 1

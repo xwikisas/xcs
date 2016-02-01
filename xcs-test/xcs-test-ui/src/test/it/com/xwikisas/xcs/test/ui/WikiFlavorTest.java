@@ -129,6 +129,10 @@ public class WikiFlavorTest extends AbstractTest
 
         // Finalization
         WikiHomePage wikiHomePage = wikiCreationPage.finalizeCreation();
+        PageWithTour tourWikiHomePage = new XCSPageWithTour();
+        if (tourWikiHomePage.isTourDisplayed()) {
+            tourWikiHomePage.close();
+        }
 
         // Go to the created subwiki
 
@@ -165,6 +169,10 @@ public class WikiFlavorTest extends AbstractTest
         wikiCreationPage.waitForFinalizeButton(60 * 2);
         assertFalse(wikiCreationPage.hasLogError());
         wikiHomePage = wikiCreationPage.finalizeCreation();
+        PageWithTour tourWikiHomePage = new XCSPageWithTour();
+        if (tourWikiHomePage.isTourDisplayed()) {
+            tourWikiHomePage.close();
+        }
 
         // Go to the subwiki and check that it has correctly be created with the template
         assertEquals("My Template", wikiHomePage.getDocumentTitle());
@@ -201,6 +209,10 @@ public class WikiFlavorTest extends AbstractTest
 
         // Finalization
         wikiCreationPage.finalizeCreation();
+        PageWithTour tourWikiHomePage = new XCSPageWithTour();
+        if (tourWikiHomePage.isTourDisplayed()) {
+            tourWikiHomePage.close();
+        }
 
         // Go to the list of wikis
         wikiIndexPage = WikiIndexPage.gotoPage();
@@ -237,6 +249,10 @@ public class WikiFlavorTest extends AbstractTest
 
         // Finalization
         wikiCreationPage.finalizeCreation();
+        PageWithTour tourWikiHomePage = new XCSPageWithTour();
+        if (tourWikiHomePage.isTourDisplayed()) {
+            tourWikiHomePage.close();
+        }
 
         // Go to the list of wikis
         wikiIndexPage = WikiIndexPage.gotoPage();
