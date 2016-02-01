@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.2" reference="XWiki.XCSTranslations" locale="fr">
+  <web>XWiki</web>
+  <name>XCSTranslations</name>
+  <language>fr</language>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>1</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1454324972000</creationDate>
+  <parent>XWiki.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1454325071000</date>
+  <contentUpdateDate>1454325052000</contentUpdateDate>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>xcs.workspace.tour.main.stepAppBar.title=Barre d'applications
+xcs.workspace.tour.main.stepAppBar.content1=La barre d'applications est l'endroit où sont listées les applications trouvées dans ce wiki.
+xcs.workspace.tour.main.stepAppBar.content2=En tant qu'administrateur, vous pouvez la remanier en ajoutant d'autres applications ou bien en en créant de nouvelles.
+
+xcs.workspace.tour.main.stepDashboard.title=Tableau de bord
+xcs.workspace.tour.main.stepDashboard.content1=Le tableau de bord recense les récents événements concernant les applications et les pages de ce wiki.
+xcs.workspace.tour.main.stepDashboard.content2=En tant qu'administrateur, vous pouvez modifier ce tableau et choisir les informations à afficher.
+
+xcs.workspace.tour.main.stepJoinWiki.title=Rejoindre le wiki
+xcs.workspace.tour.main.stepJoinWiki.content1=Pour avoir le droit de créer de nouvelles pages ou entrées sur ce wiki, vous devez en être membre.
+
+xcs.workspace.tour.main.stepBreadcrumb.title=Fil d'Ariane
+xcs.workspace.tour.main.stepBreadcrumb.content1=Le fil d'Ariane vous permet de vous situer dans le wiki et de naviguer au sein de la hiérarchie des pages.
+xcs.workspace.tour.main.stepBreadcrumb.content2=L'icône « accueil » vous emmène vers l'accueil principal, où vous pouvez accéder à tous vos wikis.</content>
+</xwikidoc>

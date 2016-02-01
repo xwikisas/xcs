@@ -19,11 +19,16 @@
  */
 package com.xwikisas.xcs.test.ui;
 
+import org.contrib.wikiflavor.tests.po.CreateFlavoredWikiPage;
 import org.junit.Rule;
 import org.junit.Test;
 import org.xwiki.contrib.tour.test.po.PageWithTour;
 import org.xwiki.test.ui.AbstractTest;
 import org.xwiki.test.ui.AdminAuthenticationRule;
+import org.xwiki.wiki.test.po.CreateWikiPageStepUser;
+import org.xwiki.wiki.test.po.WikiCreationPage;
+import org.xwiki.wiki.test.po.WikiHomePage;
+import org.xwiki.wiki.test.po.WikiIndexPage;
 
 import com.xwikisas.xcs.test.po.tour.XCSPageWithTour;
 
@@ -93,5 +98,64 @@ public class TourTest extends AbstractTest
         homePage.close();
         assertFalse(homePage.isTourDisplayed());
         assertTrue(homePage.hasResumeButton());
+    }
+    
+    @Test
+    public void testWorkspaceTour() throws Exception
+    {
+        WikiIndexPage wikiIndexPage = WikiIndexPage.gotoPage();
+        wikiIndexPage.createWiki();
+
+        CreateFlavoredWikiPage createFlavoredWikiPage = new CreateFlavoredWikiPage();
+        createFlavoredWikiPage.setFlavor("Workspace");
+        createFlavoredWikiPage.setPrettyName("Workspace");
+        createFlavoredWikiPage.setDescription("My workspace.");
+
+        // Step 2
+        CreateWikiPageStepUser createWikiPageStepUser = createFlavoredWikiPage.goUserStep();
+        WikiCreationPage wikiCreationPage = createWikiPageStepUser.create();
+
+        // Provisioning
+        assertEquals("Wiki creation", wikiCreationPage.getStepTitle());
+
+        // The installation is quite long
+        wikiCreationPage.waitForFinalizeButton(60*3); // 3 minutes
+        assertFalse(wikiCreationPage.hasLogError());
+
+        // Finalization
+        wikiCreationPage.finalizeCreation();
+
+        // Go to the created subwiki
+        PageWithTour workspaceHomePage = new XCSPageWithTour();
+        
+        // Tour step 1
+        assertTrue(workspaceHomePage.isTourDisplayed());
+        assertEquals("Applications Bar", workspaceHomePage.getStepTitle());
+        assertTrue(workspaceHomePage.getStepDescription().startsWith(
+                "The Applications Bar is the place to launch existing applications found on this wiki."));
+
+        // Tour step 2
+        workspaceHomePage.nextStep();
+        assertEquals("Dashboard", workspaceHomePage.getStepTitle());
+        assertTrue(workspaceHomePage.getStepDescription().startsWith(
+                "The Dashboard is collecting recent applications and page events from the wiki."));
+        
+        // Tour step 3
+        workspaceHomePage.nextStep();
+        assertEquals("Join Wiki", workspaceHomePage.getStepTitle());
+        assertTrue(workspaceHomePage.getStepDescription().startsWith(
+                "In order to have rights to create new pages and applications entries on this wiki,"));
+
+        // Tour step 4
+        workspaceHomePage.nextStep();
+        assertEquals("Breadcrumb", workspaceHomePage.getStepTitle());
+        assertTrue(workspaceHomePage.getStepDescription().startsWith(
+                "The breadcrumb allows you to identify where you are and navigate the hierarchy."));
+        
+        // End tour
+        workspaceHomePage.end();
+        
+        // Delete the wiki
+        WikiHomePage.gotoPage("workspace").deleteWiki().confirm("workspace");
     }
 }
