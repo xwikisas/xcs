@@ -347,6 +347,12 @@
         <artifactId>xwiki-platform-security-script</artifactId>
         <version>${platform.version}</version>
       </dependency>
+      <!-- Fix the bootstrap version that is overwritten by the Tour Application -->
+      <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>bootstrap</artifactId>
+        <version>3.3.5</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>
