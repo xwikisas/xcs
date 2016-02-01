@@ -172,7 +172,7 @@ public class WikiFlavorTest extends AbstractTest
         wikiCreationPage.waitForFinalizeButton(60 * 2);
         assertFalse(wikiCreationPage.hasLogError());
         wikiHomePage = wikiCreationPage.finalizeCreation();
-        PageWithTour tourWikiHomePage = new XCSPageWithTour();
+        tourWikiHomePage = new XCSPageWithTour();
         if (tourWikiHomePage.isTourDisplayed()) {
             tourWikiHomePage.close();
         }
