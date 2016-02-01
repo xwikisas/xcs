@@ -158,4 +158,75 @@ public class TourTest extends AbstractTest
         // Delete the wiki
         WikiHomePage.gotoPage("workspace").deleteWiki().confirm("workspace");
     }
+
+    @Test
+    public void testKnowledgeBaseTour() throws Exception
+    {
+        WikiIndexPage wikiIndexPage = WikiIndexPage.gotoPage();
+        wikiIndexPage.createWiki();
+
+        CreateFlavoredWikiPage createFlavoredWikiPage = new CreateFlavoredWikiPage();
+        createFlavoredWikiPage.setFlavor("Knowledge Base");
+        createFlavoredWikiPage.setPrettyName("KB");
+        createFlavoredWikiPage.setDescription("My KB.");
+
+        // Step 2
+        CreateWikiPageStepUser createWikiPageStepUser = createFlavoredWikiPage.goUserStep();
+        WikiCreationPage wikiCreationPage = createWikiPageStepUser.create();
+
+        // Provisioning
+        assertEquals("Wiki creation", wikiCreationPage.getStepTitle());
+
+        // The installation is quite long
+        wikiCreationPage.waitForFinalizeButton(60*3); // 3 minutes
+        assertFalse(wikiCreationPage.hasLogError());
+
+        // Finalization
+        wikiCreationPage.finalizeCreation();
+
+        // Go to the created subwiki
+        PageWithTour kbHomePage = new XCSPageWithTour();
+
+        // Tour step 1
+        assertTrue(kbHomePage.isTourDisplayed());
+        assertEquals("Knowledge Base Flavor", kbHomePage.getStepTitle());
+        assertTrue(kbHomePage.getStepDescription().startsWith(
+                "This Flavors allows you to share knowledge across your team members by providing means for"));
+
+        // Tour step 2
+        kbHomePage.nextStep();
+        assertEquals("Navigation", kbHomePage.getStepTitle());
+        assertTrue(kbHomePage.getStepDescription().startsWith(
+                "The Navigation Tree displays the wiki's hierarchy, containing pages and their children."));
+
+        // Tour step 3
+        kbHomePage.nextStep();
+        assertEquals("Tag Cloud", kbHomePage.getStepTitle());
+        assertTrue(kbHomePage.getStepDescription().startsWith(
+                "The Tag Cloud provides easy access to related pages, previously tagged."));
+
+        // Tour step 4
+        kbHomePage.nextStep();
+        assertEquals("Dashboard", kbHomePage.getStepTitle());
+        assertTrue(kbHomePage.getStepDescription().startsWith(
+                "The Dashboard is collecting recent applications and page events from the wiki."));
+
+        // Tour step 5
+        kbHomePage.nextStep();
+        assertEquals("Join Wiki", kbHomePage.getStepTitle());
+        assertTrue(kbHomePage.getStepDescription().startsWith(
+                "In order to have rights to create new pages and applications entries on this wiki, you need to"));
+
+        // Tour step 6
+        kbHomePage.nextStep();
+        assertEquals("Breadcrumb", kbHomePage.getStepTitle());
+        assertTrue(kbHomePage.getStepDescription().startsWith(
+                "The breadcrumb allows you to identify where you are and navigate the hierarchy."));
+
+        // End tour
+        kbHomePage.end();
+
+        // Delete the wiki
+        WikiHomePage.gotoPage("kb").deleteWiki().confirm("kb");
+    }
 }

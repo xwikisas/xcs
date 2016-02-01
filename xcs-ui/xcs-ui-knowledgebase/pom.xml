@@ -58,6 +58,13 @@
       <type>xar</type>
       <scope>runtime</scope>
     </dependency>
+    <!-- The tour application -->
+    <dependency>
+      <groupId>org.xwiki.contrib</groupId>
+      <artifactId>application-tour-ui</artifactId>
+      <version>${tourapplication.version}</version>
+      <type>xar</type>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

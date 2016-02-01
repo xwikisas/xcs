@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.2" reference="XWiki.XCSTranslations" locale="">
+  <web>XWiki</web>
+  <name>XCSTranslations</name>
+  <language/>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1454327928000</creationDate>
+  <parent>XWiki.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1454328786000</date>
+  <contentUpdateDate>1454328786000</contentUpdateDate>
+  <version>1.1</version>
+  <title>XCSTranslations</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>xcs.knowledgeBase.tour.main.stepWelcome.title=Knowledge Base Flavor
+xcs.knowledgeBase.tour.main.stepWelcome.content1=This Flavors allows you to share knowledge across your team members by providing means for information to be collected, organized, searched and distributed.
+
+xcs.knowledgeBase.tour.main.stepNavigation.title=Navigation
+xcs.knowledgeBase.tour.main.stepNavigation.content1=The Navigation Tree displays the wiki's hierarchy, containing pages and their children.
+
+xcs.knowledgeBase.tour.main.stepTagCloud.title=Tag Cloud
+xcs.knowledgeBase.tour.main.stepTagCloud.content1=The Tag Cloud provides easy access to related pages, previously tagged.
+
+xcs.knowledgeBase.tour.main.stepDashboard.title=Dashboard
+xcs.knowledgeBase.tour.main.stepDashboard.content1=The Dashboard is collecting recent applications and page events from the wiki.
+xcs.knowledgeBase.tour.main.stepDashboard.content2=As Administrator, you can customize it and select what to display.
+
+xcs.knowledgeBase.tour.main.stepJoinWiki.title=Join Wiki
+xcs.knowledgeBase.tour.main.stepJoinWiki.content1=In order to have rights to create new pages and applications entries on this wiki, you need to be a member.
+
+xcs.knowledgeBase.tour.main.stepBreadcrumb.title=Breadcrumb
+xcs.knowledgeBase.tour.main.stepBreadcrumb.content1=The breadcrumb allows you to identify where you are and navigate the hierarchy.
+xcs.knowledgeBase.tour.main.stepBreadcrumb.content2=The Home icon will take you to the main Home, where you can access all your wikis.</content>
+  <object>
+    <name>XWiki.XCSTranslations</name>
+    <number>0</number>
+    <className>XWiki.TranslationDocumentClass</className>
+    <guid>8f282b57-6f81-4bbd-a811-681817b3fd00</guid>
+    <class>
+      <name>XWiki.TranslationDocumentClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <scope>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>scope</name>
+        <number>1</number>
+        <prettyName>Scope</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>GLOBAL|WIKI|USER|ON_DEMAND</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </scope>
+    </class>
+    <property>
+      <scope>WIKI</scope>
+    </property>
+  </object>
+</xwikidoc>
