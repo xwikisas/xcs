@@ -108,12 +108,12 @@
               <xpath>xwikidoc/object[property/users[text()="XWiki.XWikiGuest"]]/property/levels</xpath>
               <value>none</value>
             </transformation>
-            <!-- Specify different rights for XWiki.XWikiAllGroup -->
+            <!-- Specify different rights for XWiki.XWikiAllGroup (remove the 'register' right) -->
             <transformation>
               <artifact>org.xwiki.enterprise:xwiki-enterprise-ui-mainwikipreferences</artifact>
               <file>XWiki/XWikiPreferences.xml</file>
               <xpath>xwikidoc/object[property/groups[contains(text(),"XWiki.XWikiAllGroup")]]/property/levels</xpath>
-              <value>view,edit,comment,undelete</value>
+              <value>view,edit,comment,undelete,script</value>
             </transformation>
           </transformations>
         </configuration>
