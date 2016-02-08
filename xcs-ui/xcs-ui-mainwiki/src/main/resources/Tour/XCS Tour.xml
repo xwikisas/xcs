@@ -589,7 +589,10 @@
     <property>
       <content>{{velocity}}{{translation key="xcs.tour.main.stepWelcomeMessage.content1" /}}
 
-{{translation key="xcs.tour.main.stepWelcomeMessage.content2" /}}
+
+#if ($hasGlobalAdmin)
+  {{translation key="xcs.tour.main.stepWelcomeMessage.content2" /}}
+#end
 {{/velocity}}</content>
     </property>
     <property>
