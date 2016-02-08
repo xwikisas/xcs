@@ -39,7 +39,10 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>xcs.workspace.tour.main.stepAppBar.title=Applications Bar
+  <content>xcs.workspace.tour.main.stepWelcome.title=Workspace Flavor
+xcs.workspace.tour.main.stepWelcome.content=This Flavor facilitates collaboration for your team by providing an environment where you share your files, ideas, organize meetings and discuss important topics.
+
+xcs.workspace.tour.main.stepAppBar.title=Applications Bar
 xcs.workspace.tour.main.stepAppBar.content1=The Applications Bar is the place to launch existing applications found on this wiki.
 xcs.workspace.tour.main.stepAppBar.content2=As Administrator, you can manage it, adding more or creating new applications.
 

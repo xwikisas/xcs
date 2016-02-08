@@ -39,7 +39,10 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>true</hidden>
-  <content>xcs.workspace.tour.main.stepAppBar.title=Barre d'applications
+  <content>xcs.workspace.tour.main.stepWelcome.title=Flavor « Espace de Travail »
+xcs.workspace.tour.main.stepWelcome.content=Cette « flavor » facilite la collaboration au sein de votre équipe en lui fournissant un environnement où vous pouvez partager vos fichiers et vos idées, organiser des rendez-vous et discuter à propos de sujets importants.
+
+xcs.workspace.tour.main.stepAppBar.title=Barre d'applications
 xcs.workspace.tour.main.stepAppBar.content1=La barre d'applications est l'endroit où sont listées les applications trouvées dans ce wiki.
 xcs.workspace.tour.main.stepAppBar.content2=En tant qu'administrateur, vous pouvez la remanier en ajoutant d'autres applications ou bien en en créant de nouvelles.
 
