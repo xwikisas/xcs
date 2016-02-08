@@ -59,8 +59,8 @@ xcs.tour.main.stepWelcomeMessage.content1=The Welcome message is used to display
 xcs.tour.main.stepWelcomeMessage.content2=As Administrator, you can change this message and any other Dashboard gadgets displayed.
 
 xcs.tour.main.stepWikis.title=Wikis
-xcs.tour.main.stepWikis.content1=This the list of available wikis. As Administrator you can create new wikis to match your needs.
-xcs.tour.main.stepWikis.content2=Click on a Wiki to learn more about its particularities.
+xcs.tour.main.stepWikis.content1=This is the list of available wikis. As Administrator you can create new wikis to match your needs.
+xcs.tour.main.stepWikis.content2=Click on a wiki to learn more about its particularities.
     
 xcs.menu.globalmenu.blog=News
 xcs.menu.globalmenu.people=People
