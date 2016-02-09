@@ -56,9 +56,9 @@ public class WikiFlavorTest extends AbstractTest
     @Before
     public void setUp()
     {
-        System.out.println("Browser dimmensions:" + getDriver().manage().window().getSize());
+        // Set the correct size for the browser.
+        // For unknown reason, getDriver().manage().window().maximize() do not work on some environment.
         getDriver().manage().window().setSize(new Dimension(1280, 1024));
-        System.out.println("Browser dimmensions (after manual maximize()):" + getDriver().manage().window().getSize());
     }
 
     @Test
