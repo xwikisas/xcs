@@ -24,6 +24,7 @@ import java.util.List;
 import org.contrib.wikiflavor.tests.po.CreateFlavoredWikiPage;
 import org.contrib.wikiflavor.tests.po.Flavor;
 import org.contrib.wikiflavor.tests.po.Template;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.xwiki.contrib.tour.test.po.PageWithTour;
@@ -50,6 +51,14 @@ public class WikiFlavorTest extends AbstractTest
 {
     @Rule
     public AdminAuthenticationRule adminAuthenticationRule = new AdminAuthenticationRule(getUtil());
+
+    @Before
+    public void setUp()
+    {
+        System.out.println("Browser dimmensions:" + getDriver().manage().window().getSize());
+        getDriver().manage().window().maximize();
+        System.out.println("Browser dimmensions (after manual maximize()):" + getDriver().manage().window().getSize());
+    }
 
     @Test
     public void verifyInstalledFlavors() throws Exception
