@@ -142,8 +142,14 @@ public class TourTest extends AbstractTest
         // Go to the created subwiki
         PageWithTour workspaceHomePage = new XCSPageWithTour();
         
-        // Tour step 1
+        // Tour step 0
         assertTrue(workspaceHomePage.isTourDisplayed());
+        assertEquals("Workspace Flavor", workspaceHomePage.getStepTitle());
+        assertTrue(workspaceHomePage.getStepDescription().startsWith(
+                "This Flavor facilitates collaboration for your team by providing an environment"));
+
+        // Tour step 1
+        workspaceHomePage.nextStep();
         assertEquals("Applications Bar", workspaceHomePage.getStepTitle());
         assertTrue(workspaceHomePage.getStepDescription().startsWith(
                 "The Applications Bar is the place to launch existing applications found on this wiki."));
