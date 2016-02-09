@@ -75,8 +75,8 @@ public class TourTest extends AbstractTest
         // Step 2
         homePage.nextStep();
         assertEquals("Wiki Header", homePage.getStepTitle());
-        assertTrue(homePage.getStepDescription()
-                .startsWith("This allow access to your User Profile, Watchlist activators and Search."));
+        assertTrue(homePage.getStepDescription().startsWith(
+                "This allow access to the Search feature, the Watchlist activators and your User Profile."));
         assertTrue(homePage.hasNextStep());
         assertTrue(homePage.hasPreviousStep());
         assertFalse(homePage.hasEndButton());
@@ -93,8 +93,8 @@ public class TourTest extends AbstractTest
         // Step 4
         homePage.nextStep();
         assertEquals("Welcome message", homePage.getStepTitle());
-        assertTrue(homePage.getStepDescription()
-                .startsWith("The Welcome message is used to display important messages."));
+        assertTrue(homePage.getStepDescription().startsWith(
+                "The Welcome gadget is used to display important messages."));
         assertTrue(homePage.hasNextStep());
         assertTrue(homePage.hasPreviousStep());
         assertFalse(homePage.hasEndButton());
@@ -103,7 +103,7 @@ public class TourTest extends AbstractTest
         homePage.nextStep();
         assertEquals("Wikis", homePage.getStepTitle());
         assertTrue(homePage.getStepDescription()
-                .startsWith("This the list of available wikis. As Administrator you can create new wikis to"));
+                .startsWith("This is the list of available wikis. As Administrator you can create new wikis to"));
         assertFalse(homePage.hasNextStep());
         assertTrue(homePage.hasPreviousStep());
         assertTrue(homePage.hasEndButton());
