@@ -20,8 +20,10 @@
 package com.xwikisas.xcs.test.ui;
 
 import org.contrib.wikiflavor.tests.po.CreateFlavoredWikiPage;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.openqa.selenium.Dimension;
 import org.xwiki.contrib.tour.test.po.PageWithTour;
 import org.xwiki.test.ui.AbstractTest;
 import org.xwiki.test.ui.AdminAuthenticationRule;
@@ -44,6 +46,14 @@ public class TourTest extends AbstractTest
 {
     @Rule
     public AdminAuthenticationRule adminAuthenticationRule = new AdminAuthenticationRule(getUtil());
+
+    @Before
+    public void setUp()
+    {
+        System.out.println("Browser dimmensions:" + getDriver().manage().window().getSize());
+        getDriver().manage().window().setSize(new Dimension(1280, 1024));
+        System.out.println("Browser dimmensions (after manual maximize()):" + getDriver().manage().window().getSize());
+    }
     
     @Test
     public void testMainTour() throws Exception
