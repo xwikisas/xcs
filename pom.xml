@@ -68,7 +68,7 @@
     </snapshotRepository>
   </distributionManagement>
   <properties>
-    <wikiflavorapplication.version>2.1</wikiflavorapplication.version>
+    <wikiflavorapplication.version>2.2</wikiflavorapplication.version>
     <tourapplication.version>0.2.3</tourapplication.version>
   </properties>
   <modules>
