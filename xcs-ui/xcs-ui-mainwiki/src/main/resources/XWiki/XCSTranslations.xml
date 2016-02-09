@@ -47,15 +47,15 @@ xcs.tour.main.stepWelcome.content1=In the next couple of minutes we will navigat
 xcs.tour.main.stepWelcome.content2=This is the main Home for your wikis.
 
 xcs.tour.main.stepHeader.title=Wiki Header
-xcs.tour.main.stepHeader.content1=This allow access to your User Profile, Watchlist activators and Search.
-xcs.tour.main.stepHeader.content2=The drawer contains wiki related actions, like Administration.
+xcs.tour.main.stepHeader.content1=This allow access to the Search feature, the Watchlist activators and your User Profile.
+xcs.tour.main.stepHeader.content2=The last element opens the drawer, which contains wiki related actions, like Administration.
 
 xcs.tour.main.stepPageMenu.title=Page Menu
-xcs.tour.main.stepPageMenu.content1=This menu contains page related actions, allowing users with appropriate rights to create, edit, delete pages.
-xcs.tour.main.stepPageMenu.content2=More actions are available like Export, Print, Share, etc...
+xcs.tour.main.stepPageMenu.content1=This menu contains page related actions, allowing users with appropriate rights to edit, create, administer or delete pages.
+xcs.tour.main.stepPageMenu.content2=More actions are available like Export, Print, Share, etc.
 
 xcs.tour.main.stepWelcomeMessage.title=Welcome message
-xcs.tour.main.stepWelcomeMessage.content1=The Welcome message is used to display important messages.
+xcs.tour.main.stepWelcomeMessage.content1=The Welcome gadget is used to display important messages.
 xcs.tour.main.stepWelcomeMessage.content2=As Administrator, you can change this message and any other Dashboard gadgets displayed.
 
 xcs.tour.main.stepWikis.title=Wikis

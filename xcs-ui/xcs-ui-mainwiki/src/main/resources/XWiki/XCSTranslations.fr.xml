@@ -47,12 +47,12 @@ xcs.tour.main.stepWelcome.content1=Pendant quelques minutes, nous vous proposons
 xcs.tour.main.stepWelcome.content2=Ceci est la page d'Accueil principale pour vos wikis.
 
 xcs.tour.main.stepHeader.title=Menu du haut
-xcs.tour.main.stepHeader.content1=Ce menu vous permet d'accéder à votre profil utilisateur, à la gestion de vos favoris et vous propose un bouton pour faire des recherches.
-xcs.tour.main.stepHeader.content2=Le menu « tiroir » contient les actions relatives à tout le wiki, comme son administration par exemple.
+xcs.tour.main.stepHeader.content1=Ce menu vous permet d'accéder à la fonction recherche, à la gestion de vos favoris et à votre profil utilisateur.
+xcs.tour.main.stepHeader.content2=Le dernier élément vous permet d'ouvrir le menu « tiroir » contenant les actions relatives à tout le wiki, comme son administration par exemple.
 
 xcs.tour.main.stepPageMenu.title=Menu de la page
-xcs.tour.main.stepPageMenu.content1=Ce menu contient des actions relatives à la page actuelle. Il permet aux utilisateurs ayant les droits appropriés de créer, modifier ou effacer des pages.
-xcs.tour.main.stepPageMenu.content2=D'autres actions encore sont proposées, comme l'export de documents, l'impression, le partage de liens, etc...
+xcs.tour.main.stepPageMenu.content1=Ce menu contient des actions relatives à la page actuelle. Il permet aux utilisateurs ayant les droits appropriés de modifier, créer, administer ou encore d'effacer des pages.
+xcs.tour.main.stepPageMenu.content2=D'autres actions sont aussi proposées, comme l'export de documents, l'impression, le partage de liens, etc.
 
 xcs.tour.main.stepWelcomeMessage.title=Message d'accueil
 xcs.tour.main.stepWelcomeMessage.content1=Ce bloc est utilisé pour afficher des messages importants.
@@ -60,7 +60,7 @@ xcs.tour.main.stepWelcomeMessage.content2=En tant qu'administrateur, vous pouvez
 
 xcs.tour.main.stepWikis.title=Wikis
 xcs.tour.main.stepWikis.content1=Voici la liste des wikis disponibles. En tant qu'administrateur, vous pouvez en créer de nouveaux pour répondre à vos besoins.
-xcs.tour.main.stepWikis.content2=Si vous en voyez, cliquez sur un wiki pour en apprendre d'avantage sur ses particularités.
+xcs.tour.main.stepWikis.content2=Cliquez sur un wiki pour en apprendre d'avantage sur ses particularités.
 
 xcs.menu.globalmenu.blog=Actualités
 xcs.menu.globalmenu.people=Utilisateurs
