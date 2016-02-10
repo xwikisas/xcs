@@ -27,7 +27,7 @@
   <parent>
     <artifactId>xcs-data</artifactId>
     <groupId>com.xwikisas</groupId>
-    <version>2016-1-SNAPSHOT</version>
+    <version>2016-1-milestone-1</version>
   </parent>
   <artifactId>xcs-data-xardependencies</artifactId>
   <name>XWiki Collaboration Suite - Data - XAR Dependencies</name>
