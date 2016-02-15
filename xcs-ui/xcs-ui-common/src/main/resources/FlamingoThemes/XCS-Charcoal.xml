@@ -1019,10 +1019,6 @@ font-size: 0.9em;
 .applicationsPanel&gt;li&gt;a{
 color:@bg-color;
 }
-.applicationsPanel&gt;li&gt;a:hover,.applicationsPanel&gt;li&gt;a:focus{
-background-color:@bg-color;
-color:@link-panel-hover;
-}
 div.panel-width-Small .application-img {
 font-size: 32px;
 margin-bottom: 3px;
@@ -1042,8 +1038,6 @@ overflow: hidden;
 border-radius: @gadget-radius;
 -moz-border-radius: @gadget-radius;
 -webkit-border-radius: @gadget-radius;
-min-height: 60px;
-max-width: 80px;
 line-height: 1em;
 margin: 0 auto;
 display: block;
