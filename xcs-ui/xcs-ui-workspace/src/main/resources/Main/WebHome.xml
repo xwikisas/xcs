@@ -69,7 +69,7 @@
       </defaultEditMode>
     </class>
     <property>
-      <defaultEditMode>inline</defaultEditMode>
+      <defaultEditMode>edit</defaultEditMode>
     </property>
   </object>
 </xwikidoc>
