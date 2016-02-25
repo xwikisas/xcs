@@ -315,7 +315,7 @@
       <order>2</order>
     </property>
     <property>
-      <placement>bottom</placement>
+      <placement>left</placement>
     </property>
     <property>
       <targetPage/>
@@ -457,7 +457,7 @@
       <order>3</order>
     </property>
     <property>
-      <placement>bottom</placement>
+      <placement>left</placement>
     </property>
     <property>
       <targetPage/>
