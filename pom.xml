@@ -59,7 +59,7 @@
     <repository>
       <id>xwikisas-releases</id>
       <name>XWiki SAS Maven Remote Repository for Releases</name>
-      <url>http://nexus.xwikisas.com/nexus/content/repositories/releases/</url>
+      <url>http://nexus.xwikisas.com/nexus/content/groups/xcs/</url>
     </repository>
     <snapshotRepository>
       <id>xwikisas-snapshots</id>

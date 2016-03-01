@@ -138,7 +138,7 @@
               <value>#-# When not set the following is taken:
 # extension.repositories=maven-xwiki:maven:http://nexus.xwiki.org/nexus/content/groups/public
 # extension.repositories=extensions.xwiki.org:xwiki:http://extensions.xwiki.org/xwiki/rest/
-# extension.repositories=maven-xwikisas:maven:http://nexus.xwikisas.com/nexus/content/repositories/releases</value>
+# extension.repositories=maven-xwikisas:maven:http://nexus.xwikisas.com/nexus/content/groups/xcs/</value>
             </replacement>
           </replacements>
         </configuration>

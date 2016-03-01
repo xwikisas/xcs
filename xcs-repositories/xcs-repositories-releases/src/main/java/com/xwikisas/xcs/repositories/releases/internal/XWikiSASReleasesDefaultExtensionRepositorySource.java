@@ -61,7 +61,7 @@ public class XWikiSASReleasesDefaultExtensionRepositorySource extends AbstractEx
         if (configuredRepositories == null) {
 
             newRepositories.add(new DefaultExtensionRepositoryDescriptor("maven-xwikisas", "maven",
-                URI.create("http://nexus.xwikisas.com/nexus/content/repositories/releases/")));
+                URI.create("http://nexus.xwikisas.com/nexus/content/groups/xcs/")));
         }
 
         return newRepositories;
