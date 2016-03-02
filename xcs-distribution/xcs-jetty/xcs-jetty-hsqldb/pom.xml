@@ -27,7 +27,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs-jetty</artifactId>
-    <version>2016-1-SNAPSHOT</version>
+    <version>2016-1-rc-1</version>
   </parent>
   <artifactId>xcs-jetty-hsqldb</artifactId>
   <name>XWiki Collaboration Suite - Distribution - Jetty - HSQLDB</name>
