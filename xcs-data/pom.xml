@@ -192,6 +192,6 @@
   </profiles>
   <modules>
     <module>xcs-data-hsqldb</module>
-    <module>xcs-data-xardependencies</module>
+    <module>xcs-data-extensions</module>
   </modules>
 </project>

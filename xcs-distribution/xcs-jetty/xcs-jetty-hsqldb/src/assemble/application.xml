@@ -105,7 +105,7 @@
     <!-- Unpack the dependencies files to package them in the distribution -->
     <dependencySet>
       <includes>
-        <include>com.xwikisas:xcs-data-xardependencies</include>
+        <include>com.xwikisas:xcs-data-extensions</include>
       </includes>
       <outputDirectory>/${xwikiDataDir}/</outputDirectory>
       <unpack>true</unpack>

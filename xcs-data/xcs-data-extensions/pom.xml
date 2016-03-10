@@ -29,11 +29,24 @@
     <groupId>com.xwikisas</groupId>
     <version>2016-1-SNAPSHOT</version>
   </parent>
-  <artifactId>xcs-data-xardependencies</artifactId>
-  <name>XWiki Collaboration Suite - Data - XAR Dependencies</name>
+  <artifactId>xcs-data-extensions</artifactId>
+  <name>XWiki Collaboration Suite - Data - Extensions</name>
   <packaging>pom</packaging>
-  <description>Copy all flavors XAR dependencies in the Extension Manager folder so that EM does not need to download them at runtime.</description>
+  <description>Copy all extensions used by the XCS flavors in the Extension Manager folder so that EM does not need to
+    download them at runtime, and install the portal flavor on the main wiki.</description>
   <dependencies>
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-web</artifactId>
+      <version>${project.version}</version>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>com.xwikisas</groupId>
+      <artifactId>xcs-ui-mainwiki</artifactId>
+      <version>${project.version}</version>
+      <type>xar</type>
+    </dependency>
     <dependency>
       <groupId>com.xwikisas</groupId>
       <artifactId>xcs-ui-knowledgebase</artifactId>
@@ -53,11 +66,23 @@
         <groupId>com.xwikisas</groupId>
         <artifactId>xcs-tools-dependenciespackager</artifactId>
         <version>${project.version}</version>
+        <configuration>
+          <!-- Exclude JARs that have legacy versions in the WAR -->
+          <excludes>
+            <exclude>org.xwiki.commons:xwiki-commons-component-api</exclude>
+            <exclude>org.xwiki.commons:xwiki-commons-component-default</exclude>
+            <exclude>org.xwiki.rendering:xwiki-rendering-api</exclude>
+            <exclude>org.xwiki.platform:xwiki-platform-office-importer</exclude>
+            <exclude>org.xwiki.platform:xwiki-platform-oldcore</exclude>
+          </excludes>
+          <excludeFromWAR>com.xwikisas:xcs-web</excludeFromWAR>
+          <extensionOnMainWiki>com.xwikisas:xcs-ui-mainwiki</extensionOnMainWiki>
+        </configuration>
         <executions>
           <execution>
             <phase>compile</phase>
             <goals>
-              <goal>package-xar-dependencies</goal>
+              <goal>package-extensions</goal>
             </goals>
           </execution>
         </executions>

@@ -52,6 +52,22 @@
       <version>3.0</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-dependency-tree</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-dependency-plugin</artifactId>
+      <version>2.10</version>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
     <!-- XWiki -->
     <dependency>
       <groupId>org.xwiki.commons</groupId>
@@ -71,6 +87,11 @@
     <dependency>
       <groupId>org.xwiki.commons</groupId>
       <artifactId>xwiki-commons-properties</artifactId>
+      <version>${commons.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.commons</groupId>
+      <artifactId>xwiki-commons-extension-handler-jar</artifactId>
       <version>${commons.version}</version>
     </dependency>
     <!-- Route JCL calls to SLF4J -->

@@ -30,6 +30,9 @@
     <fileSet>
       <directory>${project.build.directory}/data/</directory>
       <outputDirectory>/</outputDirectory>
+      <excludes>
+        <exclude>cache/**</exclude>
+      </excludes>
     </fileSet>
   </fileSets>
 </assembly>

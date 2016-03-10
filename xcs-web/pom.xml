@@ -66,36 +66,16 @@
       <artifactId>xcs-repositories-releases</artifactId>
       <version>${project.version}</version>
     </dependency>
-    <!-- Add dependencies on the XAR distributions for the mainwiki and for subwikis so that we transitively
-         include all JAR dependencies in the generated WAR -->
+    <!-- Needed here because it overrides a Script Service used by DW to determine what is the extension to install
+         during the upgrade -->
     <dependency>
-      <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-ui-mainwiki</artifactId>
-      <version>${project.version}</version>
-      <type>xar</type>
+      <groupId>org.xwiki.contrib</groupId>
+      <artifactId>application-wikiflavor-api</artifactId>
+      <version>${wikiflavorapplication.version}</version>
       <exclusions>
         <exclusion>
           <groupId>jdom</groupId>
           <artifactId>jdom</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-ui-knowledgebase</artifactId>
-      <version>${project.version}</version>
-      <type>xar</type>
-    </dependency>
-    <dependency>
-      <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-ui-workspace</artifactId>
-      <version>${project.version}</version>
-      <type>xar</type>
-      <!-- We exclude the platform JARS to not have them dupplicated in the WAR -->
-      <exclusions>
-        <exclusion>
-          <groupId>org.webjars</groupId>
-          <artifactId>bootstrap</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
