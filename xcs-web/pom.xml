@@ -155,6 +155,11 @@
         <persistence>
            <file-store purge="false">]]></value>
             </replacement>
+            <!-- Change a configuration to be more appropriate for XWiki SAS infrastructure -->
+            <replacement>
+              <token># lesscss.maximumSimultaneousCompilations = 4</token>
+              <value>lesscss.maximumSimultaneousCompilations = 2</value>
+            </replacement>
           </replacements>
         </configuration>
       </plugin>
