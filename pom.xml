@@ -59,6 +59,7 @@
     <repository>
       <id>xwikisas-releases</id>
       <name>XWiki SAS Maven Remote Repository for Releases</name>
+      <!-- This URL is reserved for the upload of new XCS artifacts and is the URL to use for this purpose -->
       <url>https://nexus.xwikisas.com/nexus/content/repositories/xcs-releases/</url>
     </repository>
     <snapshotRepository>
