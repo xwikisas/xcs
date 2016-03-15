@@ -112,6 +112,32 @@
           </execution>
         </executions>
       </plugin>
+      <!-- Unpack XE-WEB so we can modify its configuration (LESS cache purging) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack-dependencies</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <!-- Unpack the XE war-->
+                <artifactItem>
+                  <groupId>org.xwiki.enterprise</groupId>
+                  <artifactId>xwiki-enterprise-web</artifactId>
+                  <type>war</type>
+                  <outputDirectory>${project.build.directory}/xe-web</outputDirectory>
+                  <includes>**/infinispan/config.xml</includes>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>com.google.code.maven-replacer-plugin</groupId>
         <artifactId>replacer</artifactId>
@@ -126,7 +152,7 @@
         </executions>
         <configuration>
           <basedir>${basedir}/target/</basedir>
-          <filesToInclude>xe-web/skins/flamingo/macros.vm,xe-web/templates/macros.vm,maven-shared-archive-resources/xwiki.properties</filesToInclude>
+          <filesToInclude>maven-shared-archive-resources/xwiki.properties,xe-web/WEB-INF/cache/infinispan/config.xml</filesToInclude>
           <regex>false</regex>
           <commentsEnabled>false</commentsEnabled>
           <replacements>
@@ -139,6 +165,15 @@
 # extension.repositories=maven-xwiki:maven:http://nexus.xwiki.org/nexus/content/groups/public
 # extension.repositories=extensions.xwiki.org:xwiki:http://extensions.xwiki.org/xwiki/rest/
 # extension.repositories=maven-xwikisas:maven:http://nexus.xwikisas.com/nexus/content/groups/xcs/</value>
+            </replacement>
+            <!-- Purging of the LESS cache should be turned off -->
+            <replacement>
+              <token><![CDATA[<local-cache name="lesscss.skinfiles.cache">
+        <persistence>
+           <file-store purge="true">]]></token>
+              <value><![CDATA[<local-cache name="lesscss.skinfiles.cache">
+        <persistence>
+           <file-store purge="false">]]></value>
             </replacement>
           </replacements>
         </configuration>
@@ -167,6 +202,11 @@
               <directory>${basedir}/src/main/webInfResources</directory>
               <targetPath>WEB-INF</targetPath>
               <filtering>true</filtering>
+            </resource>
+            <!-- Include modified XE-WEB configuration (about the LESS cache purging) -->
+            <resource>
+              <directory>${basedir}/target/xe-web</directory>
+              <targetPath>/</targetPath>
             </resource>
           </webResources>
           <!-- - Exclude JCL and LOG4J since we want all logging to go through SLF4J. Note that we're excluding
