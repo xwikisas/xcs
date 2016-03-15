@@ -43,7 +43,7 @@
     </dependency>
     <dependency>
       <groupId>com.xwikisas</groupId>
-      <artifactId>xcs-data-xardependencies</artifactId>
+      <artifactId>xcs-data-extensions</artifactId>
       <version>${project.version}</version>
       <type>zip</type>
       <optional>true</optional>
