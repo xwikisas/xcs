@@ -340,6 +340,11 @@
       </dependency>
       <dependency>
         <groupId>org.xwiki.platform</groupId>
+        <artifactId>xwiki-platform-ratings-ui</artifactId>
+        <version>${platform.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.xwiki.platform</groupId>
         <artifactId>xwiki-platform-ratings-api</artifactId>
         <version>${platform.version}</version>
       </dependency>
