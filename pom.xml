@@ -27,7 +27,7 @@
   <parent>
     <groupId>org.xwiki.enterprise</groupId>
     <artifactId>xwiki-enterprise</artifactId>
-    <version>7.4.2</version>
+    <version>7.4.3</version>
   </parent>
   <groupId>com.xwikisas</groupId>
   <artifactId>xcs</artifactId>
