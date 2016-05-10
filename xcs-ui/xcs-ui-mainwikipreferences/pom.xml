@@ -35,21 +35,6 @@
   <description>Default preferences for the main wiki. Must be installed first by the Distribution Wizard to have a
   clean rights configuration before installing any other extension.</description>
   <dependencies>
-    <!-- It is important to install the admin app first to have the default skin when you log in during the DW. -->
-    <dependency>
-      <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-administration-ui</artifactId>
-      <version>${platform.version}</version>
-      <type>xar</type>
-    </dependency>
-    <!-- Then, the admin user and group -->
-    <dependency>
-      <groupId>org.xwiki.enterprise</groupId>
-      <artifactId>xwiki-enterprise-ui-admin-user</artifactId>
-      <version>${enterprise.version}</version>
-      <type>xar</type>
-    </dependency>
-    <!-- And finally, the preferences -->
     <dependency>
       <groupId>org.xwiki.enterprise</groupId>
       <artifactId>xwiki-enterprise-ui-mainwikipreferences</artifactId>

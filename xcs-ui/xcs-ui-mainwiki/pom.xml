@@ -39,8 +39,14 @@
     <xwiki.extension.category>flavor</xwiki.extension.category>
   </properties>
   <dependencies>
-    <!-- This is important to have this module in the first position, if we want XWiki.Admin and XWiki.XWikiPreferences
-    to be installed first -->
+    <!-- This is important to have these 2 modules in the first position, if we want XWiki.Admin
+    and XWiki.XWikiPreferences to be installed first -->
+    <dependency>
+      <groupId>org.xwiki.enterprise</groupId>
+      <artifactId>xwiki-enterprise-ui-admin-user</artifactId>
+      <version>${enterprise.version}</version>
+      <type>xar</type>
+    </dependency>
     <dependency>
       <groupId>com.xwikisas</groupId>
       <artifactId>xcs-ui-mainwikipreferences</artifactId>
