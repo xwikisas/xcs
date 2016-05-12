@@ -74,6 +74,7 @@
             <exclude>org.xwiki.rendering:xwiki-rendering-api</exclude>
             <exclude>org.xwiki.platform:xwiki-platform-office-importer</exclude>
             <exclude>org.xwiki.platform:xwiki-platform-oldcore</exclude>
+            <exclude>org.xwiki.platform:xwiki-platform-rendering-macro-include</exclude>
           </excludes>
           <excludeFromWAR>com.xwikisas:xcs-web</excludeFromWAR>
           <extensionOnMainWiki>com.xwikisas:xcs-ui-mainwiki</extensionOnMainWiki>
