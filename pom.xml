@@ -70,7 +70,7 @@
   </distributionManagement>
   <properties>
     <wikiflavorapplication.version>2.2</wikiflavorapplication.version>
-    <tourapplication.version>1.0-rc-1</tourapplication.version>
+    <tourapplication.version>1.0</tourapplication.version>
   </properties>
   <modules>
     <!-- Sorted Alphabetically -->
