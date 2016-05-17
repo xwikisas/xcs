@@ -61,14 +61,6 @@
       <version>${project.version}</version>
       <type>xar</type>
     </dependency>
-    <!-- Force the MainWiki UI version because otherwise WikiFlavor UI imports its own (which is outdated)
-         See: https://jira.xwikisas.com/browse/XCS-282 -->
-    <dependency>
-      <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-wiki-ui-mainwiki</artifactId>
-      <version>${platform.version}</version>
-      <type>xar</type>
-    </dependency>
     <!-- Our flavor application -->
     <dependency>
       <groupId>org.xwiki.contrib</groupId>
