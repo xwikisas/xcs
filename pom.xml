@@ -359,6 +359,14 @@
         <artifactId>bootstrap</artifactId>
         <version>3.3.5</version>
       </dependency>
+      <!-- Force the MainWiki UI version because otherwise WikiFlavor UI imports its own (which is outdated)
+         See: https://jira.xwikisas.com/browse/XCS-282 -->
+      <dependency>
+        <groupId>org.xwiki.platform</groupId>
+        <artifactId>xwiki-platform-wiki-ui-mainwiki</artifactId>
+        <version>${platform.version}</version>
+        <type>xar</type>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>
