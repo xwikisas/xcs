@@ -25,7 +25,7 @@
   <parent>
     <groupId>com.xwikisas</groupId>
     <artifactId>xcs-repositories</artifactId>
-    <version>2016-2-SNAPSHOT</version>
+    <version>2016-2-rc-1</version>
   </parent>
   <artifactId>xcs-repositories-snapshots</artifactId>
   <name>XWiki Collaboration Suite - Repositories - Snapshots</name>
