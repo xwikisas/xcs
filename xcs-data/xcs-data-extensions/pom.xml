@@ -27,7 +27,7 @@
   <parent>
     <artifactId>xcs-data</artifactId>
     <groupId>com.xwikisas</groupId>
-    <version>2016-2-SNAPSHOT</version>
+    <version>2016-2</version>
   </parent>
   <artifactId>xcs-data-extensions</artifactId>
   <name>XWiki Collaboration Suite - Data - Extensions</name>
