@@ -25,6 +25,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -212,6 +213,10 @@ public class PackageExtensionsMojo extends AbstractMojo
     {
         // Get main UI
         Artifact mainWikiUI = mavenProject.getArtifactMap().get(extensionOnMainWiki);
+        // If no artifact was configured for main wiki, return an empty list of artifacts to mark as installed
+        if (mainWikiUI == null) {
+            return Collections.<Artifact>emptyList();
+        }
 
         ProjectBuildingRequest request = new DefaultProjectBuildingRequest();
         request.setRepositorySession(session.getRepositorySession());
