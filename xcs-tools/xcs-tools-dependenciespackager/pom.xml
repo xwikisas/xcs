@@ -32,7 +32,7 @@
   <description>Maven plugin to install dependencies in the XWiki WAR.</description>
   <packaging>maven-plugin</packaging>
   <properties>
-    <mavenVersion>3.0.5</mavenVersion>
+    <mavenVersion>3.8.1</mavenVersion>
   </properties>
   <dependencies>
     <!-- Maven -->
